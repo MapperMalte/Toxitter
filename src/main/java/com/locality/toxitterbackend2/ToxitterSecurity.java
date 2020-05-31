@@ -83,6 +83,33 @@ public class ToxitterSecurity extends Reservoir
         }
     }
 
+    @Route(route = "login")
+    public static String attemptLogin(
+            @RequestParam(name = "email", obligatory = true) String email,
+            @RequestParam(name="password", obligatory = true) String password)
+    {
+        return getTokenForScope(UserReservoir.getUserIdByMail(email),password,"user");
+    }
+
+    @Route(route="register")
+    public static String registerNewUser(
+            @RequestParam(name = "name", obligatory = true) String name,
+            @RequestParam(name = "email", obligatory = true) String email,
+            @RequestParam(name="password", obligatory = true) String password
+    )
+    {
+        if ( UserReservoir.userExists(email) )
+        {
+            return "User with email "+email+" already exists!";
+        }
+        String newUserId = UserReservoir.registerUser(name,email,password);
+        UserPrivileges.add(newUserId,"user");
+        return "{\"userId:\" \""+newUserId+"\", "
+                +"\"accessToken:\" \""+
+                getTokenForScope(UserReservoir.getUserIdByMail(email),password,"user")
+                +"\"}";
+    }
+
     /**
      *
      * @param token

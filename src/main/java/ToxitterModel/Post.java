@@ -3,6 +3,7 @@ package ToxitterModel;
 import apple.laf.JRSUIUtils;
 import com.google.gson.Gson;
 import com.locality.toxitterbackend2.Ullog;
+import com.locality.toxitterbackend2.Umlauter;
 import org.apache.commons.text.StringEscapeUtils;
 import theory.DiamondList;
 
@@ -112,7 +113,7 @@ public class Post
         if ( !(owner == null))
         {
             System.out.println("Owner: "+ owner.getName());
-            p.ownerName = StringEscapeUtils.escapeHtml4(owner.getName());
+            p.ownerName = Umlauter.umlaut(owner.getName());
             p.photoUrl = owner.photoUrl;
         }
         return p;

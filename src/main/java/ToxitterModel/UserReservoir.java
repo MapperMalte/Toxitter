@@ -43,18 +43,24 @@ public class UserReservoir extends Reservoir
         return  usersByMail.get(email);
     }
 
+    public static boolean userExists(String email)
+    {
+        return usersByMail.containsKey(email);
+    }
+
     /**
      *
      * @param name
      * @param email
+     * @param pwd
      * @return
      */
-    @Route(route = "create")
     public static String registerUser(
             @RequestParam(name = "name", obligatory = true) String name,
             @RequestParam(name = "email",obligatory = true) String email,
             @RequestParam(name = "pwd",obligatory = true) String pwd)
     {
+
         User newUser = new User();
         newUser.userId = makeId();
         newUser.name = name;

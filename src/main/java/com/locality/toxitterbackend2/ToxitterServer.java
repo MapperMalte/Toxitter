@@ -29,7 +29,7 @@ public class ToxitterServer
         String malteId = UserReservoir.getUserByMail("maltemail").getId();
         String niklasId = UserReservoir.getUserByMail("nkoehler@gmx.de").getId();
 
-        UserPrivileges.add(malteId,"user");
+        UserPrivileges.add(malteId,"admin");
         Ullog.put("Maltes ID: "+malteId);
         Ullog.put("Niklas ID: "+niklasId);
 
@@ -186,7 +186,7 @@ public class ToxitterServer
                 }
             }
             System.out.println("Response: "+response);
-
+            response=Umlauter.umlaut(response);
             Headers headers= httpExchange.getResponseHeaders();
             headers.add("Access-Control-Allow-Origin", "*");
             httpExchange.sendResponseHeaders(200, response.length());
