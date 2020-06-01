@@ -4,7 +4,8 @@ import java.util.TreeMap;
 
 public class Emotions
 {
-    public static final String emotions= ":grinning::kissing_closed_eyes::sweat_smile::disappointed::smirk::rage::scream::cry::smiley::see_no_evil::stuck_out_tongue_winking_eye::sob::smile::pensive::+1::blush::joy::heart_eyes::unamused::flushed::heart::wink::relaxed::relieved::speak_no_evil::kissing_heart::confused::kiss::grin::stuck_out_tongue_closed_eyes::blush::weary::persevere:";
+    public static final String emotions
+            = ":heart_eyes::heart::rage::joy::cry::flushed::satisfied:";
     private static TreeMap<String,Integer> data = new TreeMap<>();
     private static int count = 0;
     private static boolean initialized = false;
@@ -20,6 +21,7 @@ public class Emotions
         String[] emotions = Emotions.emotions.split(":");
         for (int i = 0; i < emotions.length; i++)
         {
+            System.out.println("Emotion "+i+": "+emotions[i]);
             data.put(emotions[i],i);
             count++;
         }
@@ -29,8 +31,8 @@ public class Emotions
     {
         if ( !initialized )
         {
-            initialized = true;
             init();
+            initialized = true;
         }
     }
 

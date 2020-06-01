@@ -65,14 +65,32 @@ public class Post
     }
 
     @Route(route = "react")
-    public static String reactX(@RequestParam(name = "postId",obligatory = true) String postId,@RequestParam(name = "userId", obligatory = true) String userId, @RequestParam(name = "smileyName", obligatory = true) String smileyName)
+    public static String reactX(
+            @RequestParam(name = "postId",obligatory = true) String postId,
+            @RequestParam(name = "userId", obligatory = true) String userId,
+            @RequestParam(name = "smiley", obligatory = true) String smileyName)
     {
         Post p = PostReservoir.getPostByPostId(postId);
         System.out.println("Reacting to Post: "+p.title+" with ID "+postId+" for user "+userId);
         p.react(userId,smileyName);
-        return "User "+StringEscapeUtils.escapeHtml4(UserReservoir.getUserByUserId(userId).name)+" liked the post!";
+        return ""+p.getEmotionCount(smileyName);
     }
 
+    public int getEmotionCount(String smileyName)
+    {
+        int emotionId = Emotions.getEmotionId(smileyName);
+        if ( emotionId != -1 )
+        {
+            if ( reactionsByName.containsKey(smileyName) )
+            {
+                return  reactionsByName.get(smileyName).count;
+            } else {
+                return 0;
+            }
+        } else {
+            throw new IllegalArgumentException("getEmotionCount: "+smileyName+" is not a known smiley");
+        }
+    }
     public void react(String userId, String smileyName)
     {
         /*
