@@ -1,10 +1,12 @@
 package ToxitterModel;
 
+@FetchAt(route = "user")
 public class User
 {
     String userId;
     String name;
-    String photoUrl = "";
+    public String photoUrl = "";
+    String description = "";
     String pwd;
     String email;
 
@@ -26,5 +28,16 @@ public class User
     public boolean pwdCorrect(String pwd)
     {
         return this.pwd.equals(pwd);
+    }
+
+    @Route(route = "setdescription")
+    @Protected(scope = "user")
+    public static String setDescription(
+            @RequestParam(name = "userId",obligatory = true) String userId,
+            @RequestParam(name = "description",obligatory = true) String description
+    )
+    {
+        UserReservoir.getUserByUserId(userId).description = description;
+        return description;
     }
 }

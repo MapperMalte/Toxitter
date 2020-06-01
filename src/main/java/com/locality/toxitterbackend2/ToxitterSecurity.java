@@ -102,6 +102,7 @@ public class ToxitterSecurity extends Reservoir
 
     @Route(route="register")
     public static String registerNewUser(
+            @RequestParam(name = "surname", obligatory = true) String surname,
             @RequestParam(name = "name", obligatory = true) String name,
             @RequestParam(name = "email", obligatory = true) String email,
             @RequestParam(name="password", obligatory = true) String password
@@ -111,7 +112,7 @@ public class ToxitterSecurity extends Reservoir
         {
             return "User with email "+email+" already exists!";
         }
-        String newUserId = UserReservoir.registerUser(name,email,password);
+        String newUserId = UserReservoir.registerUser((surname+" "+name),email,password);
         UserPrivileges.add(newUserId,"user");
         return "{\"userId\": \""+newUserId+"\", "
                 +"\"accessToken\": \""+

@@ -23,8 +23,15 @@ public class ToxitterServer
     public static void loadSeedData()
     {
         String userId = UserReservoir.registerUser("Admin","admin@toxitter.de","adminpwd");
+        User user = UserReservoir.getUserByUserId(userId);
+        user.photoUrl = "https://randomuser.me/api/portraits/women/93.jpg";
         UserPrivileges.add(userId,"user");
         UserPrivileges.add(userId,"admin");
+
+        String userId2 = UserReservoir.registerUser("TestUser","sod",".");
+        User user2 = UserReservoir.getUserByUserId(userId2);
+        user2.photoUrl = "https://randomuser.me/api/portraits/men/50.jpg";
+        UserPrivileges.add(userId2,"user");
     }
     public static void loadTest()
     {

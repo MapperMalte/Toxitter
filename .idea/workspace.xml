@@ -2,25 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1a6799fa-3d81-404d-97ed-2e1ce054a946" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/locality/toxitterbackend2/Middelware.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/locality/toxitterbackend2/ToxitterSessionMiddleware.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/realtime/PostLikeSignature.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/realtime/TeleState.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/realtime/TeleStateReservoir.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/realtime/TeleStateful.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ToxitterModel/Feed.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ToxitterModel/Feed.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ToxitterModel/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ToxitterModel/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ToxitterModel/UserReservoir.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ToxitterModel/UserReservoir.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/locality/toxitterbackend2/SecurityTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/locality/toxitterbackend2/ToxitterSecurityTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/locality/toxitterbackend2/ToxitterSecurity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/locality/toxitterbackend2/ToxitterSecurity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/locality/toxitterbackend2/ToxitterSecurityMiddleware.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/locality/toxitterbackend2/ToxitterSecurityMiddleware.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/locality/toxitterbackend2/ToxitterServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/locality/toxitterbackend2/ToxitterServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ToxitterModel/Feed.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ToxitterModel/Feed.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ToxitterModel/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ToxitterModel/User.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ToxitterModel/UserReservoir.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ToxitterModel/UserReservoir.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/locality/toxitterbackend2/SecurityTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/locality/toxitterbackend2/ToxitterSecurity$AccessToken.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/locality/toxitterbackend2/ToxitterSecurity$AccessToken.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/locality/toxitterbackend2/ToxitterSecurity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/locality/toxitterbackend2/ToxitterSecurity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/locality/toxitterbackend2/ToxitterSecurityMiddleware.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/locality/toxitterbackend2/ToxitterSecurityMiddleware.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/locality/toxitterbackend2/ToxitterServer$MyHttpHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/locality/toxitterbackend2/ToxitterServer$MyHttpHandler.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/locality/toxitterbackend2/ToxitterServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/locality/toxitterbackend2/ToxitterServer.class" afterDir="false" />
     </list>
@@ -173,7 +161,7 @@
       <option name="presentableId" value="Default" />
       <updated>1590845528143</updated>
       <workItem from="1590845532987" duration="1007000" />
-      <workItem from="1590857401208" duration="53963000" />
+      <workItem from="1590857401208" duration="59332000" />
     </task>
     <servers />
   </component>

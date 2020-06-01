@@ -80,6 +80,17 @@ public class UserReservoir extends Reservoir
         return gson.toJson(usersById);
     }
 
+    public static class PublicUserInfo
+    {
+        String displayName = "";
+        String photoUrl = "";
+        public PublicUserInfo(String displayName, String photoUrl)
+        {
+            this.displayName = displayName;
+            this.photoUrl = photoUrl;
+        }
+    }
+
     @Route(route = "info")
     @Protected(scope = "user")
     public static String single(
@@ -87,7 +98,7 @@ public class UserReservoir extends Reservoir
             @RequestParam(name="token",obligatory = true) String token)
     {
         Gson gson = new Gson();
-        Ullog.put(UserReservoir.class,"Route /info called.");
-        return gson.toJson(UserReservoir.getUserByUserId(userId));
+        User user = UserReservoir.getUserByUserId(userId);
+        return gson.toJson(new PublicUserInfo(user.name,user.photoUrl));
     }
 }
