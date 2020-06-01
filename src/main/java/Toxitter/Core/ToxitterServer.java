@@ -28,7 +28,7 @@ public class ToxitterServer
     private static TreeMap<String, ToxitterModelSignature> routes = new TreeMap<>();
     public static void loadSeedData()
     {
-        String userId = UserReservoir.registerUser("Admin","admin@toxitter.de","adminpwd");
+        String userId = UserReservoir.registerUser("Admin","admin","adminpwd");
         User user = UserReservoir.getUserByUserId(userId);
         user.photoUrl = "https://randomuser.me/api/portraits/women/93.jpg";
         UserPrivileges.add(userId,"user");

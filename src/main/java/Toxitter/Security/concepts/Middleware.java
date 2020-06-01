@@ -1,7 +1,10 @@
 package Toxitter.Security.concepts;
 
-import ToxitterSecurityMiddleware;
 import Toxitter.Logging.Ullog;
+import Toxitter.Security.ToxitterSecurityMiddleware;
+import com.sun.jndi.toolkit.url.Uri;
+
+import java.util.TreeMap;
 
 public abstract class Middleware
 {
@@ -22,9 +25,9 @@ public abstract class Middleware
         int beginTokenIndex = uri.indexOf("=",beginTokenParamIndex)+1;
         int endTokenIndex = Math.max(uri.indexOf("?",beginTokenIndex),uri.length());
         String token = uri.substring(beginTokenIndex,endTokenIndex);
-        Ullog.put(ToxitterSecurityMiddleware.class,"Extracted token "+token+" from Uri: "+uri);
+        if (Ullog.active) Ullog.put(ToxitterSecurityMiddleware.class,"Extracted token "+token+" from Uri: "+uri);
         uri = uri.substring(0,beginTokenParamIndex)+uri.substring(endTokenIndex,uri.length());
-        Ullog.put(ToxitterSecurityMiddleware.class,"Now uri: "+uri);
+        if (Ullog.active) Ullog.put(ToxitterSecurityMiddleware.class,"Now uri: "+uri);
         data[0] = uri;
         data[1] = token;
         return data;

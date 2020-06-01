@@ -2,7 +2,6 @@ package Toxitter.Security.test;
 
 import Toxitter.Model.UserReservoir;
 import Toxitter.Security.ToxitterSecurity;
-import com.locality.toxitterbackend2.ToxitterTest;
 import Toxitter.Security.UserPrivileges;
 import org.junit.Test;
 

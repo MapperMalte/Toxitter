@@ -31,11 +31,19 @@ public class Emotions
     private static void addSmiley(String name, String html, String html2)
     {
         data.put(name,new Smiley(name,html));
+        count++;
     }
 
     public static boolean isValidEmotion(String name)
     {
+        checkInit();
         return data.containsKey(name);
+    }
+
+    public static String getHtmlBySmiley(String smileyName)
+    {
+        checkInit();
+        return data.get(smileyName).html;
     }
 
     public static void init()

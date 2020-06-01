@@ -46,6 +46,7 @@ public class Post
     public static class Reaction
     {
         String smiley;
+        String html;
         int count = 0;
         transient DiamondList<ProfileLink> links = new DiamondList<>();
     }
@@ -105,6 +106,7 @@ public class Post
             } else {
                 Reaction reaction = new Reaction();
                 reaction.smiley = smileyName;
+                reaction.html = Emotions.getHtmlBySmiley(smileyName);
                 reaction.count = 1;
                 reaction.links.addOnTop(new ProfileLink(userId,"",""));
                 reactionsByName.put(smileyName,reaction);

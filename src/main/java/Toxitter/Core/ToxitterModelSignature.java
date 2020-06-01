@@ -57,6 +57,10 @@ public class ToxitterModelSignature
         replenish();
     }
 
+    /**
+     * Checks if all obligatory values for the route are present.
+     * @return
+     */
     public boolean isComplete()
     {
         methods.replenish();
@@ -71,6 +75,11 @@ public class ToxitterModelSignature
         return true;
     }
 
+    /**
+     * Fills all values with null values.
+     * This means, they can be filled with values again,
+     * to check if all obligatory values of a route are present
+     */
     public void replenish()
     {
         methods.replenish();
@@ -82,6 +91,12 @@ public class ToxitterModelSignature
         methods.replenish();
     }
 
+    /**
+     * @return a clone of this Modelsignature that also has a clone of the data.
+     * The way it works: ToxitterModelSignature is empty, then filled with values from the request,
+     * then gets emptied again. If one wants to save the data from the signature to reference them
+     * later on, one must make a clone of the model-signature
+     */
     public ToxitterModelSignature getClone()
     {
         ToxitterModelSignature copy = new ToxitterModelSignature();
