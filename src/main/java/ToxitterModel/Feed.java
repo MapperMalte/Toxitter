@@ -16,6 +16,7 @@ public class Feed
     }
 
     @Route(route = "all")
+    @Protected(scope = "user")
     public static String getFeed(@RequestParam(name = "filter",obligatory = true) String filter)
     {
         System.out.println("READING FEED!");

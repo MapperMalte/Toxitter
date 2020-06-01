@@ -5,7 +5,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
-public class SecurityTest
+public class ToxitterSecurityTest
 {
     @Test
     public void testTokenHub()

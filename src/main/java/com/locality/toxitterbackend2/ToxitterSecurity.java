@@ -1,6 +1,7 @@
 package com.locality.toxitterbackend2;
 
 import ToxitterModel.*;
+import theory.DiamondList;
 
 import java.util.TreeMap;
 
@@ -88,7 +89,15 @@ public class ToxitterSecurity extends Reservoir
             @RequestParam(name = "email", obligatory = true) String email,
             @RequestParam(name="password", obligatory = true) String password)
     {
-        return getTokenForScope(UserReservoir.getUserIdByMail(email),password,"user");
+        if ( !UserReservoir.userExists(email) )
+        {
+            return "User with email "+email+" does not exist!";
+        }
+        String userId = UserReservoir.getUserIdByMail(email);
+        return "{\"userId\": \""+userId+"\", "
+                +"\"accessToken\": \""+
+                getTokenForScope(userId,password,"user")
+                +"\"}";
     }
 
     @Route(route="register")
@@ -104,8 +113,8 @@ public class ToxitterSecurity extends Reservoir
         }
         String newUserId = UserReservoir.registerUser(name,email,password);
         UserPrivileges.add(newUserId,"user");
-        return "{\"userId:\" \""+newUserId+"\", "
-                +"\"accessToken:\" \""+
+        return "{\"userId\": \""+newUserId+"\", "
+                +"\"accessToken\": \""+
                 getTokenForScope(UserReservoir.getUserIdByMail(email),password,"user")
                 +"\"}";
     }

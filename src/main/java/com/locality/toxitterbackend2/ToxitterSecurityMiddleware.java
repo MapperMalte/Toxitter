@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.nio.charset.StandardCharsets;
 
-public class ToxitterSecurityMiddleware
+public class ToxitterSecurityMiddleware extends Middelware
 {
     public static final String TOKEN_IDENTIFIER = "tokenId";
     private static final int TOKEN_IDENTIFIER_LENGTH = TOKEN_IDENTIFIER.length();
@@ -28,12 +28,10 @@ public class ToxitterSecurityMiddleware
                 Ullog.put(ToxitterSecurityMiddleware.class,"Route "+route+" requires privilege, but no token provided in request!");
                 return false;
             }
-            int beginTokenIndex = uri.indexOf("=",beginTokenParamIndex)+1;
-            int endTokenIndex = Math.max(uri.indexOf("?",beginTokenIndex),uri.length());
-            String token = uri.substring(beginTokenIndex,endTokenIndex);
-            Ullog.put(ToxitterSecurityMiddleware.class,"Extracted token "+token+" from Uri: "+uri);
-            uri = uri.substring(0,beginTokenParamIndex)+uri.substring(endTokenIndex,uri.length());
-            Ullog.put(ToxitterSecurityMiddleware.class,"Now uri: "+uri);
+
+            String[] data = extractParam(uri,TOKEN_IDENTIFIER);
+            uri = data[0];
+            String token = data[1];
 
             if ( ToxitterSecurity.hasAccesToRoute(token,route) )
             {

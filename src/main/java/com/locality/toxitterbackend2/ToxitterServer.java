@@ -20,9 +20,15 @@ import java.util.concurrent.ThreadPoolExecutor;
 public class ToxitterServer
 {
     private static TreeMap<String, ToxitterModelSignature> routes = new TreeMap<>();
-
+    public static void loadSeedData()
+    {
+        String userId = UserReservoir.registerUser("Admin","admin@toxitter.de","adminpwd");
+        UserPrivileges.add(userId,"user");
+        UserPrivileges.add(userId,"admin");
+    }
     public static void loadTest()
     {
+        loadSeedData();
         UserReservoir.registerUser("Malte Nolden","maltemail", "pwdmalte");
         UserReservoir.registerUser("Niklas Köhler","nkoehler@gmx.de", User.getPwdHashMock());
 

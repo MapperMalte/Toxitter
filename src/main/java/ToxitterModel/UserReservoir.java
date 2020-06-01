@@ -73,10 +73,21 @@ public class UserReservoir extends Reservoir
 
     @Route(route = "all")
     @Protected(scope = "admin")
-    public static String all(@RequestParam(name="token",obligatory = false) String token)
+    public static String all(@RequestParam(name="token",obligatory = true) String token)
     {
         Gson gson = new Gson();
         Ullog.put(UserReservoir.class,"Route /all called.");
         return gson.toJson(usersById);
+    }
+
+    @Route(route = "info")
+    @Protected(scope = "user")
+    public static String single(
+            @RequestParam(name = "userId", obligatory = true) String userId,
+            @RequestParam(name="token",obligatory = true) String token)
+    {
+        Gson gson = new Gson();
+        Ullog.put(UserReservoir.class,"Route /info called.");
+        return gson.toJson(UserReservoir.getUserByUserId(userId));
     }
 }
