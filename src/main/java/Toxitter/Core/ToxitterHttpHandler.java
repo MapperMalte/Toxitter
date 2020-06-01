@@ -15,17 +15,21 @@ import java.lang.reflect.InvocationTargetException;
 import java.nio.charset.StandardCharsets;
 import java.util.TreeMap;
 
-public class ToxitterHttpHandler implements HttpHandler {
-
-    private static TreeMap<String, ToxitterModelSignature> routes = new TreeMap<>();
-
+public class ToxitterHttpHandler implements HttpHandler
+{
     private void sendWithCode(HttpExchange httpExchange, String response, int code) throws IOException {
         response = Umlauter.umlaut(response);
         Headers headers= httpExchange.getResponseHeaders();
         headers.add("Access-Control-Allow-Origin", "*");
-        httpExchange.sendResponseHeaders(code, response.length());
         OutputStream outputStream = httpExchange.getResponseBody();
-        outputStream.write(response.getBytes(StandardCharsets.UTF_8));
+        byte[] bytes = response.getBytes(StandardCharsets.UTF_8);
+        httpExchange.sendResponseHeaders(code, bytes.length);
+        /*
+        for(int i = 0; i < bytes.length; i++ )
+        {
+            outputStream.write(bytes,i*256,Math.min(256,bytes.length-256*i));
+        }*/
+        outputStream.write(bytes);
         outputStream.flush();
         outputStream.close();
     }
@@ -34,86 +38,78 @@ public class ToxitterHttpHandler implements HttpHandler {
         sendWithCode(httpExchange,"Not allowed!",403);
     }
 
+    private void cancelAs404NotFound(HttpExchange httpExchange) throws IOException {
+        sendWithCode(httpExchange,"Route not found!",404);
+    }
+
+    private void cancelAs502InternalServerError(HttpExchange httpExchange, String msg) throws IOException {
+        sendWithCode(httpExchange,"Internal Server Error! Message: "+msg,502);
+    }
+
     private void sendStringAs200Success(HttpExchange httpExchange, String response) throws IOException {
         sendWithCode(httpExchange,response,200);
     }
 
-        @Override
-        public void handle(HttpExchange httpExchange) throws IOException
+    /**
+     * @param tms
+     * @param route
+     * @param params
+     * @param paramOffset
+     */
+    private void extractRouteParametersIntoToxitterModelSignature(ToxitterModelSignature tms, String route, String[] params, int paramOffset)
+    {
+        ReplenisherStack<ToxitterModelSignature.Method> methods = tms.getReplenisherStack();
+        for(int i = paramOffset; i < params.length; i++)
         {
-            String[] params = httpExchange.getRequestURI().toString().split("\\?");
+            String[] data = params[i].split("=");
+            ToxitterModelSignature.Method m = methods.find(data[0]);
+            if ( m!= null )
+            {
+                m.value = data[1];
+            }
+        }
+    }
 
-            ToxitterModelSignature tms = null;
+    private boolean knownRoute(String route)
+    {
+        return ToxitterServer.routes.containsKey(route);
+    }
+    @Override
+    public void handle(HttpExchange httpExchange) throws IOException
+    {
+        String uri = httpExchange.getRequestURI().toString();
+        String[] params = uri.split("\\?");
+        String route = params[0];
+        Ullog.put(ToxitterHttpHandler.class,"Handling Request on uri: "+uri);
+        if (!knownRoute(route) )
+        {
+            Ullog.put(ToxitterHttpHandler.class,"Route "+route+" unknown!");
+            cancelAs404NotFound(httpExchange);
+            return;
+        }
+        if ( !ToxitterSecurityMiddleware.allowed(route,uri) )
+        {
+            cancelAs403NotAllowed(httpExchange);
+            return;
+        }
 
-            if ( !ToxitterSecurityMiddleware.allowed(params[0],httpExchange.getRequestURI().toString()) )
-            {
-                cancelAs403NotAllowed(httpExchange);
-            }
+        ToxitterModelSignature tms = ToxitterServer.routes.get(route);
+        extractRouteParametersIntoToxitterModelSignature(tms,route,params,1);
+        Object[] args = tms.splurpIntoParameters();
+        tms.releaseForNextRequest();
 
-            if ( routes.containsKey(params[0]) )
-            {
-                System.out.println("Route known! ");
-                System.out.println("Params: ");
-                tms = routes.get(params[0]);
-            } else
-            {
-                System.out.println("Route unknown! ");
-            }
+        ToxitterSessionReservoir.registerRequest(tms,httpExchange.getRemoteAddress().getAddress().toString());
 
-            String response = "";
-            ReplenisherStack<ToxitterModelSignature.Method> methods = null;
-            if ( tms != null )
-            {
-                methods = tms.getReplenisherStack();
-            }
-            for(String param: params)
-            {
-                System.out.println("Param: "+param);
-                String[] data = param.split("=");
-                System.out.println("Datalength: "+data.length);
-                if ( data.length > 1 )
-                {
-                    if ( tms != null )
-                    {
-                        ToxitterModelSignature.Method m = methods.find(data[0]);
-                        if ( m!= null )
-                        {
-                            System.out.println("ToxitterMethod found: "+m.name);
-                            m.value = data[1];
-                        }
-                    }
-                    Ullog.put("Data[0]: "+data[0]+" and Data[1]: "+data[1]);
-                    response += "Data[0]: "+data[0]+" and Data[1]: "+data[1]+" --- ";
-                }
-            }
-            if ( tms != null )
-            {
-                System.out.println("#1 Complete: "+tms.isComplete());
-                methods = tms.getReplenisherStack();
-                methods.replenish();
-                Object[] args = new Object[methods.getCount()];
-                while(methods.getCount()>0)
-                {
-                    args[methods.getCount()-1] = methods.peek().value;
-                    System.out.println("Key: "+methods.peek().name+" / Value: "+methods.peek().value);
-                    methods.pop();
-                }
-                System.out.println(tms.toString());
-                ToxitterSessionReservoir.registerRequest(tms,httpExchange.getRemoteAddress().getAddress().toString());
-                tms.replenish();
-                System.out.println("Now invoke ");
-                try {
-                    System.out.println("Invoking ... "+methods.peek().name);
-                    String result = methods.peek().method.invoke(tms.toxiClass, args).toString();
-                    response = result;
-                } catch (IllegalAccessException e) {
-                    e.printStackTrace();
-                } catch (InvocationTargetException e) {
-                    e.printStackTrace();
-                }
-            }
-            System.out.println("Response: "+response);
+        String response = null;
+        try {
+            response = tms.getMethod().method.invoke(tms.toxiClass, args).toString();
+            Ullog.put(ToxitterHttpHandler.class,"Response from Server: "+response);
             sendStringAs200Success(httpExchange,response);
+        } catch (Exception e) {
+            e.printStackTrace();
+            cancelAs502InternalServerError(httpExchange,"Sth went wrong!");
+
+        }
     }
 
 }

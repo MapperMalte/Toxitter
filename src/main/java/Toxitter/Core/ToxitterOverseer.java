@@ -17,7 +17,7 @@ public class ToxitterOverseer
         System.out.println("Serve class "+c.getName());
         if ( c.isAnnotationPresent(FetchAt.class) )
         {
-            System.out.println("Found FetchAt Annotaton");
+            Ullog.put(ToxitterOverseer.class,"Found FetchAt Annotation");
             String persist = "";
             FetchAt p = (FetchAt) c.getAnnotation(FetchAt.class);
             Method[] ms = c.getMethods();
@@ -30,16 +30,14 @@ public class ToxitterOverseer
                     String allRoute = "/"+p.route()+"/"+r.route();
                     if ( method.isAnnotationPresent(Protected.class) )
                     {
-                        System.out.println("Route is protected!");
+                        Ullog.put(ToxitterOverseer.class,"Route is protected!");
                         Protected pr = (Protected) method.getAnnotation(Protected.class);
-                        System.out.println("Required scope: "+pr.scope());
-                        System.out.println("Adding to TokenHub!");
+                        Ullog.put(ToxitterOverseer.class,"Required scope: "+pr.scope());
+                        Ullog.put(ToxitterOverseer.class,"Adding to TokenHub!");
                         ToxitterSecurity.addRequiredScopeToRoute(pr.scope(),allRoute);
                     } else {
-                        System.out.println("Route is not protected");
+                        Ullog.put(ToxitterOverseer.class,"Route is NOT protected.");
                     }
-                    System.out.println("Route in Overseer: "+allRoute);
-                    System.out.println("Param Names: ");
                     ToxitterModelSignature sign = new ToxitterModelSignature();
                     sign.toxiClass = c;
                     for (Parameter param: method.getParameters() )
@@ -57,7 +55,7 @@ public class ToxitterOverseer
 
             }
         } else {
-            System.out.println("No annotation");
+            Ullog.put(ToxitterOverseer.class,"No annotation!");
         }
     }
 }

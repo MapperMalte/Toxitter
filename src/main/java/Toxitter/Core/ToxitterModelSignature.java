@@ -42,6 +42,11 @@ public class ToxitterModelSignature
     }
     private ReplenisherStack<Method> methods = new ReplenisherStack<>();
 
+    public Method getMethod()
+    {
+        return methods.peek();
+    }
+
     public void addMethod(java.lang.reflect.Method method, Parameter p, String requestParamName, boolean obligatory)
     {
         Method m = new Method();
@@ -54,7 +59,7 @@ public class ToxitterModelSignature
 
     public void execute()
     {
-        replenish();
+        releaseForNextRequest();
     }
 
     /**
@@ -80,7 +85,7 @@ public class ToxitterModelSignature
      * This means, they can be filled with values again,
      * to check if all obligatory values of a route are present
      */
-    public void replenish()
+    public void releaseForNextRequest()
     {
         methods.replenish();
         while(methods.getCount()>0)
@@ -89,6 +94,18 @@ public class ToxitterModelSignature
             methods.pop();
         }
         methods.replenish();
+    }
+
+    public Object[] splurpIntoParameters()
+    {
+        methods.replenish();
+        Object[] args = new Object[methods.getCount()];
+        while(methods.getCount()>0)
+        {
+            args[methods.getCount()-1] = methods.peek().value;
+            methods.pop();
+        }
+        return args;
     }
 
     /**

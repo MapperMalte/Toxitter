@@ -88,7 +88,7 @@ public class Seeder
                         "Mögen tausend Kristalle sich in eurem Leben zu Rosen entfalten. \n" +
                         "Wir werden eine neue Ära des Friedens und des Wohlstands einleiten.\n "
         );
-        p1.react(trumpId, "love");
+        p1.react(trumpId, "heart");
         p1.react(malteId, "satisfied");
         p1.react(niklasId, "rage");
 
@@ -101,15 +101,15 @@ public class Seeder
                         "dass wir unsere Freiheiten aufgeben mussten. Dass wir nun mit Drohnengeld zahlen und" +
                         " digitale Halsbänder tragen. Dass sie mit Prothesen unseren Verstand gekapert haben! " +
                         "Es ist Zeit, das wir uns auflehnen!");
-        p1.react(trumpId, "rage");
+        p2.react(trumpId, "rage");
 
         Post p3 = Post.create(
                 trumpId,
                 "FAKE NEWS!",
                 "FAKE NEWS! FEWK NEWS @Niklas.");
-        p1.react(gottPharaohId, "love");
-        p1.react(malteId, "cry");
-        p1.react(niklasId, "cry");
+        p3.react(gottPharaohId, "heart");
+        p3.react(malteId, "cry");
+        p3.react(niklasId, "cry");
 
         Post p4 = Post.create(
                 malteId,
@@ -118,6 +118,6 @@ public class Seeder
                         "Sang abends sein Abendlied für das\n "+
                         "MAN ICH BIN DER ZERBÜRSTER"
         );
-        p1.react(niklasId, "flushed");
+        p4.react(niklasId, "flushed");
     }
 }
