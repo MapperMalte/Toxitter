@@ -2,8 +2,10 @@ package Toxitter.Core.factoryfresh;
 
 import Toxitter.Core.ToxitterOverseer;
 import Toxitter.Core.ToxitterServer;
+import Toxitter.Model.Notifications;
 import Toxitter.Security.ToxitterSecurity;
 
+import javax.management.Notification;
 import java.io.IOException;
 
 public class ToxitterStandardConfiguratedEnvironment
@@ -22,6 +24,7 @@ public class ToxitterStandardConfiguratedEnvironment
         ToxitterOverseer.serve(Toxitter.Model.Feed.class);
         ToxitterOverseer.serve(Toxitter.Model.UserReservoir.class);
         ToxitterOverseer.serve(ToxitterSecurity.class);
+        ToxitterOverseer.serve(Notifications.class);
     }
 
     public static void up() throws Exception

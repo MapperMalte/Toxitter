@@ -1,5 +1,7 @@
 package Toxitter.Model;
 
+import com.google.gson.JsonArray;
+
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Map;
@@ -96,7 +98,14 @@ public class UserNotificationCollector
             notifications.add(notif);
             count++;
         }
+
+        JsonNotification notif = new JsonNotification();
+        notif.text= "Willkommen auf Toxitter!";
+        notifications.add(notif);
+        count++;
+
         JsonNotification[] notifs = new JsonNotification[count];
+
         return notifications.toArray(notifs);
     }
 }

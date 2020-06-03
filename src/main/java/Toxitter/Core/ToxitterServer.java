@@ -1,11 +1,8 @@
 package Toxitter.Core;
 
 import Toxitter.Core.factoryfresh.ToxitterStandardConfiguratedEnvironment;
-import Toxitter.Model.*;
 import Toxitter.Logging.Ullog;
-import Toxitter.Security.UserPrivileges;
 import com.sun.net.httpserver.HttpServer;
-import theory.DiamondList;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
@@ -16,7 +13,7 @@ import java.util.concurrent.ThreadPoolExecutor;
 
 public class ToxitterServer
 {
-    public static TreeMap<String, ToxitterModelSignature> routes = new TreeMap<>();
+    public static TreeMap<String, ToxitterModelSignature> routeSignatures = new TreeMap<>();
 
     private static HttpServer server;
 
@@ -35,7 +32,7 @@ public class ToxitterServer
         server.setExecutor(threadPoolExecutor);
         server.start();
         Ullog.put(" Server started on port "+port+" on "+threads+" threads.");
-        for(Map.Entry<String,ToxitterModelSignature> entry: routes.entrySet())
+        for(Map.Entry<String,ToxitterModelSignature> entry: routeSignatures.entrySet())
         {
             server.createContext(entry.getKey(), new  ToxitterHttpHandler());
         }
@@ -44,7 +41,7 @@ public class ToxitterServer
     public static void registerRoute(String route, ToxitterModelSignature model)
     {
         System.out.println("Route: "+route);
-        routes.put(route,model);
+        routeSignatures.put(route,model);
     }
 
 }

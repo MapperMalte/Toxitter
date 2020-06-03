@@ -102,6 +102,7 @@ public class ToxitterModelSignature
         Object[] args = new Object[methods.getCount()];
         while(methods.getCount()>0)
         {
+            System.out.println("Argument: Value "+methods.peek().value);
             args[methods.getCount()-1] = methods.peek().value;
             methods.pop();
         }
@@ -137,6 +138,7 @@ public class ToxitterModelSignature
         methods.replenish();
         while(methods.getCount()>0)
         {
+            System.out.println("TOXITTERMODEL SIGNATURE: KEY "+methods.peek().name+" VALUE "+methods.peek().value);
             sb.append("\"").append(methods.peek().name).append("\" : ").append("\"").append(methods.peek().value).append("\",\n");
             methods.pop();
         }

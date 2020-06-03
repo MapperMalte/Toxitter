@@ -128,6 +128,8 @@ public class Post
     {
         System.out.println("CREATING POST WITH USERID: "+userId+" Content: "+content+" and title "+title);
         Post p =  PostReservoir.addPost(userId, title, content);
+        p.reactions = new DiamondList<>();
+
         User owner = UserReservoir.getUserByUserId(userId);
         if ( !(owner == null))
         {

@@ -24,7 +24,7 @@ public class ToxitterSessionReservoir
         r.d = new Date();
         System.out.println("Signature Registered in Reservoir: "+r.signature.toString());
         requests.addOnTop(r);
-        log();
+        //log();
     }
     public static void log()
     {

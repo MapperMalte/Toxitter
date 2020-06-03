@@ -161,9 +161,13 @@ public class ToxitterSecurity extends Reservoir
      */
     public static boolean hasAccesToRoute(String token, String route)
     {
+        System.out.println("CheckAccess");
         if ( routeRequiredScope.containsKey(route) )
         {
-            return routeRequiredScope.get(route).equals(toToken(token).scope);
+            AccessToken accessToken = toToken(token);
+            if ( accessToken == null )
+                return false;
+            return routeRequiredScope.get(route).equals(accessToken.scope);
         } else {
             return true;
         }

@@ -1,7 +1,6 @@
 package Toxitter.Security;
 
-import Toxitter.Security.concepts.Middleware;
-import Toxitter.Logging.Ullog;
+import Toxitter.Model.concepts.Middleware;
 
 import java.io.IOException;
 
@@ -17,7 +16,8 @@ public class ToxitterSecurityMiddleware extends Middleware
      * @return
      * @throws IOException
      */
-    public static boolean allowed(String route, String uri) throws IOException {
+    /*
+    public static boolean allowedGet(String route, String uri) throws IOException {
         if (ToxitterSecurity.routeRequiresAnyPrivilege(route) )
         {
             int beginTokenParamIndex = uri.indexOf(TOKEN_IDENTIFIER);
@@ -27,7 +27,7 @@ public class ToxitterSecurityMiddleware extends Middleware
                 return false;
             }
 
-            String[] data = extractParam(uri,TOKEN_IDENTIFIER);
+            String[] data = extractGetParam(uri,TOKEN_IDENTIFIER);
             uri = data[0];
             String token = data[1];
 
@@ -41,5 +41,5 @@ public class ToxitterSecurityMiddleware extends Middleware
             }
         }
         return true;
-    }
+    }*/
 }
