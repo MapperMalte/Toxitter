@@ -2,9 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1a6799fa-3d81-404d-97ed-2e1ce054a946" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Model/concepts/ReservoirEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Model/concepts/ReservoirEntity_OneToOne.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Persistence/annotations/ReservoirEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Persistence/concepts/ReservoirEntityOneToN.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Persistence/concepts/ReservoirObserver.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Core/factoryfresh/ToxitterStandardConfiguratedEnvironment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Core/factoryfresh/ToxitterStandardConfiguratedEnvironment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Model/concepts/Reservoir.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Model/concepts/Reservoir.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Persistence/permanent/annotations/Flash.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Persistence/annotations/Flash.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Persistence/permanent/concepts/Persistor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Persistence/concepts/Persistor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Security/ToxitterSecurity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Security/ToxitterSecurity.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -161,5 +169,27 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="899" y="355" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1591237903205">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="899" y="355" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1591237903205" />
+    <state width="1725" height="260" key="GridCell.Tab.0.bottom" timestamp="1591257811774">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1725" height="260" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1591257811774" />
+    <state width="1725" height="260" key="GridCell.Tab.0.center" timestamp="1591257811774">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1725" height="260" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1591257811774" />
+    <state width="1725" height="260" key="GridCell.Tab.0.left" timestamp="1591257811774">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1725" height="260" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1591257811774" />
+    <state width="1725" height="260" key="GridCell.Tab.0.right" timestamp="1591257811774">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1725" height="260" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1591257811774" />
   </component>
 </project>

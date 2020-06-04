@@ -124,9 +124,17 @@ public class ToxitterSecurity extends Reservoir
         }
         String newUserId = UserReservoir.registerUser((surname+" "+name),email,password);
         UserPrivileges.add(newUserId,"user");
+        User user = UserReservoir.getUserByMail(email);
+
         return "{\"userId\": \""+newUserId+"\", "
                 +"\"accessToken\": \""+
-                getTokenForScope(UserReservoir.getUserIdByMail(email),password,"user")
+                getTokenForScope(newUserId,password,"user")+"\", "
+                +"\"userId\": \""+
+                user.getId()+"\", "
+                +"\"userName\": \""+
+                user.getName()+"\", "
+                +"\"photoUrl\": \""+
+                user.photoUrl
                 +"\"}";
     }
 

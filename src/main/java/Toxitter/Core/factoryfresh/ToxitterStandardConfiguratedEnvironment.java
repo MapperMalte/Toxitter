@@ -3,6 +3,7 @@ package Toxitter.Core.factoryfresh;
 import Toxitter.Core.ToxitterOverseer;
 import Toxitter.Core.ToxitterServer;
 import Toxitter.Model.Notifications;
+import Toxitter.Model.User;
 import Toxitter.Security.ToxitterSecurity;
 
 import javax.management.Notification;
@@ -25,6 +26,7 @@ public class ToxitterStandardConfiguratedEnvironment
         ToxitterOverseer.serve(Toxitter.Model.UserReservoir.class);
         ToxitterOverseer.serve(ToxitterSecurity.class);
         ToxitterOverseer.serve(Notifications.class);
+        ToxitterOverseer.serve(User.class);
     }
 
     public static void up() throws Exception

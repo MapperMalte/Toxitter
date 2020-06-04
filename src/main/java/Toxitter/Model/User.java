@@ -46,4 +46,15 @@ public class User
         UserReservoir.getUserByUserId(userId).description = description;
         return description;
     }
+
+    @Route(route = "setprofilephoto")
+    @Protected(scope = "user")
+    public static String setPhotoUrl(
+            @RequestParam(name = "userId",obligatory = true) String userId,
+            @RequestParam(name = "photoUrl",obligatory = true) String photoUrl
+    )
+    {
+        UserReservoir.getUserByUserId(userId).photoUrl = photoUrl;
+        return photoUrl;
+    }
 }
