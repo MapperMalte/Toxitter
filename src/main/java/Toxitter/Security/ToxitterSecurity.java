@@ -96,10 +96,17 @@ public class ToxitterSecurity extends Reservoir
         {
             return "User with email "+email+" does not exist!";
         }
+        User user = UserReservoir.getUserByMail(email);
         String userId = UserReservoir.getUserIdByMail(email);
         return "{\"userId\": \""+userId+"\", "
                 +"\"accessToken\": \""+
-                getTokenForScope(userId,password,"user")
+                getTokenForScope(userId,password,"user")+"\", "
+                +"\"userId\": \""+
+                user.getId()+"\", "
+                +"\"userName\": \""+
+                user.getName()+"\", "
+                +"\"photoUrl\": \""+
+                user.photoUrl
                 +"\"}";
     }
 
