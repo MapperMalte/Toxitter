@@ -3,6 +3,8 @@ package Toxitter.Model;
 import Toxitter.Model.annotations.FetchAt;
 import Toxitter.Model.annotations.RequestParam;
 import Toxitter.Model.annotations.Route;
+import Toxitter.Model.concepts.ReservoirEntity;
+import Toxitter.Persistence.annotations.Table;
 import com.google.gson.Gson;
 import Toxitter.Infusion.Umlauter;
 import theory.DiamondList;
@@ -11,7 +13,8 @@ import java.util.Date;
 import java.util.TreeMap;
 
 @FetchAt(route="post")
-public class Post
+@Table(primaryKey = "id", tableName = "post")
+public class Post extends ReservoirEntity
 {
     public String content;
     public String title;

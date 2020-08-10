@@ -1,13 +1,16 @@
 package Toxitter.Model;
 
 import Toxitter.Model.annotations.FetchAt;
+import Toxitter.Model.concepts.ReservoirEntity;
+import Toxitter.Persistence.annotations.Table;
 import Toxitter.Security.annotations.Protected;
 import Toxitter.Model.annotations.RequestParam;
 import Toxitter.Model.annotations.Route;
 import Toxitter.Model.concepts.Reservoir;
 
 @FetchAt(route = "user")
-public class User
+@Table(primaryKey = "userId", tableName = "user")
+public class User extends ReservoirEntity
 {
     String userId;
     String name;
@@ -15,6 +18,11 @@ public class User
     String description = "";
     String pwd;
     String email;
+
+    /*
+        INSERT INTO toxitter.user
+        VALUES('bjkdfgdfhjfdfgs667',"Malte",null,null,"34534dfg","malte_nolden@yahoo.de");
+     */
 
     public String getName()
     {

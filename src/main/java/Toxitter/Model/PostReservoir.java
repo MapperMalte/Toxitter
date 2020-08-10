@@ -1,5 +1,6 @@
 package Toxitter.Model;
 
+import Toxitter.Persistence.OneToOne;
 import Toxitter.Model.concepts.Reservoir;
 import theory.DiamondList;
 
@@ -11,6 +12,7 @@ public class PostReservoir extends Reservoir
     private static TreeMap<String,Post> postsById = new TreeMap<>();
     private static TreeMap<String, DiamondList<Post>> postsByUser = new TreeMap<String, DiamondList<Post>>();
 
+    private static OneToOne<String,Post> as;
     public static Post addPost(String userId, String title, String content)
     {
         Post p = new Post();

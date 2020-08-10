@@ -1,0 +1,22 @@
+version: '3'
+
+networks:
+  toxitter:
+
+services:
+  mysql-toxitter:
+    image: mysql:5.7.22
+    container_name: mysql-toxitter
+    restart: unless-stopped
+    tty: true
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_DATABASE: toxitter
+      MYSQL_USER: toxitter
+      MYSQL_PASSWORD: secret
+      MYSQL_ROOT_PASSWORD: secret
+      SERVICE_TAGS: dev
+      SERVICE_NAME: mysql-toxitter
+    networks:
+      - toxitter
