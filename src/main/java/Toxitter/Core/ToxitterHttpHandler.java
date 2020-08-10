@@ -2,7 +2,6 @@ package Toxitter.Core;
 
 import Toxitter.Infusion.Umlauter;
 import Toxitter.Logging.Ullog;
-import Toxitter.Persistence.session.ToxitterSessionReservoir;
 import Toxitter.Security.ToxitterSecurity;
 import Toxitter.Security.ToxitterSecurityMiddleware;
 import com.google.gson.Gson;
@@ -11,6 +10,7 @@ import com.google.gson.JsonObject;
 import com.sun.net.httpserver.Headers;
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
+import example.ToxitterServer;
 import theory.ReplenisherStack;
 
 import java.io.IOException;

@@ -1,6 +1,6 @@
 package Toxitter.Realtime.annotations;
 
-import Toxitter.Realtime.concepts.TeleState;
+import Toxitter.Realtime.TeleState;
 
 public @interface TeleStateful
 {

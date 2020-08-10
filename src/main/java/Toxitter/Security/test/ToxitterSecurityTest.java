@@ -1,6 +1,6 @@
 package Toxitter.Security.test;
 
-import Toxitter.Model.UserReservoir;
+import Toxitter.Model.factoryfresh.UserReservoir;
 import Toxitter.Security.ToxitterSecurity;
 import Toxitter.Security.UserPrivileges;
 import org.junit.Test;

@@ -1,8 +1,6 @@
 package Toxitter.Realtime;
 
-import Toxitter.Model.User;
-import Toxitter.Realtime.concepts.TeleDelta;
-import Toxitter.Realtime.concepts.TeleState;
+import Toxitter.Model.factoryfresh.User;
 
 public class TeleHub
 {

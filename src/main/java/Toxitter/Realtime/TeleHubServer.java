@@ -15,7 +15,6 @@ public class TeleHubServer {
 
     }
 
-
     @OnOpen
     public void onOpen(Session session, @PathParam("username") String username) throws IOException
     {

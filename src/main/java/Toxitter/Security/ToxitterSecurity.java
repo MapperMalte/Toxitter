@@ -1,10 +1,11 @@
 package Toxitter.Security;
 
-import Toxitter.Model.*;
-import Toxitter.Model.annotations.FetchAt;
-import Toxitter.Model.annotations.RequestParam;
-import Toxitter.Model.annotations.Route;
-import Toxitter.Model.concepts.Reservoir;
+import Toxitter.Core.annotations.FetchAt;
+import Toxitter.Core.annotations.RequestParam;
+import Toxitter.Core.annotations.Route;
+import Toxitter.Model.Reservoir;
+import Toxitter.Model.factoryfresh.User;
+import Toxitter.Model.factoryfresh.UserReservoir;
 
 import java.util.TreeMap;
 

@@ -1,6 +1,6 @@
 package Toxitter.Security;
 
-import Toxitter.Model.concepts.Middleware;
+import Toxitter.Connection.Middleware;
 
 import java.io.IOException;
 
