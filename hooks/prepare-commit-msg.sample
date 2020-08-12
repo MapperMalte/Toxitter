@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# An example hook script to prepare the commit log message.
+# An examples hook script to prepare the commit log message.
 # Called by "git commit" with the name of the file that has the
 # commit message, followed by the description of the commit
 # message's source.  The hook's purpose is to edit the commit
@@ -17,7 +17,7 @@
 # commented because it doesn't cope with --amend or with squashed
 # commits.
 #
-# The third example adds a Signed-off-by line to the message, that can
+# The third examples adds a Signed-off-by line to the message, that can
 # still be edited.  This is rarely a good idea.
 
 case "$2,$3" in

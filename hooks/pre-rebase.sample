@@ -109,7 +109,7 @@ The workflow assumed here is:
  * Whenever you need to test or publish your changes to topic
    branches, merge them into "next" branch.
 
-The script, being an example, hardcodes the publish branch name
+The script, being an examples, hardcodes the publish branch name
 to be "next", but it is trivial to make it configurable via
 $GIT_DIR/config mechanism.
 
@@ -130,7 +130,7 @@ With this workflow, you would want to know:
     fork the topic (perhaps with the same name) afresh from the
     tip of "master".
 
-Let's look at this example:
+Let's look at this examples:
 
 		   o---o---o---o---o---o---o---o---o---o "next"
 		  /       /           /           /

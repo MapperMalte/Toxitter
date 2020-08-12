@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# An example hook script to verify what is about to be committed
+# An examples hook script to verify what is about to be committed
 # by applypatch from an e-mail message.
 #
 # The hook should exit with non-zero status after issuing an
