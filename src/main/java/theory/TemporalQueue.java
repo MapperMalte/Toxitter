@@ -66,8 +66,19 @@ public class TemporalQueue<K extends Comparable,V>
             if ( !(bottom == null || bottom.next == null) )
                 bottom.next.previous = null;
 
+            index.remove(bottom.key);
             bottom = bottom.next;
             size--;
+        }
+    }
+
+    public void print()
+    {
+        ValueBag bot = bottom;
+        while ( !(bot == null) )
+        {
+            System.out.println(bot.value.toString());
+            bot = bot.next;
         }
     }
 
@@ -100,7 +111,7 @@ public class TemporalQueue<K extends Comparable,V>
     {
         if ( !index.containsKey(key) )
         {
-            return null;
+            return queueSleeper.wakeup(key);
         }
         ValueBag vb = index.get(key);
         pullToTop(vb);
