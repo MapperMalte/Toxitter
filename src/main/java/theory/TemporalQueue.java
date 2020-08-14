@@ -44,15 +44,20 @@ public class TemporalQueue<K extends Comparable,V>
             return;
         } else if ( vb == bottom )
         {
+            bottom = bottom.next;
             vb.next.previous = null;
             top.next = vb;
             vb.previous = top;
             vb.next = null;
             top = vb;
         } else {
-            // has next and previous
-            vb.next.previous = vb.previous;
-            vb.previous.next = vb.next;
+            if ( !(vb.next == null) )
+            {
+                // has next and previous
+                vb.next.previous = vb.previous;
+                vb.previous.next = vb.next;
+            }
+
         }
     }
 
@@ -71,15 +76,18 @@ public class TemporalQueue<K extends Comparable,V>
             size--;
         }
     }
-
-    public void print()
+    public String print()
     {
         ValueBag bot = bottom;
+        StringBuilder sb = new StringBuilder();
+
         while ( !(bot == null) )
         {
-            System.out.println(bot.value.toString());
+            sb.append(bot.key.toString()).append(" : ").append(bot.value.toString()).append("\n");
             bot = bot.next;
         }
+
+        return sb.toString();
     }
 
     public void put(K key, V value)
@@ -96,7 +104,13 @@ public class TemporalQueue<K extends Comparable,V>
             } else {
                 top.next = vb;
                 vb.previous = top;
+                top = vb;
+                if ( (bottom.next == null) )
+                {
+                    bottom.next = vb;
+                }
             }
+
             index.put(key,vb);
             size++;
             overflow();
@@ -142,7 +156,6 @@ public class TemporalQueue<K extends Comparable,V>
             index.remove(key);
         }
     }
-
     public boolean exists(K key)
     {
         return index.containsKey(key);
