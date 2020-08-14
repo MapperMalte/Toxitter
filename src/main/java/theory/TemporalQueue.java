@@ -155,6 +155,7 @@ public class TemporalQueue<K extends Comparable,V>
             }
             index.remove(key);
         }
+        queueSleeper.delete(key);
     }
     public boolean exists(K key)
     {

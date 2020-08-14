@@ -36,6 +36,7 @@ public class TemporalQueueTest
         @Override
         public void delete(K key)
         {
+            System.out.println("del");
             data.remove(key);
         }
     }
