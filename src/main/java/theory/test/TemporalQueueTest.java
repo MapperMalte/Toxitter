@@ -23,11 +23,6 @@ public class TemporalQueueTest
         }
 
         @Override
-        public void multiPutToSleep(DiamondList<V> values) {
-
-        }
-
-        @Override
         public V wakeup(K key)
         {
             return data.get(key);

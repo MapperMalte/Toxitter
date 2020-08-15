@@ -3,8 +3,6 @@ package Toxitter.Model;
 import theory.QueueSleeper;
 import theory.TemporalQueue;
 
-import java.util.TreeMap;
-
 public class OneToOne<K extends Comparable,V extends ReservoirEntity>
 {
     private TemporalQueue<K,V> data;

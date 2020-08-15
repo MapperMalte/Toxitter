@@ -1,8 +1,5 @@
 package Toxitter.Model;
 
-import Toxitter.Boxfresh.NirvanaQueueSleeper;
-import Toxitter.Model.ReservoirEntity;
-import theory.DiamondList;
 import theory.QueueSleeper;
 import theory.TemporalQueue;
 

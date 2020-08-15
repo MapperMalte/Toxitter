@@ -1,12 +1,11 @@
-package Toxitter.Boxfresh;
+package Toxitter.Persistence.persistence.simpledb;
 
+import Toxitter.Model.ID;
 import Toxitter.Model.ReservoirEntity;
-import theory.DiamondList;
 import theory.QueueSleeper;
 
-public class NirvanaQueueSleeper<K extends Comparable, V> extends QueueSleeper<K, V>
+public class SimpleDBQueueSleeper<K extends ID, V extends ReservoirEntity> extends QueueSleeper<K, V>
 {
-
     @Override
     public void putToSleep(K key, V value) {
 

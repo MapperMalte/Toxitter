@@ -1,10 +1,8 @@
 package Toxitter.Model;
 
-import Toxitter.Persistence.DataAccessToReservoirEntityBeingPersisted;
-import Toxitter.Persistence.PersistingOctopus;
-import Toxitter.Persistence.annotations.Table;
+import Toxitter.Persistence.DataAccessToReservoirEntity;
 
-import java.lang.reflect.Field;
+import Toxitter.Persistence.annotations.Table;
 
 public abstract class ReservoirEntity<K extends Comparable>
 {
@@ -13,9 +11,9 @@ public abstract class ReservoirEntity<K extends Comparable>
         return null;
     }
 
-    public DataAccessToReservoirEntityBeingPersisted getDataAccess()
+    public DataAccessToReservoirEntity getDataAccess()
     {
-        return new DataAccessToReservoirEntityBeingPersisted(this);
+        return new DataAccessToReservoirEntity(this);
     }
 
     public abstract K getId();
