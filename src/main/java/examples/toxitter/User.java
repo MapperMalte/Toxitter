@@ -1,6 +1,6 @@
-package Toxitter.Model.factoryfresh;
+package examples.toxitter;
 
-import Toxitter.Model.Reservoir;
+import Toxitter.Model.ID;
 import Toxitter.Model.ReservoirEntity;
 import Toxitter.Core.annotations.FetchAt;
 import Toxitter.Persistence.annotations.Table;
@@ -36,7 +36,7 @@ public class User extends ReservoirEntity
 
     public static String getPwdHashMock()
     {
-        return Reservoir.makeId();
+        return ID.makeId();
     }
 
     public boolean pwdCorrect(String pwd)

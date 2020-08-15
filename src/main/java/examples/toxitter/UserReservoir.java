@@ -1,6 +1,6 @@
-package Toxitter.Model.factoryfresh;
+package examples.toxitter;
 
-import Toxitter.Model.Reservoir;
+import Toxitter.Model.ID;
 import Toxitter.Core.annotations.FetchAt;
 import Toxitter.Security.annotations.Protected;
 import Toxitter.Core.annotations.RequestParam;
@@ -11,7 +11,7 @@ import Toxitter.Logging.Ullog;
 import java.util.TreeMap;
 
 @FetchAt(route="user")
-public class UserReservoir extends Reservoir
+public class UserReservoir
 {
     private static TreeMap<String,User> usersByMail = new TreeMap<>();
     private static TreeMap<String,User> usersById = new TreeMap<>();
@@ -65,7 +65,7 @@ public class UserReservoir extends Reservoir
     {
 
         User newUser = new User();
-        newUser.userId = makeId();
+        newUser.userId = ID.makeId();
         newUser.name = name;
         newUser.email = email;
         newUser.pwd = pwd;

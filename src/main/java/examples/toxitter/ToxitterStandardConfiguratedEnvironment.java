@@ -1,8 +1,6 @@
 package examples.toxitter;
 
 import Toxitter.Core.ToxitterClassRouter;
-import Toxitter.Model.factoryfresh.User;
-import Toxitter.Model.factoryfresh.UserReservoir;
 import Toxitter.Security.ToxitterSecurity;
 
 public class ToxitterStandardConfiguratedEnvironment

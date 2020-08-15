@@ -1,12 +1,7 @@
 package examples.toxitter.test;
 
 import Toxitter.Logging.Ullog;
-import Toxitter.Model.factoryfresh.User;
-import Toxitter.Model.factoryfresh.UserReservoir;
-import examples.toxitter.JsonNotification;
-import examples.toxitter.Post;
-import examples.toxitter.PostReservoir;
-import examples.toxitter.UserNotificationCollector;
+import examples.toxitter.*;
 import org.junit.Test;
 import theory.DiamondList;
 

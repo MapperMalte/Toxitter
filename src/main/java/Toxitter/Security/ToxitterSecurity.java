@@ -3,14 +3,14 @@ package Toxitter.Security;
 import Toxitter.Core.annotations.FetchAt;
 import Toxitter.Core.annotations.RequestParam;
 import Toxitter.Core.annotations.Route;
-import Toxitter.Model.Reservoir;
-import Toxitter.Model.factoryfresh.User;
-import Toxitter.Model.factoryfresh.UserReservoir;
+import Toxitter.Model.ID;
+import examples.toxitter.User;
+import examples.toxitter.UserReservoir;
 
 import java.util.TreeMap;
 
 @FetchAt(route = "auth")
-public class ToxitterSecurity extends Reservoir
+public class ToxitterSecurity
 {
     private static TreeMap<String,AccessToken> tokens = new TreeMap<>();
     private static TreeMap<String,AccessToken> refreshTokens = new TreeMap<>();
@@ -61,7 +61,7 @@ public class ToxitterSecurity extends Reservoir
         }
         if ( user.pwdCorrect(password) )
         {
-            String id = makeId();
+            String id = ID.makeId();
             tokens.put(id,new AccessToken(scope,id));
             return id;
         } else {
@@ -80,7 +80,7 @@ public class ToxitterSecurity extends Reservoir
         AccessToken old = toToken(token);
         if ( !(old==null) )
         {
-            AccessToken accessToken = new AccessToken(old.scope,makeId());
+            AccessToken accessToken = new AccessToken(old.scope,ID.makeId());
             refreshTokens.put(accessToken.token, accessToken);
             return accessToken.token;
         } else {

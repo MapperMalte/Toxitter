@@ -1,4 +1,11 @@
 package Toxitter.Persistence.permanent.simplefile;
 
-public class SimpleDB {
+import java.io.File;
+
+public class SimpleDB
+{
+    public SimpleDB(File f)
+    {
+
+    }
 }

@@ -1,6 +1,5 @@
 package Toxitter.Realtime;
 
-import Toxitter.Model.factoryfresh.User;
 
 public class TeleHub
 {

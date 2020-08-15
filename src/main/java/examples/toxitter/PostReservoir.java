@@ -1,13 +1,13 @@
 package examples.toxitter;
 
+import Toxitter.Model.ID;
 import Toxitter.Model.OneToOne;
-import Toxitter.Model.Reservoir;
 import theory.DiamondList;
 
 import java.util.Date;
 import java.util.TreeMap;
 
-public class PostReservoir extends Reservoir
+public class PostReservoir
 {
     private static TreeMap<String,Post> postsById = new TreeMap<>();
     private static TreeMap<String, DiamondList<Post>> postsByUser = new TreeMap<String, DiamondList<Post>>();
@@ -16,7 +16,7 @@ public class PostReservoir extends Reservoir
     public static Post addPost(String userId, String title, String content)
     {
         Post p = new Post();
-        p.id = makeId();
+        p.id = ID.makeId();
         p.content = content;
         p.title = title;
         p.time = new Date();

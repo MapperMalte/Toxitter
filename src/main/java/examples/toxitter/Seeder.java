@@ -1,7 +1,5 @@
 package examples.toxitter;
 
-import Toxitter.Model.factoryfresh.User;
-import Toxitter.Model.factoryfresh.UserReservoir;
 import Toxitter.Security.UserPrivileges;
 
 public class Seeder

@@ -11,7 +11,7 @@ public class OneToOneTest
     @Test
     public void testPutAndRead()
     {
-        OneToOne<String,Integer> ids = new OneToOne<>();
+        OneToOne<String,Integer> ids = new OneToOne<>(10);
         ids.put("123",123);
         ids.put("abc",10);
         assertEquals(ids.read("123").intValue(),123);
@@ -21,7 +21,7 @@ public class OneToOneTest
     @Test
     public void testPutUpdateAndRead()
     {
-        OneToOne<String,Integer> ids = new OneToOne<>();
+        OneToOne<String,Integer> ids = new OneToOne<>(10);
         ids.put("123",123);
         ids.put("abc",10);
         ids.update("abc",100);
@@ -32,7 +32,7 @@ public class OneToOneTest
     @Test
     public void testPutAndDelete()
     {
-        OneToOne<String,Integer> ids = new OneToOne<>();
+        OneToOne<String,Integer> ids = new OneToOne<>(10);
         ids.put("123",123);
         ids.put("abc",10);
         ids.delete("abc");

@@ -1,10 +1,19 @@
 package Toxitter.Model;
 
+import theory.TemporalQueue;
+
 import java.util.TreeMap;
 
 public class OneToOne<K extends Comparable,V> extends Relation<K, V>
 {
-    private TreeMap<K,V> data = new TreeMap<>();
+    private TemporalQueue<K,V> data;
+    private int maxNumberOfCachedElements;
+
+    public OneToOne(int maxNumberOfCachedElements)
+    {
+        this.maxNumberOfCachedElements = maxNumberOfCachedElements;
+        data = new TemporalQueue<>(this.maxNumberOfCachedElements,null);
+    }
 
     public void putIfNotExists(K key, V value)
     {
@@ -31,6 +40,6 @@ public class OneToOne<K extends Comparable,V> extends Relation<K, V>
 
     public void delete(K key)
     {
-        data.remove(key);
+        data.delete(key);
     }
 }

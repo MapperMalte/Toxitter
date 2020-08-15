@@ -1,31 +1,22 @@
 package Toxitter.Persistence.permanent.mysql;
 
+import Toxitter.Model.ID;
 import Toxitter.Model.ReservoirEntity;
-import Toxitter.Persistence.Persistor;
-import Toxitter.Persistence.TypeTransformer;
+import Toxitter.Persistence.DataAccessToReservoirEntityBeingPersisted;
+import Toxitter.Persistence.ReservoirEntityDataPresenter;
 import theory.DiamondList;
 import theory.QueueSleeper;
 
-import java.lang.reflect.Field;
-
-public class MySqlQueueSleeper<K extends Comparable, V extends ReservoirEntity> extends QueueSleeper<K, V>
+public class MySqlQueueSleeper<K extends ID, V extends ReservoirEntity> extends QueueSleeper<K, V>
 {
-    Persistor<V> p;
-    TypeTransformer t;
+    MySqlShapeshifter shift;
 
     @Override
     public void putToSleep(K key, V value)
     {
-        Field[] f = value.getClass().getFields();
-        MySqlStatement stmt = new MySqlStatement();
-        stmt.prefix = "INSERT INTO table ("+value.getTable().tableName()+")\n VALUES (";
-        StringBuilder sb = new StringBuilder();
-        for(Field field: f)
-        {
-            sb.append(t.transform(field.getType())+p.get(value,field.getName()).toString());
-        }
-        stmt.middlefix =
-        stmt.postfix = ") ON DUPLICATE KEY UPDATE\n";
+        ReservoirEntityDataPresenter representation = new ReservoirEntityDataPresenter(new DataAccessToReservoirEntityBeingPersisted(value));
+        MySqlStatement stmt = shift.getInsertValueStatement(representation,key,value);
+        MySql.execute(stmt);
     }
 
     @Override
