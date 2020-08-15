@@ -1,6 +1,4 @@
 package Toxitter.Persistence.permanent.mysql;
 
-public class MySQLDatabaseQueueSleeper
-{
-
+public class MySql {
 }

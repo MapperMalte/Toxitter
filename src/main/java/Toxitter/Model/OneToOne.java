@@ -31,8 +31,6 @@ public class OneToOne<K extends Comparable,V> extends Relation<K, V>
 
     public void delete(K key)
     {
-        Object o = data.get(key);
-        if ( !(o == null ) )
-            data.remove(o);
+        data.remove(key);
     }
 }

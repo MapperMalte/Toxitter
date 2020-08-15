@@ -157,6 +157,17 @@ public class TemporalQueue<K extends Comparable,V>
         }
         queueSleeper.delete(key);
     }
+
+    public V getTop()
+    {
+        return top.value;
+    }
+
+    public V getBottom()
+    {
+        return bottom.value;
+    }
+
     public boolean exists(K key)
     {
         return index.containsKey(key);
@@ -164,6 +175,11 @@ public class TemporalQueue<K extends Comparable,V>
 
     public void shutdown()
     {
-
+        ValueBag bot = bottom;
+        while ( !(bot == null) )
+        {
+            queueSleeper.putToSleep(bot.key,bot.value);
+            bot = bot.next;
+        }
     }
 }

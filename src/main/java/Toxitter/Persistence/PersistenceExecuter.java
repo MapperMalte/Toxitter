@@ -1,6 +1,6 @@
 package Toxitter.Persistence;
 
-public class PersistorFile
+public class PersistenceExecuter
 {
 
 }

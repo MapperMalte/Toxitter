@@ -77,7 +77,7 @@ public class TemporalQueueTest
     }
 
     @Test
-    public void testGetPutsElemnentToTopOfTemporalQueue()
+    public void testGetPutsElementToTopOfTemporalQueue()
     {
         TemporalQueue<String, String> tq = new TemporalQueue<>(5, new MockQueueSleeper<String,String>());
         tq.put("1","1");

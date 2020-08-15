@@ -1,5 +1,7 @@
 package Toxitter.Model;
 
+import theory.QueueSleeper;
+
 // Uses Temproal Lists and a Mysql-Connector or SimpleDB-Connector to dynamically
 // store and fetch dats
 public class Reservoir<K extends Comparable,V> extends Relation<K,V>
@@ -12,6 +14,11 @@ public class Reservoir<K extends Comparable,V> extends Relation<K,V>
             sb.append((char)(97+(Math.random()* (122-97))));
         }
         return sb.toString();
+    }
+
+    public void setQueueSleeper(QueueSleeper<K, V> queueSleeper)
+    {
+
     }
 
     @Override
