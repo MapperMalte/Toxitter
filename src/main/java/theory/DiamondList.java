@@ -5,17 +5,25 @@
  */
 package theory;
 
+import com.sun.org.apache.bcel.internal.generic.LASTORE;
+
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 
 public class DiamondList<T>
 {
-    private ValueBag pointer;
-    private ValueBag bottom;
-    private ValueBag top;
+    protected ValueBag<T> pointer;
+    protected ValueBag<T> bottom;
+    protected ValueBag<T> top;
     private SimpleStack<ValueBag> breakpoints;
     private int size;
+    private ValueBag<T> lastCreatedValueBag = null;
+
+    protected synchronized ValueBag<T> getLastCreatedValueBag()
+    {
+        return lastCreatedValueBag;
+    }
 
     /**
      * Adds an element to the top of the list
@@ -26,12 +34,14 @@ public class DiamondList<T>
         if ( empty() )
         {
             bottom = new ValueBag();
+            lastCreatedValueBag = bottom;
             bottom.content = element;
             top = bottom;
             pointer = bottom;
         } else
         {
             ValueBag newBag = new ValueBag();
+            lastCreatedValueBag = newBag;
             newBag.content = element;
             top.next = newBag;
             newBag.previous = top;
@@ -58,6 +68,7 @@ public class DiamondList<T>
         if ( !empty() && pointer != null )
         {
             ValueBag newBag = new ValueBag();
+            lastCreatedValueBag = newBag;
             newBag.content = element;
 
             if ( pointer == bottom )
@@ -297,10 +308,10 @@ public class DiamondList<T>
         return size;
     }
 
-    private class ValueBag
+    public class ValueBag<T>
     {
-        ValueBag previous = null;
-        ValueBag next = null;
-        T content = null;
+        public ValueBag previous = null;
+        public ValueBag next = null;
+        public T content = null;
     }
 }
