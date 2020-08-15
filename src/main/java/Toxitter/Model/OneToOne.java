@@ -4,7 +4,7 @@ import theory.TemporalQueue;
 
 import java.util.TreeMap;
 
-public class OneToOne<K extends Comparable,V> extends Relation<K, V>
+public class OneToOne<K extends Comparable,V extends ReservoirEntity>
 {
     private TemporalQueue<K,V> data;
     private int maxNumberOfCachedElements;
@@ -12,15 +12,7 @@ public class OneToOne<K extends Comparable,V> extends Relation<K, V>
     public OneToOne(int maxNumberOfCachedElements)
     {
         this.maxNumberOfCachedElements = maxNumberOfCachedElements;
-        data = new TemporalQueue<>(this.maxNumberOfCachedElements,null);
-    }
-
-    public void putIfNotExists(K key, V value)
-    {
-        if ( !(data.get(key) == null) )
-        {
-            data.put(key, value);
-        }
+        data = new TemporalQueue<>(this.maxNumberOfCachedElements,new NirvanaQueueSleeper<K,V>());
     }
 
     public void put(K key, V value)

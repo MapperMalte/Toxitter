@@ -2,7 +2,7 @@ package examples.locality;
 
 import Toxitter.Model.ReservoirEntity;
 
-public class Coordinate extends ReservoirEntity
+public class Coordinate extends ReservoirEntity<Integer>
 {
     private double x;
     private double y;
@@ -21,5 +21,10 @@ public class Coordinate extends ReservoirEntity
 
     public void setX(double x) {
         this.x = x;
+    }
+
+    @Override
+    public Integer getId() {
+        return null;
     }
 }

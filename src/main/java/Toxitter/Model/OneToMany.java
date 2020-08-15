@@ -2,21 +2,19 @@ package Toxitter.Model;
 
 import Toxitter.Model.ReservoirEntity;
 import theory.DiamondList;
+import theory.TemporalQueue;
 
 import java.util.TreeMap;
 
-public class OneToMany<K extends Comparable,V extends ReservoirEntity> extends Relation<K, V>
+public class OneToMany<K extends Comparable,V extends ReservoirEntity>
 {
-    private TreeMap<K, DiamondList<V>> data = new TreeMap<>();
-
-    public void putIfNotExists(K key, V value)
-    {
-
-    }
+    private TemporalQueue<K, DiamondList<V>> data;
 
     public void put(K key, V value)
     {
-        DiamondList dl = data.get(key);
+        value.getTable().primaryKey();
+
+        DiamondList<V> dl = data.get(key);
         if ( dl == null )
         {
             dl = new DiamondList<V>();
@@ -25,15 +23,10 @@ public class OneToMany<K extends Comparable,V extends ReservoirEntity> extends R
         dl.addOnTop(value);
     }
 
-    @Override
     public DiamondList<V> read(K key)
     {
-        return null;
-    }
 
-    @Override
-    public void update(K key, V newValue) {
-
+        return data.get(key);
     }
 
     public void update(K key, DiamondList<V> newValue)
