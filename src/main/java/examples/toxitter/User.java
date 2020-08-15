@@ -10,7 +10,7 @@ import Toxitter.Core.annotations.Route;
 
 @FetchAt(route = "user")
 @Table(primaryKey = "userId", tableName = "user")
-public class User extends ReservoirEntity
+public class User extends ReservoirEntity<String>
 {
     public String userId;
     public String name;
@@ -32,6 +32,11 @@ public class User extends ReservoirEntity
     public String getId()
     {
         return userId;
+    }
+
+    @Override
+    public void setId(String key) {
+        this.userId = key;
     }
 
     public static String getPwdHashMock()

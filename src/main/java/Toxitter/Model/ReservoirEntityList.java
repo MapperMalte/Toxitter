@@ -33,8 +33,14 @@ public class ReservoirEntityList<K extends Comparable, V extends ReservoirEntity
 
     public void movePointerToKey(K key)
     {
-        ValueBag<V> value = index.get(this.getCurrent().getId());
-        this.pointer = value;
+        this.pointer = index.get(key);
+    }
+
+    public void replace(K key, V value)
+    {
+        movePointerToKey(key);
+        removeCurrent();
+        addOnTop(value);
     }
 
     public V getByKey(K key)

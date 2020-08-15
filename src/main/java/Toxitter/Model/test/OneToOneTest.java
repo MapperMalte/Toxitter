@@ -1,5 +1,6 @@
 package Toxitter.Model.test;
 
+import Toxitter.Boxfresh.NirvanaQueueSleeper;
 import Toxitter.Model.ID;
 import Toxitter.Model.OneToOne;
 import Toxitter.Model.ReservoirEntity;
@@ -14,7 +15,7 @@ public class OneToOneTest
     @Test
     public void testPutAndRead()
     {
-        OneToOne<String,TestReservoirEntity> ids = new OneToOne<>(10);
+        OneToOne<String,TestReservoirEntity> ids = new OneToOne<>(10, new NirvanaQueueSleeper<>());
 
         TestReservoirEntity malte = new TestReservoirEntity("Malte",9001);
         TestReservoirEntity gott = new TestReservoirEntity("Gott",2654);
@@ -34,7 +35,7 @@ public class OneToOneTest
     @Test
     public void testPutUpdateAndRead()
     {
-        OneToOne<String,TestReservoirEntity> ids = new OneToOne<>(10);
+        OneToOne<String,TestReservoirEntity> ids = new OneToOne<>(10, new NirvanaQueueSleeper<>());
 
         TestReservoirEntity malte = new TestReservoirEntity("Malte",9001);
         TestReservoirEntity gott = new TestReservoirEntity("Gott",2654);

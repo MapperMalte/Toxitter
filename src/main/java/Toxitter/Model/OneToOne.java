@@ -1,5 +1,6 @@
 package Toxitter.Model;
 
+import theory.QueueSleeper;
 import theory.TemporalQueue;
 
 import java.util.TreeMap;
@@ -9,10 +10,10 @@ public class OneToOne<K extends Comparable,V extends ReservoirEntity>
     private TemporalQueue<K,V> data;
     private int maxNumberOfCachedElements;
 
-    public OneToOne(int maxNumberOfCachedElements)
+    public OneToOne(int maxNumberOfCachedElements, QueueSleeper<K,V> queueSleeper)
     {
         this.maxNumberOfCachedElements = maxNumberOfCachedElements;
-        data = new TemporalQueue<>(this.maxNumberOfCachedElements,new NirvanaQueueSleeper<K,V>());
+        data = new TemporalQueue<>(this.maxNumberOfCachedElements,queueSleeper);
     }
 
     public void put(K key, V value)

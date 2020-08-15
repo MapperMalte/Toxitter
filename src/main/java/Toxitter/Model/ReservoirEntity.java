@@ -19,4 +19,5 @@ public abstract class ReservoirEntity<K extends Comparable>
     }
 
     public abstract K getId();
+    public abstract void setId(K key);
 }

@@ -51,6 +51,11 @@ public class Post extends ReservoirEntity<String>
         return null;
     }
 
+    @Override
+    public void setId(String key) {
+        this.id = key;
+    }
+
     public static class Reaction
     {
         String smiley;

@@ -27,4 +27,9 @@ public class Coordinate extends ReservoirEntity<Integer>
     public Integer getId() {
         return null;
     }
+
+    @Override
+    public void setId(Integer key) {
+
+    }
 }
