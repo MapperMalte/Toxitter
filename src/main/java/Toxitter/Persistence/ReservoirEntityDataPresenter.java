@@ -1,6 +1,7 @@
 package Toxitter.Persistence;
 
 import Toxitter.Persistence.annotations.Table;
+import Toxitter.Persistence.persistence.mysql.MySqlTypeTransformer;
 import theory.DiamondList;
 
 public class ReservoirEntityDataPresenter
@@ -17,6 +18,16 @@ public class ReservoirEntityDataPresenter
         this.dataAccessToReservoirEntityBeingPersisted = o;
     }
 
+    public String escape(String in)
+    {
+        return "`"+in+"`";
+    }
+
+    public String escapeValue(String field, String value, TypeTransformer tf)
+    {
+        return tf.escape(value,dataAccessToReservoirEntityBeingPersisted.getType(field));
+    }
+
     public DataAccessToReservoirEntity getAccess()
     {
         return dataAccessToReservoirEntityBeingPersisted;
@@ -29,10 +40,10 @@ public class ReservoirEntityDataPresenter
         String list = "";
         while(!paramList.isPointerAtTop())
         {
-            list += paramList.getCurrent().fieldName + separatedByWhat;
+            list += escape(paramList.getCurrent().fieldName) + separatedByWhat;
             paramList.next();
         }
-        list += paramList.getCurrent().fieldName;
+        list += escape(paramList.getCurrent().fieldName);
         return list;
     }
 
@@ -43,10 +54,48 @@ public class ReservoirEntityDataPresenter
         String list = "";
         while(!paramList.isPointerAtTop())
         {
-            list += "'"+dataAccessToReservoirEntityBeingPersisted.get(paramList.getCurrent().fieldName)+"'"+separatedByWhat;
+            list += t.escape(dataAccessToReservoirEntityBeingPersisted.get(paramList.getCurrent().fieldName).toString(),paramList.getCurrent().type)+separatedByWhat;
             paramList.next();
         }
-        list += "'"+dataAccessToReservoirEntityBeingPersisted.get(paramList.getCurrent().fieldName)+"'";
+        list += t.escape(dataAccessToReservoirEntityBeingPersisted.get(paramList.getCurrent().fieldName).toString(),paramList.getCurrent().type);
+        return list;
+    }
+
+    public String getAssignmentSeparatedBy(String separatedByWhat, TypeTransformer t)
+    {
+        DiamondList<DataAccessToReservoirEntity.DataAccessField> paramList = dataAccessToReservoirEntityBeingPersisted.getAllFields();
+        paramList.bottom();
+        String list = "";
+        while(!paramList.isPointerAtTop())
+        {
+            list += escape(paramList.getCurrent().fieldName)+" = "+
+                    t.escape(dataAccessToReservoirEntityBeingPersisted.get(
+                        paramList.getCurrent().fieldName).toString(),
+                        paramList.getCurrent().type)+
+                    separatedByWhat;
+            paramList.next();
+        }
+        list += escape(paramList.getCurrent().fieldName)+" = "+
+                t.escape(dataAccessToReservoirEntityBeingPersisted.get(
+                        paramList.getCurrent().fieldName).toString(),
+                        paramList.getCurrent().type);
+        return list;
+    }
+
+    public String getVariableRepresentationStringSeparatedBy(String separatedByWhat, TypeTransformer t)
+    {
+        DiamondList<DataAccessToReservoirEntity.DataAccessField> paramList = dataAccessToReservoirEntityBeingPersisted.getAllFields();
+        paramList.bottom();
+        String list = "";
+        while(!paramList.isPointerAtTop())
+        {
+            list += escape(paramList.getCurrent().fieldName)+ " "
+                    +t.transform(dataAccessToReservoirEntityBeingPersisted.getType(paramList.getCurrent().fieldName))
+                    +separatedByWhat;
+            paramList.next();
+        }
+        list += escape(paramList.getCurrent().fieldName)+ " "
+                +t.transform(dataAccessToReservoirEntityBeingPersisted.getType(paramList.getCurrent().fieldName));
         return list;
     }
 
