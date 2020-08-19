@@ -4,7 +4,7 @@ import org.junit.Test;
 
 import java.sql.*;
 
-public class MySqlConnectionTest
+public class MySqlTest
 {
     @Test
     public void testMysqlConnection()

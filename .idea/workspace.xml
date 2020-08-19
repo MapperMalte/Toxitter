@@ -2,18 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1a6799fa-3d81-404d-97ed-2e1ce054a946" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Persistence/persistence/mysql/test/MySqlStatementTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Toxitter/CLI/CLIClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Toxitter/CLI/CLIServer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Toxitter/CLI/server/key" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Toxitter/CLI/toxitterconfig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Persistence/ReservoirEntityObjectBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Persistence/persistence/simpledb/SimpleDBTypeTransformer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Persistence/persistence/simpledb/test/SimpleDBTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Model/ReservoirEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Model/ReservoirEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Model/test/TestReservoirEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Model/test/TestReservoirEntity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Persistence/ReservoirEntityDataPresenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Persistence/ReservoirEntityDataPresenter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Persistence/TypeTransformer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Persistence/TypeTransformer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Persistence/persistence/mysql/MySqlStatement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Persistence/persistence/mysql/MySqlStatement.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Persistence/persistence/mysql/MySqlTypeTransformer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Persistence/persistence/mysql/MySqlTypeTransformer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Persistence/persistence/mysql/test/MySqlQueueSleeperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Persistence/persistence/mysql/test/MySqlQueueSleeperTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Persistence/persistence/mysql/test/MySqlConnectionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Persistence/persistence/mysql/test/MySqlTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Persistence/persistence/simpledb/SimpleDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Persistence/persistence/simpledb/SimpleDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Toxitter/Model/ReservoirEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Toxitter/Model/ReservoirEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Toxitter/Model/test/TestReservoirEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Toxitter/Model/test/TestReservoirEntity.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Toxitter/Persistence/ReservoirEntityDataPresenter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Toxitter/Persistence/ReservoirEntityDataPresenter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Toxitter/Persistence/TypeTransformer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Toxitter/Persistence/TypeTransformer.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Toxitter/Persistence/persistence/mysql/MySqlStatement.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Toxitter/Persistence/persistence/mysql/MySqlStatement.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Toxitter/Persistence/persistence/mysql/MySqlTypeTransformer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Toxitter/Persistence/persistence/mysql/MySqlTypeTransformer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Toxitter/Persistence/persistence/mysql/test/MySqlQueueSleeperTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Toxitter/Persistence/persistence/mysql/test/MySqlQueueSleeperTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Toxitter/Persistence/persistence/mysql/test/MySqlConnectionTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Toxitter/Persistence/persistence/simpledb/SimpleDB.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Toxitter/Persistence/persistence/simpledb/SimpleDB.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -90,7 +100,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.MySqlStatementTest">
+  <component name="RunManager" selected="JUnit.SimpleDBTest">
     <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
@@ -103,7 +113,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="All in ToxitterBackend2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="All in ToxitterBackend2 (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ToxitterBackend2" />
       <option name="PACKAGE_NAME" value="" />
       <option name="TEST_OBJECT" value="package" />
@@ -144,33 +154,32 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="OneToOneTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SimpleDBTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ToxitterBackend2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Toxitter.Model.test.*" />
+          <option name="PATTERN" value="Toxitter.Persistence.persistence.simpledb.test.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="Toxitter.Model.test" />
-      <option name="MAIN_CLASS_NAME" value="Toxitter.Model.test.OneToOneTest" />
+      <option name="PACKAGE_NAME" value="Toxitter.Persistence.persistence.simpledb.test" />
+      <option name="MAIN_CLASS_NAME" value="Toxitter.Persistence.persistence.simpledb.test.SimpleDBTest" />
       <option name="TEST_OBJECT" value="class" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ReservoirEntityDataPresenterTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Toxitter in ToxitterBackend2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ToxitterBackend2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Toxitter.Persistence.persistence.test.*" />
+          <option name="PATTERN" value="Toxitter.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="Toxitter.Persistence.persistence.test" />
-      <option name="MAIN_CLASS_NAME" value="Toxitter.Persistence.persistence.test.ReservoirEntityDataPresenterTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="PACKAGE_NAME" value="Toxitter" />
+      <option name="TEST_OBJECT" value="package" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -203,11 +212,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.SimpleDBTest" />
         <item itemvalue="JUnit.MySqlStatementTest" />
+        <item itemvalue="JUnit.Toxitter in ToxitterBackend2" />
+        <item itemvalue="JUnit.All in ToxitterBackend2 (1)" />
         <item itemvalue="JUnit.MySqlQueueSleeperTest" />
-        <item itemvalue="JUnit.All in ToxitterBackend2" />
-        <item itemvalue="JUnit.OneToOneTest" />
-        <item itemvalue="JUnit.ReservoirEntityDataPresenterTest" />
       </list>
     </recent_temporary>
   </component>
@@ -227,7 +236,8 @@
       <workItem from="1597037339856" duration="19341000" />
       <workItem from="1597443355039" duration="5187000" />
       <workItem from="1597448805333" duration="40563000" />
-      <workItem from="1597678135770" duration="8526000" />
+      <workItem from="1597678135770" duration="11825000" />
+      <workItem from="1597791569402" duration="4710000" />
     </task>
     <servers />
   </component>

@@ -8,7 +8,7 @@ public abstract class ReservoirEntity<K extends Comparable>
 {
     public Table getTable()
     {
-        return null;
+        return (Table) this.getClass().getAnnotation(Table.class);
     }
 
     public DataAccessToReservoirEntity getDataAccess()

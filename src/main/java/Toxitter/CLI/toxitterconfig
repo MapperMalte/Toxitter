@@ -1,0 +1,5 @@
+Deploy to: 81.169.242.219
+Servername: toxitter.de
+DB: MySql
+DB_username: toxitter
+DB_password: secret

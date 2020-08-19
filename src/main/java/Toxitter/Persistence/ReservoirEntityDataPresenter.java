@@ -61,7 +61,7 @@ public class ReservoirEntityDataPresenter
         return list;
     }
 
-    public String getAssignmentSeparatedBy(String separatedByWhat, TypeTransformer t)
+    public String getFieldEqualsValueSeparatedBy(String separatedByWhat, TypeTransformer t)
     {
         DiamondList<DataAccessToReservoirEntity.DataAccessField> paramList = dataAccessToReservoirEntityBeingPersisted.getAllFields();
         paramList.bottom();
@@ -82,7 +82,7 @@ public class ReservoirEntityDataPresenter
         return list;
     }
 
-    public String getVariableRepresentationStringSeparatedBy(String separatedByWhat, TypeTransformer t)
+    public String getFieldsSeparatedBy(String separatedByWhat, TypeTransformer t)
     {
         DiamondList<DataAccessToReservoirEntity.DataAccessField> paramList = dataAccessToReservoirEntityBeingPersisted.getAllFields();
         paramList.bottom();

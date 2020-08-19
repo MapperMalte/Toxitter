@@ -2,8 +2,6 @@ package Toxitter.Persistence.persistence.mysql;
 
 import Toxitter.Persistence.ReservoirEntityDataPresenter;
 
-import java.security.Key;
-
 public class MySqlStatement
 {
     public String prefix;
@@ -20,7 +18,7 @@ public class MySqlStatement
                 "."
                 +redp.escape(redp.getTable().tableName())+" (";
 
-        stmt.middlefix = redp.getVariableRepresentationStringSeparatedBy(", ", new MySqlTypeTransformer());
+        stmt.middlefix = redp.getFieldsSeparatedBy(", ", new MySqlTypeTransformer());
 
         stmt.postfix = ", PRIMARY KEY ("+redp.escape(redp.getTable().primaryKey())+")" + ") ENGINE=InnoDB DEFAULT CHARSET=latin1;";
         System.out.println(stmt.prefix+stmt.middlefix+stmt.postfix);
@@ -83,7 +81,7 @@ public class MySqlStatement
                 redp.escape("toxitter")+
                 "."+
                 redp.escape(redp.getTable().tableName());
-        stmt.middlefix = " SET "+redp.getAssignmentSeparatedBy(", ",new MySqlTypeTransformer());
+        stmt.middlefix = " SET "+redp.getFieldEqualsValueSeparatedBy(", ",new MySqlTypeTransformer());
         /*
         UPDATE toxitter.tableName
         SET

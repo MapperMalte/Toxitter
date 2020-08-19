@@ -19,6 +19,7 @@ public class MySqlTypeTransformer extends TypeTransformer
         throw new IllegalArgumentException("");
     }
 
+    @Override
     public String escape(String string, Class type)
     {
         switch (type.getName()){

@@ -11,6 +11,17 @@ public class TestReservoirEntity extends ReservoirEntity<String>
     private String name;
     private int powerlevel;
 
+    public String toString()
+    {
+        return ("Id: "+id+" / name: "+name+" /  powerlevel: "+powerlevel);
+    }
+
+    public TestReservoirEntity()
+    {
+        this.id = ID.makeId();
+        this.powerlevel = (int)(Math.random()*10000);
+        this.name = ID.makeId();
+    }
     public TestReservoirEntity(String name, int powerlevel)
     {
         this.id = ID.makeId();
