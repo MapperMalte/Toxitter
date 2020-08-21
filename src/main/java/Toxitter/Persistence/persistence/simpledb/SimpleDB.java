@@ -4,7 +4,9 @@ import Toxitter.Model.ReservoirEntity;
 import Toxitter.Model.test.TestReservoirEntity;
 import Toxitter.Persistence.DataAccessToReservoirEntity;
 import Toxitter.Persistence.ReservoirEntityDataPresenter;
+import Toxitter.Persistence.ReservoirEntityFactory;
 import Toxitter.Persistence.annotations.Table;
+import theory.DiamondList;
 
 import java.io.*;
 import java.util.Map;
@@ -32,8 +34,9 @@ public class SimpleDB
         }
     }
 
-    public void read(String tableName)
+    public DiamondList<DataAccessToReservoirEntity> read(String tableName, ReservoirEntityFactory ref)
     {
+        DiamondList dl = new DiamondList<DataAccessToReservoirEntity>();
         try {
             BufferedReader br = new BufferedReader((new FileReader(new File(root+tableName))));
             String line = "";
@@ -43,23 +46,20 @@ public class SimpleDB
                 String[] data = line.split(", ");
                 for( String entry: data )
                 {
-                    /*
-                    `id` = awnytvyhinieuqrfdrmmiakndxogwjua
-                     */
                     String field = entry.substring(0,entry.indexOf(" = ")).replaceAll("`","");
                     String value = entry.substring(entry.indexOf(" = ")+3);
-                    System.out.println("Field: "+field);
-                    System.out.println("Value: "+value);
 
                     ter.set(field,value);
                 }
-                System.out.println("Read Object_ "+ter.toString());
+                dl.addOnTop(ter);
             }
+            return dl;
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
+        return null;
     }
 
     public void flushAndClose()

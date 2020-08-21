@@ -4,15 +4,13 @@ import Toxitter.Model.ReservoirEntity;
 import Toxitter.Persistence.annotations.Table;
 import theory.DiamondList;
 
-import javax.xml.crypto.Data;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.TreeMap;
 
-public class DataAccessToReservoirEntity
+public class ReservoirEntityAnalyzer
 {
-    private ReservoirEntity object;
     private TreeMap<String, Method> getters = new TreeMap<>();
     private TreeMap<String, Method> setters = new TreeMap<>();
     private TreeMap<String, Field> fieldIndex = new TreeMap<>();
@@ -36,9 +34,8 @@ public class DataAccessToReservoirEntity
         return table;
     }
 
-    public DataAccessToReservoirEntity(ReservoirEntity o)
+    public ReservoirEntityAnalyzer(Class c)
     {
-        Class c = o.getClass();
         if ( c.isAnnotationPresent(Table.class) )
         {
             Table t = (Table) c.getAnnotation(Table.class);
@@ -67,24 +64,6 @@ public class DataAccessToReservoirEntity
                 setters.put(f.getName(),indexedMethods.get(getSetterName(f)));
             }
         }
-        this.object = o;
-    }
-
-    public void set(String field, Object value)
-    {
-        try {
-            if ( setters.get(field).getParameterTypes()[0].getName().equals("int") )
-            {
-                setters.get(field).invoke(object,Integer.valueOf((String)value));
-            } else
-            {
-                setters.get(field).invoke(object,value);
-            }
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        } catch (InvocationTargetException e) {
-            e.printStackTrace();
-        }
     }
 
     public static class DataAccessField
@@ -93,29 +72,17 @@ public class DataAccessToReservoirEntity
         Class type;
     }
 
-    public DiamondList<DataAccessField> getAllFields()
+    public DiamondList<DataAccessToReservoirEntity.DataAccessField> getAllFields()
     {
-        DiamondList<DataAccessField> dl = new DiamondList<>();
+        DiamondList<DataAccessToReservoirEntity.DataAccessField> dl = new DiamondList<>();
         for(Field f: fields)
         {
-            DataAccessField daf = new DataAccessField();
+            DataAccessToReservoirEntity.DataAccessField daf = new DataAccessToReservoirEntity.DataAccessField();
             daf.fieldName = f.getName();
             daf.type = getType(daf.fieldName);
             dl.addOnTop(daf);
         }
         return dl;
-    }
-
-    public Object get(String field)
-    {
-        try {
-            return getters.get(field).invoke(object);
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        } catch (InvocationTargetException e) {
-            e.printStackTrace();
-        }
-        throw new IllegalArgumentException();
     }
 
     public Class getType(String field)

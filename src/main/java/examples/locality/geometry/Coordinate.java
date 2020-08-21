@@ -1,4 +1,4 @@
-package examples.locality;
+package examples.locality.geometry;
 
 import Toxitter.Model.ReservoirEntity;
 
