@@ -1,7 +1,6 @@
 package examples.toxitter;
 
-import Toxitter.Core.ToxitterClassRouter;
-import Toxitter.Security.ToxitterSecurity;
+import Toxitter.Core.*;
 
 public class ToxitterStandardConfiguratedEnvironment
 {

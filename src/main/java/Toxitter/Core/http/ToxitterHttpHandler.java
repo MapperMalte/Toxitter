@@ -2,7 +2,7 @@ package Toxitter.Core.http;
 
 import Toxitter.Infusion.Umlauter;
 import Toxitter.Logging.Ullog;
-import Toxitter.Security.ToxitterSecurity;
+import Toxitter.Core.ToxitterSecurity;
 import Toxitter.Security.ToxitterSecurityMiddleware;
 import com.google.gson.Gson;
 import com.google.gson.JsonElement;
@@ -10,7 +10,7 @@ import com.google.gson.JsonObject;
 import com.sun.net.httpserver.Headers;
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
-import examples.toxitter.ToxitterServer;
+import Toxitter.Core.ToxitterServer;
 import theory.ReplenisherStack;
 
 import java.io.IOException;
@@ -74,7 +74,7 @@ public class ToxitterHttpHandler implements HttpHandler
         }
     }
 
-    private void extractJsonParametersIntoToxitterModelSignature(ToxitterModelSignature tms, String json)
+    public static void extractJsonParametersIntoToxitterModelSignature(ToxitterModelSignature tms, String json)
     {
         JsonObject jsonObject = new Gson().fromJson(json,JsonObject.class);
         ReplenisherStack<ToxitterModelSignature.Method> methods = tms.getReplenisherStack();
@@ -120,7 +120,7 @@ public class ToxitterHttpHandler implements HttpHandler
             System.out.println("Uri: "+uri);
             token = ToxitterSecurityMiddleware.extractGetParam(uri,ToxitterSecurityMiddleware.TOKEN_IDENTIFIER);
             System.out.println("Token: "+token);
-            this.extractRouteParametersIntoToxitterModelSignature(tms,route,params,1);
+            extractRouteParametersIntoToxitterModelSignature(tms,route,params,1);
             System.out.println("Uri: "+uri);
 
             System.out.println("INCOMING GET with token: "+token);
@@ -133,7 +133,7 @@ public class ToxitterHttpHandler implements HttpHandler
             while ((i = ios.read()) != -1) {
                 sb.append((char) i);
             }
-            this.extractJsonParametersIntoToxitterModelSignature(tms,sb.toString());
+            extractJsonParametersIntoToxitterModelSignature(tms,sb.toString());
             System.out.println("INCOMING POST: " + sb.toString());
             JsonObject jsonObject = new Gson().fromJson(sb.toString(),JsonObject.class);
             token = ToxitterSecurityMiddleware.extractPostParam(jsonObject,ToxitterSecurityMiddleware.TOKEN_IDENTIFIER);

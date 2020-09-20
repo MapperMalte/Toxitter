@@ -1,9 +1,10 @@
 package examples.toxitter;
 
+import Toxitter.Core.User;
+import Toxitter.Core.UserReservoir;
 import Toxitter.Core.annotations.FetchAt;
 import Toxitter.Core.annotations.RequestParam;
 import Toxitter.Core.annotations.Route;
-import Toxitter.Model.ReservoirEntity;
 import Toxitter.Persistence.annotations.Table;
 import com.google.gson.Gson;
 import Toxitter.Infusion.Umlauter;

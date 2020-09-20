@@ -1,5 +1,7 @@
 package examples.toxitter;
 
+import Toxitter.Core.User;
+import Toxitter.Core.UserReservoir;
 import Toxitter.Security.UserPrivileges;
 
 public class Seeder

@@ -74,13 +74,19 @@
     <input id="input">
 </div>
 </body>
-<script src="toxitter.js"></script>
 <script>
     let chatMessageReceived = function (fromUserId, fromUserName, message) {
         var ul = document.getElementById("chatmessages");
         var li = document.createElement("div");
         li.classList.add('chatmessage');
-        li.appendChild(document.createTextNode(received_msg));
+        li.appendChild(document.createTextNode(message));
+        ul.appendChild(li);
+    };
+
+    let notify = function (message) {
+        var ul = document.getElementById("notifs");
+        var li = document.createElement("li");
+        li.appendChild(document.createTextNode(message));
         ul.appendChild(li);
     };
 
@@ -103,14 +109,6 @@
         li.appendChild(document.createTextNode("Freundschaftsanfrage von "+fromUserName+" akzeptieren"));
         ul.appendChild(li);
     };
-
-    let notify = function (message) {
-        var ul = document.getElementById("notifs");
-        var li = document.createElement("li");
-        li.appendChild(document.createTextNode(message));
-        ul.appendChild(li);
-    };
-
     let addfriend = function (name) {
         var ul = document.getElementById("friendsul");
         var li = document.createElement("div");
@@ -135,6 +133,7 @@
     document.getElementById("input").addEventListener("keydown", function(event) {
         if (event.key === "Enter")
         {
+            console.log("ENTER: "+document.getElementById("input").value)
             event.preventDefault();
             ws.send("##TO: "+chatpartner+": "+document.getElementById("input").value)
             document.getElementById("input").value = "";
@@ -148,7 +147,20 @@
     document.getElementById("loginbutton").addEventListener("click", function (event) {
         let username = document.getElementById("usernamefield").value;
         let password = document.getElementById("passwordfield").value;
-        ws.send("##Login{ \"username\"=\""+username+"\", \"password\"=\""+password+"\"}##");
+        ws.send("/auth/login { \"email\"=\""+username+"\", \"password\"=\""+password+"\"}");
     });
+
+    let send = function (name, data){
+        console.log("Called method "+name)
+        if ( name === "chatMessageReceived" )
+        {
+            console.log("Chatmessage received:"+data.message);
+            chatMessageReceived(data.fromUserId, data.fromUserName, data.message);
+        } else if ( name === "" )
+        {
+
+        }
+    }
 </script>
+<script src="toxitter.js"></script>
 </html>

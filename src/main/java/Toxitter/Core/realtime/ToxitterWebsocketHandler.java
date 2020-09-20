@@ -1,6 +1,14 @@
 package Toxitter.Core.realtime;
 
+import Toxitter.Core.ToxitterSecurity;
+import Toxitter.Core.ToxitterServer;
+import Toxitter.Core.http.ToxitterHttpHandler;
+import Toxitter.Core.http.ToxitterModelSignature;
 import Toxitter.Core.remake.ChatMessage_OutputDTO;
+import Toxitter.Logging.Ullog;
+import Toxitter.Security.ToxitterSecurityMiddleware;
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
 import examples.chat.FriendRequestDTO;
 import examples.chat.Reservoir;
 import org.java_websocket.WebSocket;
@@ -54,9 +62,49 @@ public class ToxitterWebsocketHandler extends WebSocketServer
     }
     Reservoir<String, FriendRequestDTO> receivedUnresolvedFriendRequestes = new Reservoir<>();
 
+    private boolean knownRoute(String route)
+    {
+        return ToxitterServer.routeSignatures.containsKey(route);
+    }
+
     @Override
     public void onMessage(WebSocket conn, String message)
     {
+        String route = message.substring(0,message.indexOf(" "));
+        if ( knownRoute(route) )
+        {
+            Ullog.put(ToxitterWebsocketHandler.class,"Found route: "+route);
+            ToxitterModelSignature tms = ToxitterServer.routeSignatures.get(route);
+            String json = message.substring(message.indexOf(" ")+1);
+            Ullog.put("JSON: "+json);
+            ToxitterHttpHandler.extractJsonParametersIntoToxitterModelSignature(tms, json);
+            Ullog.put(ToxitterHttpHandler.class,"Signature: "+tms.toString());
+            Ullog.put(ToxitterHttpHandler.class,"Complete: "+tms.isComplete());
+            JsonObject jsonObject = new Gson().fromJson(json,JsonObject.class);
+            String token = ToxitterSecurityMiddleware.extractPostParam(jsonObject,ToxitterSecurityMiddleware.TOKEN_IDENTIFIER);
+            Ullog.put(ToxitterWebsocketHandler.class,"Extracted token: "+token);
+            if ( !ToxitterSecurity.hasAccesToRoute(token,route) )
+            {
+                Ullog.put(ToxitterHttpHandler.class,"Token does not have access to route!");
+                conn.send("You do not have access to this route!");
+                return;
+            }
+            Object[] args = tms.splurpIntoParameters();
+            tms.releaseForNextRequest();
+            try {
+                String response = tms.getMethod().method.invoke(tms.toxiClass, args).toString();
+                Ullog.put(ToxitterHttpHandler.class,"Invoking Method "+tms.getMethod().name+" on class "+tms.toxiClass.getCanonicalName());
+                response = tms.getMethod().method.invoke(tms.toxiClass, args).toString();
+                Ullog.put(ToxitterHttpHandler.class,"Response from Server: "+response);
+                conn.send(response);
+            } catch (Exception e) {
+                e.printStackTrace();
+                conn.send("Sth. went wrong!");
+            }
+        } else {
+            Ullog.put(ToxitterWebsocketHandler.class,"Unknown route "+route+" from message "+message);
+        }
+
         ChatMessage_OutputDTO chatMessage_outputDTO = new ChatMessage_OutputDTO();
         chatMessage_outputDTO.fromUserId = "asasdas";
         chatMessage_outputDTO.fromUserName = "Malte";
@@ -69,19 +117,6 @@ public class ToxitterWebsocketHandler extends WebSocketServer
     {
         broadcast(message.array());
         System.out.println(conn + ": " + message);
-    }
-
-
-    public static void main(String[] args) throws InterruptedException, IOException
-    {
-        int port = 8887; // 843 flash policy port
-        try {
-            port = Integer.parseInt(args[0]);
-        } catch (Exception ex) {
-        }
-        ToxitterWebsocketHandler s = new ToxitterWebsocketHandler(port);
-        s.start();
-        System.out.println("WebsocketServer started on port: " + s.getPort());
     }
 
     @Override
@@ -98,6 +133,6 @@ public class ToxitterWebsocketHandler extends WebSocketServer
     {
         System.out.println("Websocket Server started!");
         setConnectionLostTimeout(0);
-        setConnectionLostTimeout(100);
+        setConnectionLostTimeout(1000);
     }
 }

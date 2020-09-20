@@ -1,4 +1,4 @@
-package examples.toxitter;
+package Toxitter.Core;
 
 import Toxitter.Model.ID;
 import Toxitter.Core.annotations.FetchAt;
@@ -13,7 +13,7 @@ import java.util.TreeMap;
 @FetchAt(route="user")
 public class UserReservoir
 {
-    private static TreeMap<String,User> usersByMail = new TreeMap<>();
+    private static TreeMap<String, User> usersByMail = new TreeMap<>();
     private static TreeMap<String,User> usersById = new TreeMap<>();
 
     /**

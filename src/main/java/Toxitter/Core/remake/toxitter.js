@@ -1,3 +1,4 @@
+
 var routes = [];
 var request = new XMLHttpRequest();
 request.open("GET", "commands_client.json", false);
@@ -9,23 +10,6 @@ for (let i = 0; i < my_JSON_object.length; i++)
 {
     routes.push(my_JSON_object[i]);
 }
-
-let chatMessageReceived = function (data) {
-    console.log("RECEIVED CHAT MESSAGE FROM "+data.fromUserName+"MESS"+data.message)
-};
-
-let notifyFriendRequestAccepted = function (data) {
-
-};
-
-let notifyFriendRequestReceived = function (data) {
-
-};
-
-let notify = function (message) {
-
-};
-
 
 var ws = new WebSocket("ws://localhost:8887");
 
@@ -46,7 +30,7 @@ ws.onmessage = function (evt) {
             console.log("METHOD: " + json_data.method)
             var fname = json_data.method;
             var params = "";
-            window[fname](json_data);
+            send(fname,json_data);
 
         } else {
             console.log("Not starts with: " + routes[i].route)

@@ -1,4 +1,4 @@
-package examples.toxitter;
+package Toxitter.Core;
 
 import Toxitter.Model.ID;
 import Toxitter.Model.ReservoirEntity;

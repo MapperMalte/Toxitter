@@ -1,5 +1,7 @@
 package examples.toxitter.test;
 
+import Toxitter.Core.User;
+import Toxitter.Core.UserReservoir;
 import Toxitter.Logging.Ullog;
 import examples.toxitter.*;
 import org.junit.Test;

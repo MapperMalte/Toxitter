@@ -1,9 +1,11 @@
-package examples.toxitter;
+package Toxitter.Core;
 
 import Toxitter.Core.http.ToxitterHttpHandler;
 import Toxitter.Core.http.ToxitterModelSignature;
+import Toxitter.Core.realtime.ToxitterWebsocketHandler;
 import Toxitter.Logging.Ullog;
 import com.sun.net.httpserver.HttpServer;
+import examples.toxitter.ToxitterStandardConfiguratedEnvironment;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
@@ -22,6 +24,7 @@ public class ToxitterServer
     {
         try {
             ToxitterStandardConfiguratedEnvironment.up();
+
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -37,6 +40,11 @@ public class ToxitterServer
         {
             server.createContext(entry.getKey(), new ToxitterHttpHandler());
         }
+        int port2 = 8887;
+        ToxitterWebsocketHandler s = new ToxitterWebsocketHandler(port2);
+        s.start();
+        System.out.println("WebsocketServer started on port: " + s.getPort());
+
     }
 
     public static void registerRoute(String route, ToxitterModelSignature model)

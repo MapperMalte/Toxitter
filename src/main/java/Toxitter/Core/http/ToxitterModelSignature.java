@@ -9,9 +9,9 @@ public class ToxitterModelSignature
     public Class toxiClass;
     public static class Method
     {
-        java.lang.reflect.Method method;
+        public java.lang.reflect.Method method;
         Parameter p;
-        String name;
+        public String name;
         String value = null;
         boolean obligatory = false;
 
