@@ -52,6 +52,11 @@ public class ToxitterWebsocketHandler extends WebSocketServer
                 conn.getRemoteSocketAddress().getAddress().getHostAddress() + " entered the room!");
     }
 
+    public static void push(String userId, String route, OutputDTO outputDTO)
+    {
+        Online.getWebsocketByUserId(userId).send(route+" "+outputDTO.asJSON());
+    }
+
     @Override
     public void onClose(WebSocket conn, int code, String reason, boolean remote)
     {

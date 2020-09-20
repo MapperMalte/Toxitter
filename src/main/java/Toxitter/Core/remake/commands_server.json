@@ -31,7 +31,7 @@
         "obligatory": true
       },
       {
-        "name": "targetUserId",
+        "name": "targetUserName",
         "type": "String",
         "obligatory": true
       }

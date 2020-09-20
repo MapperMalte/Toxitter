@@ -148,7 +148,7 @@
         ws.send("/friends/add {"
             + " \"accessToken\" = " + accessToken + ", "
             + " \"userId\" = " + userId + ", "
-            + " \"targetUserId\" = " + document.getElementById("whichfriend").value + "}");
+            + " \"targetUserName\" = " + document.getElementById("whichfriend").value + "}");
     });
 
     document.getElementById("loginbutton").addEventListener("click", function (event) {
@@ -168,6 +168,7 @@
         {
             accessToken = data.accessToken;
             userId = data.userId;
+
             alert("Du bist nun eingeloggt! AccessToken "+data.accessToken)
         } else if ( name === "notifyFriendRequestReceived" )
         {
