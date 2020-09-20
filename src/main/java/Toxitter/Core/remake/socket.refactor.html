@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        #chatmessages
+        {
+            display: block;
+            width: 500px;
+        }
+        .chatmessage
+        {
+            width: 500px;
+        }
+        .chatwindow
+        {
+            padding: 20px;
+            border-radius: 10px;
+            position: absolute;
+            margin: 0 auto;
+        }
+        .friendslist
+        {
+            left: 100px;
+
+        }
+        .friend
+        {
+
+        }
+        .notification
+        {
+
+        }
+    </style>
+</head>
+<body>
+<h3>Login</h3>
+<div>
+    <label>
+        Name
+        <input id="usernamefield" type="text">
+    </label>
+    <label>
+        Passwort
+        <input id="passwordfield" type="password">
+    </label>
+    <button id="loginbutton">Login</button>
+</div>
+<h3>notifications</h3>
+<div class="notifications">
+    <ul id="notifs">
+
+    </ul>
+</div>
+<h3>friend requests</h3>
+<div>
+    <ul id="friendrequests">
+
+    </ul>
+</div>
+<h3>friendlist</h3>
+<div class="friendslist">
+    <div id="friendsul">
+    </div>
+    <input type="search" id="whichfriend">
+    <button id="addfriend">Hinzufügen</button>
+</div>
+<h3 id="chatheader">Chat</h3>
+<div class="chatwindow">
+    <div id="chatmessages"></div>
+    <input id="input">
+</div>
+</body>
+<script src="toxitter.js"></script>
+<script>
+    let chatMessageReceived = function (fromUserId, fromUserName, message) {
+        var ul = document.getElementById("chatmessages");
+        var li = document.createElement("div");
+        li.classList.add('chatmessage');
+        li.appendChild(document.createTextNode(received_msg));
+        ul.appendChild(li);
+    };
+
+    let notifyFriendRequestAccepted = function (fromUserId, fromUserName) {
+        addfriend(fromUserName);
+        notify("Deine Freundschaftsanfrage an "+fromUserName+" wurde akzeptiert!")
+    };
+
+    let notifyFriendRequestReceived = function (fromUserName, fromUserId) {
+        var ul = document.getElementById("friendrequests");
+        var li = document.createElement("button");
+        li.addEventListener("click", function (event)
+        {
+            ul.removeChild(li);
+            ws.send("##ACCEPT_FRIEND_REQUEST "+fromUserName);
+            notify("Du hast die Freundschaftsanfrage von "+fromUserName+" akzeptiert");
+        });
+        //li.classList.add('notifcation');
+        notify("Du hast eine Freundschaftsanfrage von "+fromUserName+" erhalten");
+        li.appendChild(document.createTextNode("Freundschaftsanfrage von "+fromUserName+" akzeptieren"));
+        ul.appendChild(li);
+    };
+
+    let notify = function (message) {
+        var ul = document.getElementById("notifs");
+        var li = document.createElement("li");
+        li.appendChild(document.createTextNode(message));
+        ul.appendChild(li);
+    };
+
+    let addfriend = function (name) {
+        var ul = document.getElementById("friendsul");
+        var li = document.createElement("div");
+        li.classList.add('friend');
+        li.appendChild(document.createTextNode(name));
+        var btn = document.createElement("button");
+        btn.appendChild(document.createTextNode("Chat"));
+        btn.friendname = name;
+        btn.addEventListener("click", function (event){
+            document.getElementById("chatheader").innerHTML = "Chat mit "+btn.friendname;
+        });
+        li.appendChild(btn);
+        ul.appendChild(li);
+    };
+
+    let chatpartner = "all";
+
+    let setchatpartner = function (name) {
+        chatpartner = name;
+    }
+
+    document.getElementById("input").addEventListener("keydown", function(event) {
+        if (event.key === "Enter")
+        {
+            event.preventDefault();
+            ws.send("##TO: "+chatpartner+": "+document.getElementById("input").value)
+            document.getElementById("input").value = "";
+        }
+    });
+
+    document.getElementById("addfriend").addEventListener("click", function (event) {
+        ws.send("##ADD_FRIEND "+document.getElementById("whichfriend").value);
+    });
+
+    document.getElementById("loginbutton").addEventListener("click", function (event) {
+        let username = document.getElementById("usernamefield").value;
+        let password = document.getElementById("passwordfield").value;
+        ws.send("##Login{ \"username\"=\""+username+"\", \"password\"=\""+password+"\"}##");
+    });
+</script>
+</html>

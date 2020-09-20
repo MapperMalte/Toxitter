@@ -1,6 +1,6 @@
 package Toxitter.Connection;
 
-import Toxitter.Core.ToxitterModelSignature;
+import Toxitter.Core.http.ToxitterModelSignature;
 import theory.DiamondList;
 
 import java.util.Date;

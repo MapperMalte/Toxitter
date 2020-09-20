@@ -132,6 +132,10 @@ public class TemporalQueue<K extends Comparable,V>
         return vb.value;
     }
 
+    /**
+     * Deletes the element if it exists, then calls the queueSleepers delete method
+     * @param key
+     */
     public void delete(K key)
     {
         if ( index.containsKey(key) )
@@ -173,6 +177,9 @@ public class TemporalQueue<K extends Comparable,V>
         return index.containsKey(key);
     }
 
+    /**
+     * Puts all values in the queue to sleep via QueueSleeper
+     */
     public void shutdown()
     {
         ValueBag bot = bottom;

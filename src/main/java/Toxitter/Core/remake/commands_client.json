@@ -1,0 +1,62 @@
+  [
+  {
+    "route": "/notify",
+    "method": "notify",
+    "sent_params": [
+      {
+        "name": "message",
+        "type": "String",
+        "obligatory": true
+      }
+    ]
+  },
+  {
+    "route": "/receiveFriendRequest",
+    "method": "notifyFriendRequestReceived",
+    "sent_params": [
+      {
+        "name": "fromUserName",
+        "type": "String",
+        "obligatory": true
+      },
+      {
+        "name": "fromUserId",
+        "type": "String",
+        "obligatory": true
+      }
+    ]
+  },
+  {
+    "route": "/notify/friendRequestAccepted",
+    "method": "notifyFriendRequestAccepted",
+    "sent_params": [
+      {
+        "name": "from",
+        "type": "String",
+        "obligatory": true
+      }
+    ]
+  },
+  {
+    "route": "/receiveChatMessage",
+    "method": "chatMessageReceived",
+    "sent_params": [
+      {
+        "name": "fromUserId",
+        "type": "String",
+        "obligatory": true
+      },
+      {
+        "name": "fromUserName",
+        "type": "String",
+        "obligatory": true
+      },
+      {
+        "name": "message",
+        "type": "String",
+        "obligatory": true
+      }
+    ]
+  }
+
+]

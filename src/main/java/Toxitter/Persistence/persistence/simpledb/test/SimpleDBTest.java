@@ -38,6 +38,5 @@ public class SimpleDBTest
             assertEquals(dl.getCurrent().get("name"),names[i]);
             dl.next();
         }
-
     }
 }

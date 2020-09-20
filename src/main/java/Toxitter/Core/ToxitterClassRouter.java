@@ -1,6 +1,7 @@
 package Toxitter.Core;
 
 import Toxitter.Core.annotations.FetchAt;
+import Toxitter.Core.http.ToxitterModelSignature;
 import Toxitter.Security.annotations.Protected;
 import Toxitter.Core.annotations.RequestParam;
 import Toxitter.Core.annotations.Route;

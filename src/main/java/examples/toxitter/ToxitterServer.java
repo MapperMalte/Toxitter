@@ -1,7 +1,7 @@
 package examples.toxitter;
 
-import Toxitter.Core.ToxitterHttpHandler;
-import Toxitter.Core.ToxitterModelSignature;
+import Toxitter.Core.http.ToxitterHttpHandler;
+import Toxitter.Core.http.ToxitterModelSignature;
 import Toxitter.Logging.Ullog;
 import com.sun.net.httpserver.HttpServer;
 

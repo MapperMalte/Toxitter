@@ -19,11 +19,6 @@ public class User extends ReservoirEntity<String>
     public String pwd;
     public String email;
 
-    /*
-        INSERT INTO toxitter.user
-        VALUES('bjkdfgdfhjfdfgs667',"Malte",null,null,"34534dfg","malte_nolden@yahoo.de");
-     */
-
     public String getName()
     {
         return name;

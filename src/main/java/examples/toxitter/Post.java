@@ -14,7 +14,7 @@ import java.util.TreeMap;
 
 @FetchAt(route="post")
 @Table(primaryKey = "id", tableName = "post")
-public class Post extends ReservoirEntity<String>
+public class Post
 {
     public String content;
     public String title;
@@ -44,16 +44,6 @@ public class Post extends ReservoirEntity<String>
     public boolean isComment()
     {
         return referencedPostId != null;
-    }
-
-    @Override
-    public String getId() {
-        return null;
-    }
-
-    @Override
-    public void setId(String key) {
-        this.id = key;
     }
 
     public static class Reaction
