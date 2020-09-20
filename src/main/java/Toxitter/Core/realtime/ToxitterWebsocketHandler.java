@@ -4,7 +4,6 @@ import Toxitter.Core.ToxitterSecurity;
 import Toxitter.Core.ToxitterServer;
 import Toxitter.Core.http.ToxitterHttpHandler;
 import Toxitter.Core.http.ToxitterModelSignature;
-import Toxitter.Core.remake.ChatMessage_OutputDTO;
 import Toxitter.Logging.Ullog;
 import Toxitter.Security.ToxitterSecurityMiddleware;
 import com.google.gson.Gson;
@@ -17,7 +16,6 @@ import org.java_websocket.drafts.Draft_6455;
 import org.java_websocket.handshake.ClientHandshake;
 import org.java_websocket.server.WebSocketServer;
 
-import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.net.UnknownHostException;
 import java.nio.ByteBuffer;
@@ -96,7 +94,7 @@ public class ToxitterWebsocketHandler extends WebSocketServer
                 Ullog.put(ToxitterHttpHandler.class,"Invoking Method "+tms.getMethod().name+" on class "+tms.toxiClass.getCanonicalName());
                 response = tms.getMethod().method.invoke(tms.toxiClass, args).toString();
                 Ullog.put(ToxitterHttpHandler.class,"Response from Server: "+response);
-                conn.send(response);
+                conn.send("/login/success/ "+response);
             } catch (Exception e) {
                 e.printStackTrace();
                 conn.send("Sth. went wrong!");
@@ -105,11 +103,12 @@ public class ToxitterWebsocketHandler extends WebSocketServer
             Ullog.put(ToxitterWebsocketHandler.class,"Unknown route "+route+" from message "+message);
         }
 
+        /*
         ChatMessage_OutputDTO chatMessage_outputDTO = new ChatMessage_OutputDTO();
         chatMessage_outputDTO.fromUserId = "asasdas";
         chatMessage_outputDTO.fromUserName = "Malte";
         chatMessage_outputDTO.message = message;
-        conn.send(ChatMessage_OutputDTO.push(chatMessage_outputDTO));
+        conn.send(ChatMessage_OutputDTO.push(chatMessage_outputDTO));*/
     }
 
     @Override

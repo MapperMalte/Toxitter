@@ -1,6 +1,7 @@
 package examples.toxitter;
 
 import Toxitter.Core.*;
+import Toxitter.Core.remake.Friends;
 
 public class ToxitterStandardConfiguratedEnvironment
 {
@@ -20,6 +21,7 @@ public class ToxitterStandardConfiguratedEnvironment
         ToxitterClassRouter.serve(ToxitterSecurity.class);
         ToxitterClassRouter.serve(Notifications.class);
         ToxitterClassRouter.serve(User.class);
+        ToxitterClassRouter.serve(Friends.class);
     }
 
     public static void up() throws Exception

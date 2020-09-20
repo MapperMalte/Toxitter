@@ -1,11 +1,8 @@
 package Toxitter.Core.realtime;
 
-public class OutputDTO
+public abstract class OutputDTO
 {
-    public String asJSON()
-    {
-        return "";
-    }
+    public abstract String asJSON();
 
     public String asJavaScript()
     {

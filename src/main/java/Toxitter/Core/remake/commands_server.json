@@ -20,13 +20,13 @@
     "route": "/friends/add",
     "expected_params" : [
       {
-        "name": "AccessToken",
+        "name": "accessToken",
         "type": "String",
         "obligatory": true,
         "description": "AccessToken of the user that sends a friend request. Scope USER"
       },
       {
-        "name": "userId",
+        "name": "fromUserId",
         "type": "String",
         "obligatory": true
       },
@@ -37,6 +37,27 @@
       }
     ]
   },
+    {
+      "route": "/friends/accept",
+      "expected_params" : [
+        {
+          "name": "accessToken",
+          "type": "String",
+          "obligatory": true,
+          "description": "AccessToken of the user that sends a friend request. Scope USER"
+        },
+        {
+          "name": "userId",
+          "type": "String",
+          "obligatory": true
+        },
+        {
+          "name": "targetUserId",
+          "type": "String",
+          "obligatory": true
+        }
+      ]
+    },
   {
     "route": "/user/message",
     "expected_params": [

@@ -10,6 +10,27 @@
       }
     ]
   },
+    {
+      "route": "/login/success",
+      "method": "onLoginSuccess",
+      "sent_params": [
+        {
+          "name": "userId",
+          "type": "String",
+          "obligatory": true
+        },
+        {
+          "name": "accessToken",
+          "type": "String",
+          "obligatory": true
+        },
+        {
+          "name": "userName",
+          "type": "String",
+          "obligatory": true
+        }
+      ]
+    },
   {
     "route": "/receiveFriendRequest",
     "method": "notifyFriendRequestReceived",
@@ -58,5 +79,4 @@
       }
     ]
   }
-
 ]

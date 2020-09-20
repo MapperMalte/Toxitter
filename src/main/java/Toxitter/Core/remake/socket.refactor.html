@@ -75,6 +75,9 @@
 </div>
 </body>
 <script>
+    let accessToken;
+    let userId;
+
     let chatMessageReceived = function (fromUserId, fromUserName, message) {
         var ul = document.getElementById("chatmessages");
         var li = document.createElement("div");
@@ -90,9 +93,9 @@
         ul.appendChild(li);
     };
 
-    let notifyFriendRequestAccepted = function (fromUserId, fromUserName) {
-        addfriend(fromUserName);
-        notify("Deine Freundschaftsanfrage an "+fromUserName+" wurde akzeptiert!")
+    let notifyFriendRequestAccepted = function (from) {
+        addfriend(from);
+        notify("Deine Freundschaftsanfrage an "+from+" wurde akzeptiert!")
     };
 
     let notifyFriendRequestReceived = function (fromUserName, fromUserId) {
@@ -109,6 +112,7 @@
         li.appendChild(document.createTextNode("Freundschaftsanfrage von "+fromUserName+" akzeptieren"));
         ul.appendChild(li);
     };
+
     let addfriend = function (name) {
         var ul = document.getElementById("friendsul");
         var li = document.createElement("div");
@@ -141,7 +145,10 @@
     });
 
     document.getElementById("addfriend").addEventListener("click", function (event) {
-        ws.send("##ADD_FRIEND "+document.getElementById("whichfriend").value);
+        ws.send("/friends/add {"
+            + " \"accessToken\" = " + accessToken + ", "
+            + " \"userId\" = " + userId + ", "
+            + " \"targetUserId\" = " + document.getElementById("whichfriend").value + "}");
     });
 
     document.getElementById("loginbutton").addEventListener("click", function (event) {
@@ -150,15 +157,28 @@
         ws.send("/auth/login { \"email\"=\""+username+"\", \"password\"=\""+password+"\"}");
     });
 
+
     let send = function (name, data){
         console.log("Called method "+name)
         if ( name === "chatMessageReceived" )
         {
             console.log("Chatmessage received:"+data.message);
             chatMessageReceived(data.fromUserId, data.fromUserName, data.message);
-        } else if ( name === "" )
+        } else if ( name === "onLoginSuccess" )
+        {
+            accessToken = data.accessToken;
+            userId = data.userId;
+            alert("Du bist nun eingeloggt! AccessToken "+data.accessToken)
+        } else if ( name === "notifyFriendRequestReceived" )
+        {
+            notifyFriendRequestReceived(data.fromUserName,data.fromUserId);
+        } else if ( name === "notifyFriendRequestAccepted" )
         {
 
+            notifyFriendRequestAccepted(data.from);
+        } else if ( name === "notify" )
+        {
+            notify(data.message);
         }
     }
 </script>
