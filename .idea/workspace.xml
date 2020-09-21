@@ -23,14 +23,42 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1a6799fa-3d81-404d-97ed-2e1ce054a946" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/Toxitter2/annotations/Expectations.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Toxitter2/annotations/Expects.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Toxitter2/annotations/Extracts.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Toxitter2/annotations/FetchAt.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Toxitter2/annotations/Injected.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Toxitter2/annotations/PushTo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Toxitter2/annotations/Redirects.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Toxitter2/annotations/Responds.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Toxitter2/annotations/TeleKey.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Toxitter2/annotations/TeleKeyFragment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Toxitter2/dto/Atom.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Toxitter2/dto/ChatMessageInputAtom.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Toxitter2/dto/ChatMessageOutputAtom.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Toxitter2/dto/ChatTeleReservoir.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Toxitter2/dto/CredentialsDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Toxitter2/dto/LoginAnswerDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Toxitter2/dto/LoginAttemptDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Toxitter2/dto/Pusher.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Toxitter2/dto/TeleKey.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Toxitter2/example/API.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Core/ToxitterSecurity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Core/ToxitterSecurity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Core/realtime/Online.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Core/realtime/Online.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Core/realtime/ToxitterWebsocketHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Core/realtime/ToxitterWebsocketHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Core/remake/Friends.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Core/remake/Friends.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Core/remake/commands_server.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Core/remake/commands_server.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Core/remake/dto/FriendRequestAccepted.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Core/remake/dto/FriendRequestAccepted.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Core/remake/dto/FriendRequestReceived.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Core/remake/dto/FriendRequestReceived.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Core/remake/socket.refactor.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Core/remake/socket.refactor.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Core/remake/Pusher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Core/remake/Pusher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Core/remake/dto/LoginSuccess.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Core/remake/dto/LoginSuccess.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Toxitter/Core/ToxitterSecurity$AccessToken.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Toxitter/Core/ToxitterSecurity$AccessToken.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Toxitter/Core/ToxitterSecurity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Toxitter/Core/ToxitterSecurity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Toxitter/Core/annotations/PushAt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Toxitter/Core/realtime/Online.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Toxitter/Core/realtime/Online.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Toxitter/Core/realtime/OutputDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Toxitter/Core/realtime/OutputDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Toxitter/Core/realtime/ToxitterWebsocketHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Toxitter/Core/realtime/ToxitterWebsocketHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Toxitter/Core/remake/API.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Toxitter/Core/remake/ChatMessage_OutputDTO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Toxitter/Core/remake/ReceiveFriendRequest_OutputDTO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/examples/toxitter/ToxitterStandardConfiguratedEnvironment.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/examples/toxitter/ToxitterStandardConfiguratedEnvironment.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,11 +86,11 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="AnnotationType" />
         <option value="HTML File" />
         <option value="Java" />
-        <option value="Class" />
         <option value="JavaScript File" />
+        <option value="AnnotationType" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -264,7 +292,7 @@
       <workItem from="1599315376824" duration="2183000" />
       <workItem from="1600523561777" duration="3275000" />
       <workItem from="1600601440398" duration="10280000" />
-      <workItem from="1600626404323" duration="10149000" />
+      <workItem from="1600626404323" duration="15731000" />
     </task>
     <servers />
   </component>
@@ -288,29 +316,29 @@
       <screen x="0" y="23" width="1440" height="823" />
     </state>
     <state x="541" y="148" key="#com.intellij.ide.util.MemberChooser/0.23.1440.823@0.23.1440.823" timestamp="1600636849883" />
-    <state x="329" y="75" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1600637293461">
+    <state x="329" y="75" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1600649395904">
       <screen x="0" y="23" width="1440" height="823" />
     </state>
-    <state x="329" y="75" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.23.1440.823@0.23.1440.823" timestamp="1600637293461" />
-    <state x="466" y="188" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1600637742606">
+    <state x="329" y="75" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.23.1440.823@0.23.1440.823" timestamp="1600649395904" />
+    <state x="466" y="188" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1600650449982">
       <screen x="0" y="23" width="1440" height="823" />
     </state>
-    <state x="466" y="188" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1440.823@0.23.1440.823" timestamp="1600637742606" />
-    <state width="1398" height="213" key="GridCell.Tab.0.bottom" timestamp="1600638898241">
+    <state x="466" y="188" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1440.823@0.23.1440.823" timestamp="1600650449982" />
+    <state width="1398" height="213" key="GridCell.Tab.0.bottom" timestamp="1600650261191">
       <screen x="0" y="23" width="1440" height="823" />
     </state>
-    <state width="1398" height="213" key="GridCell.Tab.0.bottom/0.23.1440.823@0.23.1440.823" timestamp="1600638898241" />
-    <state width="1398" height="213" key="GridCell.Tab.0.center" timestamp="1600638898240">
+    <state width="1398" height="213" key="GridCell.Tab.0.bottom/0.23.1440.823@0.23.1440.823" timestamp="1600650261191" />
+    <state width="1398" height="213" key="GridCell.Tab.0.center" timestamp="1600650261190">
       <screen x="0" y="23" width="1440" height="823" />
     </state>
-    <state width="1398" height="213" key="GridCell.Tab.0.center/0.23.1440.823@0.23.1440.823" timestamp="1600638898240" />
-    <state width="1398" height="213" key="GridCell.Tab.0.left" timestamp="1600638898240">
+    <state width="1398" height="213" key="GridCell.Tab.0.center/0.23.1440.823@0.23.1440.823" timestamp="1600650261190" />
+    <state width="1398" height="213" key="GridCell.Tab.0.left" timestamp="1600650261189">
       <screen x="0" y="23" width="1440" height="823" />
     </state>
-    <state width="1398" height="213" key="GridCell.Tab.0.left/0.23.1440.823@0.23.1440.823" timestamp="1600638898240" />
-    <state width="1398" height="213" key="GridCell.Tab.0.right" timestamp="1600638898241">
+    <state width="1398" height="213" key="GridCell.Tab.0.left/0.23.1440.823@0.23.1440.823" timestamp="1600650261189" />
+    <state width="1398" height="213" key="GridCell.Tab.0.right" timestamp="1600650261191">
       <screen x="0" y="23" width="1440" height="823" />
     </state>
-    <state width="1398" height="213" key="GridCell.Tab.0.right/0.23.1440.823@0.23.1440.823" timestamp="1600638898241" />
+    <state width="1398" height="213" key="GridCell.Tab.0.right/0.23.1440.823@0.23.1440.823" timestamp="1600650261191" />
   </component>
 </project>

@@ -3,6 +3,8 @@ package Toxitter.Core;
 import Toxitter.Core.annotations.FetchAt;
 import Toxitter.Core.annotations.RequestParam;
 import Toxitter.Core.annotations.Route;
+import Toxitter.Core.realtime.Online;
+import Toxitter.Core.realtime.ToxitterWebsocketHandler;
 import Toxitter.Model.ID;
 import Toxitter.Core.User;
 import Toxitter.Core.UserReservoir;
@@ -100,15 +102,13 @@ public class ToxitterSecurity
         }
         User user = UserReservoir.getUserByMail(email);
         String userId = UserReservoir.getUserIdByMail(email);
+        Online.connect(ToxitterWebsocketHandler.current,user);
+
         return "{\"userId\": \""+userId+"\", "
-                +"\"accessToken\": \""+
-                getTokenForScope(userId,password,"user")+"\", "
-                +"\"userId\": \""+
-                user.getId()+"\", "
-                +"\"userName\": \""+
-                user.getName()+"\", "
-                +"\"photoUrl\": \""+
-                user.photoUrl
+                +"\"accessToken\": \""+ getTokenForScope(userId,password,"user")+"\", "
+                +"\"userId\": \""+ user.getId()+"\", "
+                +"\"userName\": \""+ user.getName()+"\", "
+                +"\"photoUrl\": \""+ user.photoUrl
                 +"\"}";
     }
 
@@ -129,14 +129,10 @@ public class ToxitterSecurity
         User user = UserReservoir.getUserByMail(email);
 
         return "{\"userId\": \""+newUserId+"\", "
-                +"\"accessToken\": \""+
-                getTokenForScope(newUserId,password,"user")+"\", "
-                +"\"userId\": \""+
-                user.getId()+"\", "
-                +"\"userName\": \""+
-                user.getName()+"\", "
-                +"\"photoUrl\": \""+
-                user.photoUrl
+                +"\"accessToken\": \""+ getTokenForScope(newUserId,password,"user")+"\", "
+                +"\"userId\": \""+ user.getId()+"\", "
+                +"\"userName\": \""+ user.getName()+"\", "
+                +"\"photoUrl\": \""+ user.photoUrl
                 +"\"}";
     }
 

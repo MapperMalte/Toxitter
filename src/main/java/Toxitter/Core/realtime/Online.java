@@ -7,13 +7,14 @@ import java.util.TreeMap;
 
 public class Online
 {
-    private static TreeMap<WebSocket, User> onlineUsers = new TreeMap<>();
+    private static TreeMap<String, User> onlineUsers = new TreeMap<>();
     private static TreeMap<String,WebSocket> websocketsByUserId = new TreeMap<>();
 
     public static void connect(WebSocket webSocket, User user)
     {
+        System.out.println("Connecting user "+user.name+" with IP "+webSocket.getRemoteSocketAddress());
         websocketsByUserId.put(user.userId,webSocket);
-        onlineUsers.put(webSocket,user);
+        onlineUsers.put(webSocket.getRemoteSocketAddress().getHostString(),user);
     }
 
     public static WebSocket getWebsocketByUserId(String userId)

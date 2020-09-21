@@ -12,7 +12,8 @@ public class LoginSuccess extends OutputDTO
     String photoUrl;
 
     @Override
-    public String asJSON() {
+    public String asJSON()
+    {
         return null;
     }
 }

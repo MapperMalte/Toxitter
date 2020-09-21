@@ -2,6 +2,8 @@ package Toxitter.Core.realtime;
 
 import Toxitter.Core.ToxitterSecurity;
 import Toxitter.Core.ToxitterServer;
+import Toxitter.Core.User;
+import Toxitter.Core.UserReservoir;
 import Toxitter.Core.http.ToxitterHttpHandler;
 import Toxitter.Core.http.ToxitterModelSignature;
 import Toxitter.Logging.Ullog;
@@ -54,6 +56,7 @@ public class ToxitterWebsocketHandler extends WebSocketServer
 
     public static void push(String userId, String route, OutputDTO outputDTO)
     {
+        Ullog.put(ToxitterWebsocketHandler.class, "Pushing: "+route+" "+outputDTO.asJSON());
         Online.getWebsocketByUserId(userId).send(route+" "+outputDTO.asJSON());
     }
 
@@ -70,9 +73,12 @@ public class ToxitterWebsocketHandler extends WebSocketServer
         return ToxitterServer.routeSignatures.containsKey(route);
     }
 
+    public static WebSocket current;
+
     @Override
-    public void onMessage(WebSocket conn, String message)
+    public synchronized void onMessage(WebSocket conn, String message)
     {
+        current = conn;
         String route = message.substring(0,message.indexOf(" "));
         if ( knownRoute(route) )
         {
@@ -88,7 +94,7 @@ public class ToxitterWebsocketHandler extends WebSocketServer
             Ullog.put(ToxitterWebsocketHandler.class,"Extracted token: "+token);
             if ( !ToxitterSecurity.hasAccesToRoute(token,route) )
             {
-                Ullog.put(ToxitterHttpHandler.class,"Token does not have access to route!");
+                Ullog.put(ToxitterWebsocketHandler.class,"Token does not have access to route!");
                 conn.send("You do not have access to this route!");
                 return;
             }
@@ -96,9 +102,9 @@ public class ToxitterWebsocketHandler extends WebSocketServer
             tms.releaseForNextRequest();
             try {
                 String response = tms.getMethod().method.invoke(tms.toxiClass, args).toString();
-                Ullog.put(ToxitterHttpHandler.class,"Invoking Method "+tms.getMethod().name+" on class "+tms.toxiClass.getCanonicalName());
+                Ullog.put(ToxitterWebsocketHandler.class,"Invoking Method "+tms.getMethod().name+" on class "+tms.toxiClass.getCanonicalName());
                 response = tms.getMethod().method.invoke(tms.toxiClass, args).toString();
-                Ullog.put(ToxitterHttpHandler.class,"Response from Server: "+response);
+                Ullog.put(ToxitterWebsocketHandler.class,"Response from Server: "+response);
                 conn.send("/login/success/ "+response);
             } catch (Exception e) {
                 e.printStackTrace();
@@ -107,13 +113,6 @@ public class ToxitterWebsocketHandler extends WebSocketServer
         } else {
             Ullog.put(ToxitterWebsocketHandler.class,"Unknown route "+route+" from message "+message);
         }
-
-        /*
-        ChatMessage_OutputDTO chatMessage_outputDTO = new ChatMessage_OutputDTO();
-        chatMessage_outputDTO.fromUserId = "asasdas";
-        chatMessage_outputDTO.fromUserName = "Malte";
-        chatMessage_outputDTO.message = message;
-        conn.send(ChatMessage_OutputDTO.push(chatMessage_outputDTO));*/
     }
 
     @Override
