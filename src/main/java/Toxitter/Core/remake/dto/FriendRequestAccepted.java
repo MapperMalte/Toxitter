@@ -2,6 +2,7 @@ package Toxitter.Core.remake.dto;
 
 import Toxitter.Core.annotations.PushTo;
 import Toxitter.Core.realtime.TransferrableDataAtom;
+import com.google.gson.Gson;
 
 @PushTo(route = "/notifyFriendRequestAccepted", method = "notifyFriendRequestAccepted")
 public class FriendRequestAccepted implements TransferrableDataAtom
@@ -10,7 +11,7 @@ public class FriendRequestAccepted implements TransferrableDataAtom
 
     @Override
     public String asJSON() {
-        return "{\"from\" : \""+from+"\"}";
+        return new Gson().toJson(this).toString();
     }
 
     @Override

@@ -77,13 +77,18 @@
 <script>
     let accessToken = "";
     let userId = "";
+    let chatpartner = "all";
+
+    let setchatpartner = function (name) {
+        chatpartner = name;
+    }
 
     let sendChatMessageToServer = function (fromUserId, targetUserName, chatMessage){
         let json = {
           "fromUserId" : fromUserId,
           "accessToken" : accessToken,
           "targetUserName" : targetUserName,
-          "chatmessage: " : chatMessage
+          "chatmessage" : chatMessage
         };
         ws.send("/chat/send "+JSON.stringify(json));
     }
@@ -142,16 +147,13 @@
         btn.friendname = name;
         btn.addEventListener("click", function (event){
             document.getElementById("chatheader").innerHTML = "Chat mit "+btn.friendname;
+            chatpartner = btn.friendname;
         });
         li.appendChild(btn);
         ul.appendChild(li);
     };
 
-    let chatpartner = "all";
 
-    let setchatpartner = function (name) {
-        chatpartner = name;
-    }
 
     document.getElementById("input").addEventListener("keydown", function(event) {
         if (event.key === "Enter")

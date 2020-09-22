@@ -12,7 +12,7 @@ public class Chat
 {
     @Route(route = "send")
     @Protected(scope = "user")
-    public void incomingMessageFromUser(
+    public static String incomingMessageFromUser(
             @RequestParam(name = "fromUserId", obligatory = true) String fromUserId,
             @RequestParam(name = "targetUserName", obligatory = true) String targetUserName,
             @RequestParam(name = "chatmessage", obligatory = true) String chatMessage)
@@ -22,6 +22,7 @@ public class Chat
         chatMessage1.fromUserName = UserReservoir.getUserByUserId(fromUserId).name;
         chatMessage1.message = chatMessage;
 
-        ToxitterWebsocketHandler.push(UserReservoir.getUserIdByMail(targetUserName),chatMessage1);
+        ToxitterWebsocketHandler.push(UserReservoir.getUserByUserName(targetUserName).userId,chatMessage1);
+        return "Chatmessage delivered!";
     }
 }

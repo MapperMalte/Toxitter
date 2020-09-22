@@ -61,7 +61,7 @@ public class Friends
         ReceivedFriendRequest receivedFriendRequest = sentRequests.getget(requestSentFromUserId,acceptingUserId);
         //receivedFriendRequest.friendRequestReceived.fromUserId
         FriendRequestAccepted answer = new FriendRequestAccepted();
-        answer.from = UserReservoir.getUserByUserId(acceptingUserId).name;
+        answer.from = fromUserName;
         return answer;
     }
 
