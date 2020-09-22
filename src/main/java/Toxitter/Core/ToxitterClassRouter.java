@@ -34,7 +34,7 @@ public class ToxitterClassRouter
                         Protected pr = (Protected) method.getAnnotation(Protected.class);
                         Ullog.put(ToxitterClassRouter.class,"Required scope: "+pr.scope());
                         Ullog.put(ToxitterClassRouter.class,"Adding to TokenHub!");
-                        Login.addRequiredScopeToRoute(pr.scope(),allRoute);
+                        LoginAndRegister.addRequiredScopeToRoute(pr.scope(),allRoute);
                     } else {
                         Ullog.put(ToxitterClassRouter.class,"Route is NOT protected.");
                     }

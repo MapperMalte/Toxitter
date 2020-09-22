@@ -5,6 +5,7 @@ import Toxitter.Core.UserReservoir;
 import Toxitter.Core.annotations.FetchAt;
 import Toxitter.Core.annotations.RequestParam;
 import Toxitter.Core.annotations.Route;
+import Toxitter.Core.realtime.Transferrable;
 import Toxitter.Persistence.annotations.Table;
 import com.google.gson.Gson;
 import Toxitter.Infusion.Umlauter;
@@ -15,7 +16,7 @@ import java.util.TreeMap;
 
 @FetchAt(route="post")
 @Table(primaryKey = "id", tableName = "post")
-public class Post
+public class Post implements Transferrable
 {
     public String content;
     public String title;
@@ -38,6 +39,7 @@ public class Post
     {
         return new Gson().toJson(this);
     }
+
     public Post()
     {
     }
@@ -45,6 +47,21 @@ public class Post
     public boolean isComment()
     {
         return referencedPostId != null;
+    }
+
+    @Override
+    public String asJSON() {
+        return new Gson().toJson(this);
+    }
+
+    @Override
+    public String asJavaScript() {
+        return null;
+    }
+
+    @Override
+    public String asJavaCode() {
+        return null;
     }
 
     public static class Reaction

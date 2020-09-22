@@ -1,8 +1,8 @@
 package Toxitter2.annotations;
 
-import Toxitter.Core.realtime.TransferrableDataAtom;
+import Toxitter.Core.realtime.Transferrable;
 
 public @interface Responds
 {
-    public Class<? extends TransferrableDataAtom> dto();
+    public Class<? extends Transferrable> dto();
 }

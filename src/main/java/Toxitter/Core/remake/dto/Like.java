@@ -2,21 +2,21 @@ package Toxitter.Core.remake.dto;
 
 import Toxitter.Core.annotations.PushTo;
 import Toxitter.Core.realtime.Transferrable;
-import com.google.gson.Gson;
 
-@PushTo(route = "/notifyFriendRequestAccepted", method = "notifyFriendRequestAccepted")
-public class FriendRequestAccepted implements Transferrable
+@PushTo(route = "/incomingLikeInfo", method = "notifyIncomingLike")
+public class Like implements Transferrable
 {
-    public String from;
+    String contentId;
+    String reactionId;
+    String likingUserUserId;
 
     @Override
     public String asJSON() {
-        return new Gson().toJson(this).toString();
+        return null;
     }
 
     @Override
-    public String asJavaScript()
-    {
+    public String asJavaScript() {
         return null;
     }
 

@@ -1,10 +1,6 @@
 package Toxitter.Core.realtime;
 
-public interface TransferrableDataAtom
+public abstract class TransferrableDataAtom implements Transferrable
 {
-    public abstract String asJSON();
 
-    public String asJavaScript();
-
-    public String asJavaCode();
 }

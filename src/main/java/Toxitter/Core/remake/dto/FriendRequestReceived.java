@@ -1,12 +1,11 @@
 package Toxitter.Core.remake.dto;
 
 import Toxitter.Core.annotations.PushTo;
-import Toxitter.Core.realtime.TransferrableDataAtom;
-import Toxitter.Model.ReservoirEntity;
+import Toxitter.Core.realtime.Transferrable;
 import com.google.gson.Gson;
 
-@PushTo(route = "receiveFriendRequest", method = "notifyFriendRequestReceived")
-public class FriendRequestReceived implements TransferrableDataAtom
+@PushTo(route = "/receiveFriendRequest", method = "notifyFriendRequestReceived")
+public class FriendRequestReceived implements Transferrable
 {
     public String fromUserName;
     public String fromUserId;

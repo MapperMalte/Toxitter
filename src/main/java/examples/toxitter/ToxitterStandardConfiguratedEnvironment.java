@@ -19,7 +19,7 @@ public class ToxitterStandardConfiguratedEnvironment
         ToxitterClassRouter.serve(Post.class);
         ToxitterClassRouter.serve(Feed.class);
         ToxitterClassRouter.serve(UserReservoir.class);
-        ToxitterClassRouter.serve(Login.class);
+        ToxitterClassRouter.serve(LoginAndRegister.class);
         ToxitterClassRouter.serve(Notifications.class);
         ToxitterClassRouter.serve(User.class);
         ToxitterClassRouter.serve(Friends.class);

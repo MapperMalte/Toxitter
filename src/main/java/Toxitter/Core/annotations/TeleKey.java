@@ -1,4 +1,4 @@
-package Toxitter2.annotations;
+package Toxitter.Core.annotations;
 
 public @interface TeleKey
 {

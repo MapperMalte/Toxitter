@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-
     <style>
         #chatmessages
         {
@@ -34,9 +33,90 @@
         {
 
         }
+        .feed{
+            position: absolute;
+            right: 0px;
+            width: 50%;
+            height: 2000px;
+            padding: 20px;
+            margin: 20px;
+            border: 1px solid black;
+        }
+
+        .post{
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid black;
+        }
+        .text{
+
+        }
+
+        .post .reactions{
+            border-top: 2px solid black;
+            margin-top: 10px;
+        }
+
+        .post .comments{
+            border-top: 2px solid black;
+            margin-top: 10px;
+        }
+        .post .addcomment{
+            border-top: 2px solid black;
+            margin-top: 10px;
+        }
+
+        .comment{
+            padding: 10px;
+            margin: 10px;
+            border: 1px solid;
+        }
     </style>
 </head>
 <body>
+<div class="feed">
+<h3>Feed</h3>
+    <div class="post">
+        <h4>From User</h4>
+        <div class="text">
+            Hallo ich finde das alles toll.
+        </div>
+        <div class="reactions">
+            <div>3 mal Liebe <button>Liebe geben</button><button>Anzeigen von wem</button></div>
+            <div>2 mal Wut <button>Wut geben</button><button>Anzeigen von wem</button></div>
+            <div>3 mal Gefällt mir<button>Gefällt mir</button><button>Anzeigen von wem</button></div>
+            <div><button>Kommentare anzeigen</button></div>
+        </div>
+        <div class="comments">
+            <div class="comment">
+                <h5>Kommentar von PETER</h5>
+                Ich sehe das alles anderes!
+                <div class="reactions">
+                    <div>3 mal Liebe <button>Liebe geben</button><button>Anzeigen von wem</button></div>
+                    <div>2 mal Wut <button>Wut geben</button><button>Anzeigen von wem</button></div>
+                    <div>3 mal Gefällt mir<button>Gefällt mir</button><button>Anzeigen von wem</button></div>
+                    <div><button>Antworten</button></div>
+                </div>
+            </div>
+            <div class="comment">
+                <h5>Kommentar von KARINA</h5>
+                Ach, wir kommen doch alle in die Hölle
+                <div class="reactions">
+                    <div>3 mal Liebe <button>Liebe geben</button><button>Anzeigen von wem</button></div>
+                    <div>2 mal Wut <button>Wut geben</button><button>Anzeigen von wem</button></div>
+                    <div>3 mal Gefällt mir<button>Gefällt mir</button><button>Anzeigen von wem</button></div>
+                    <div><button>Antworten</button></div>
+                </div>
+            </div>
+        </div>
+        <div><button>Mehr Kommentare laden</button></div>
+        <div class="addcomment">
+            <div><textarea id="commentId"></textarea></div>
+            <div><button>Kommentar schreiben</button></div>
+        </div>
+    </div>
+    <div><button>Neuen Feed laden</button></div>
+</div>
 <h3>Login</h3>
 <div>
     <label>
@@ -58,7 +138,6 @@
 <h3>friend requests</h3>
 <div>
     <ul id="friendrequests">
-
     </ul>
 </div>
 <h3>friendlist</h3>
@@ -94,6 +173,7 @@
     }
 
     let acceptFriendRequest = function (acceptingUserId, fromUserName) {
+        addfriend(fromUserName);
         let json = {
             "acceptingUserId" : acceptingUserId,
             "accessToken" : accessToken,

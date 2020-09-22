@@ -1,8 +1,9 @@
 package Toxitter.Core.http;
 
+import Toxitter.Core.realtime.Transferrable;
 import Toxitter.Infusion.Umlauter;
 import Toxitter.Logging.Ullog;
-import Toxitter.Core.Login;
+import Toxitter.Core.LoginAndRegister;
 import Toxitter.Security.ToxitterSecurityMiddleware;
 import com.google.gson.Gson;
 import com.google.gson.JsonElement;
@@ -150,7 +151,7 @@ public class ToxitterHttpHandler implements HttpHandler
             return;
         }
         Ullog.put(ToxitterHttpHandler.class,"Route "+route+" known!");
-        if ( !Login.hasAccesToRoute(token,route) )
+        if ( !LoginAndRegister.hasAccesToRoute(token,route) )
         {
             Ullog.put(ToxitterHttpHandler.class,"Token does not have access to route!");
             cancelAs403NotAllowed(httpExchange);
@@ -163,12 +164,18 @@ public class ToxitterHttpHandler implements HttpHandler
 
         //ToxitterSessionReservoir.registerRequest(tms,httpExchange.getRemoteAddress().getAddress().toString());
 
-        String response = null;
+        Object response = null;
         try {
             Ullog.put(ToxitterHttpHandler.class,"Invoking Method "+tms.getMethod().name+" on class "+tms.toxiClass.getCanonicalName());
-            response = tms.getMethod().method.invoke(tms.toxiClass, args).toString();
-            Ullog.put(ToxitterHttpHandler.class,"Response from Server: "+response);
-            sendStringAs200Success(httpExchange,response);
+            response = tms.getMethod().method.invoke(tms.toxiClass, args);
+            if ( response.getClass().equals(String.class) )
+            {
+                Ullog.put(ToxitterHttpHandler.class,"String-Response from Server: "+response);
+                sendStringAs200Success(httpExchange,(String)response);
+            } else {
+                Ullog.put(ToxitterHttpHandler.class,"Transferrable-Response from Server: "+((Transferrable)response).asJSON());
+                sendStringAs200Success(httpExchange,((Transferrable)response).asJSON());
+            }
         } catch (Exception e) {
             e.printStackTrace();
             cancelAs502InternalServerError(httpExchange,"Sth went wrong!");

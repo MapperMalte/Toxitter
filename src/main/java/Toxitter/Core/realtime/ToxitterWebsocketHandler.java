@@ -1,6 +1,6 @@
 package Toxitter.Core.realtime;
 
-import Toxitter.Core.Login;
+import Toxitter.Core.LoginAndRegister;
 import Toxitter.Core.ToxitterServer;
 import Toxitter.Core.UserReservoir;
 import Toxitter.Core.annotations.PushTo;
@@ -55,7 +55,7 @@ public class ToxitterWebsocketHandler extends WebSocketServer
                 conn.getRemoteSocketAddress().getAddress().getHostAddress() + " entered the room!");
     }
 
-    public static void push(String userId, TransferrableDataAtom outputDTO)
+    public static void push(String userId, Transferrable outputDTO)
     {
         Ullog.put(ToxitterWebsocketHandler.class,"==== {PUSH! Called Targeting user with ID "+userId+" and outputDTO "+outputDTO.getClass().getName());
         if ( outputDTO.getClass().isAnnotationPresent(PushTo.class) )
@@ -65,16 +65,17 @@ public class ToxitterWebsocketHandler extends WebSocketServer
             Ullog.put(ToxitterWebsocketHandler.class, "Pushing to client data "+outputDTO.asJSON()+" on route "+pushTo.route());
             Ullog.put(ToxitterWebsocketHandler.class,"UserId of target client: "+userId);
             Ullog.put(ToxitterWebsocketHandler.class,"Associated websocket: "+OnlineStateManager.getWebsocketByUserId(userId));
-            OnlineStateManager.getWebsocketByUserId(userId).send("/"+pushTo.route()+" "+outputDTO.asJSON());
-            Ullog.put(ToxitterWebsocketHandler.class,"PushTo Annotation for route /"+pushTo.route()+" resolved. }====");
+            OnlineStateManager.getWebsocketByUserId(userId).send(pushTo.route()+" "+outputDTO.asJSON());
+            Ullog.put(ToxitterWebsocketHandler.class,"PushTo Annotation for route "+pushTo.route()+" resolved. }====");
+            OnlineStateManager.ping(userId);
         }
     }
 
     @Override
     public void onClose(WebSocket conn, int code, String reason, boolean remote)
     {
-        broadcast(conn + " has left the room!");
         System.out.println(conn + " has left the room!");
+        OnlineStateManager.disconnect(conn);
     }
     Reservoir<String, FriendRequestDTO> receivedUnresolvedFriendRequestes = new Reservoir<>();
 
@@ -102,10 +103,10 @@ public class ToxitterWebsocketHandler extends WebSocketServer
             String token = ToxitterSecurityMiddleware.extractPostParam(jsonObject,ToxitterSecurityMiddleware.TOKEN_IDENTIFIER_2);
             Ullog.put(ToxitterWebsocketHandler.class,"Extracted token: "+token);
 
-            if ( !Login.hasAccesToRoute(token,route) )
+            if ( !LoginAndRegister.hasAccesToRoute(token,route) )
             {
                 Ullog.put(ToxitterWebsocketHandler.class,"Token does not have access to route!");
-                Ullog.put("Required privilege: "+ Login.getRequiredPrivilege(route));
+                Ullog.put("Required privilege: "+ LoginAndRegister.getRequiredPrivilege(route));
                 conn.send("You do not have access to this route!");
 
                 return;
@@ -126,7 +127,7 @@ public class ToxitterWebsocketHandler extends WebSocketServer
                     Ullog.put(ToxitterWebsocketHandler.class,"Response from Server: "+result);
                 } else
                 {
-                    TransferrableDataAtom response = (TransferrableDataAtom)(tms.getMethod().method.invoke(tms.toxiClass, args));
+                    Transferrable response = (Transferrable)(tms.getMethod().method.invoke(tms.toxiClass, args));
                     Ullog.put(ToxitterWebsocketHandler.class,"Response from Server: "+response.asJSON());
                     if ( response.getClass().equals(LoginSuccess.class) )
                     {

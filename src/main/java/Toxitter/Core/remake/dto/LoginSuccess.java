@@ -1,11 +1,11 @@
 package Toxitter.Core.remake.dto;
 
 import Toxitter.Core.annotations.PushTo;
-import Toxitter.Core.realtime.TransferrableDataAtom;
+import Toxitter.Core.realtime.Transferrable;
 import com.google.gson.Gson;
 
 @PushTo(route = "/login/success",method="onLoginSuccess")
-public class LoginSuccess implements TransferrableDataAtom
+public class LoginSuccess implements Transferrable
 {
     public String userId;
     public String accessToken;

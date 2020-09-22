@@ -11,7 +11,7 @@ import Toxitter.Security.UserPrivileges;
 import java.util.TreeMap;
 
 @FetchAt(route = "auth")
-public class Login
+public class LoginAndRegister
 {
     private static TreeMap<String,AccessToken> tokens = new TreeMap<>();
     private static TreeMap<String,AccessToken> refreshTokens = new TreeMap<>();
