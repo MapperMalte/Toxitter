@@ -24,7 +24,6 @@ public class ToxitterServer
     {
         try {
             ToxitterStandardConfiguratedEnvironment.up();
-
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -52,5 +51,4 @@ public class ToxitterServer
         System.out.println("Route: "+route);
         routeSignatures.put(route,model);
     }
-
 }

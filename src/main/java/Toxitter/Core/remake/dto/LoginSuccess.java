@@ -1,19 +1,22 @@
 package Toxitter.Core.remake.dto;
 
-import Toxitter.Core.realtime.OutputDTO;
-import org.java_websocket.WebSocket;
+import Toxitter.Core.annotations.PushTo;
+import Toxitter.Core.realtime.TransferrableDataAtom;
+import com.google.gson.Gson;
 
-public class LoginSuccess extends OutputDTO
+@PushTo(route = "/login/success",method="onLoginSuccess")
+public class LoginSuccess extends TransferrableDataAtom
 {
-    String userId;
-    String accessToken;
-    String token;
-    String userNamer;
-    String photoUrl;
+    public String userId;
+    public String accessToken;
+    public String token;
+    public String userNamer;
+    public String photoUrl;
+    public String errormsg = "";
 
     @Override
     public String asJSON()
     {
-        return null;
+        return new Gson().toJson(this).toString();
     }
 }

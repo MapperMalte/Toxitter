@@ -2,6 +2,7 @@ package Toxitter.Core;
 
 import Toxitter.Model.ID;
 import Toxitter.Core.annotations.FetchAt;
+import Toxitter.Security.UserPrivileges;
 import Toxitter.Security.annotations.Protected;
 import Toxitter.Core.annotations.RequestParam;
 import Toxitter.Core.annotations.Route;
@@ -71,6 +72,7 @@ public class UserReservoir
         newUser.pwd = pwd;
         usersByMail.put(email,newUser);
         usersById.put(newUser.userId,newUser);
+        UserPrivileges.add(newUser.userId,"user");
         return newUser.userId;
     }
 

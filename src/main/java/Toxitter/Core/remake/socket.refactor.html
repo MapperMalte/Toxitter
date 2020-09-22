@@ -75,8 +75,18 @@
 </div>
 </body>
 <script>
-    let accessToken;
-    let userId;
+    let accessToken = "";
+    let userId = "";
+
+    let sendChatMessageToServer = function (fromUserId, targetUserName, chatMessage){
+        let json = {
+          "fromUserId" : fromUserId,
+          "accessToken" : accessToken,
+          "targetUserName" : targetUserName,
+          "chatmessage: " : chatMessage
+        };
+        ws.send("/chat/send "+json);
+    }
 
     let chatMessageReceived = function (fromUserId, fromUserName, message) {
         var ul = document.getElementById("chatmessages");
@@ -139,7 +149,8 @@
         {
             console.log("ENTER: "+document.getElementById("input").value)
             event.preventDefault();
-            ws.send("##TO: "+chatpartner+": "+document.getElementById("input").value)
+            sendChatMessageToServer(userId,chatpartner,document.getElementById("input").value);
+            //ws.send("##TO: "+chatpartner+": "+document.getElementById("input").value)
             document.getElementById("input").value = "";
         }
     });
@@ -147,7 +158,7 @@
     document.getElementById("addfriend").addEventListener("click", function (event) {
         ws.send("/friends/add {"
             + " \"accessToken\" = " + accessToken + ", "
-            + " \"userId\" = " + userId + ", "
+            + " \"fromUserId\" = " + userId + ", "
             + " \"targetUserName\" = " + document.getElementById("whichfriend").value + "}");
     });
 
@@ -175,7 +186,6 @@
             notifyFriendRequestReceived(data.fromUserName,data.fromUserId);
         } else if ( name === "notifyFriendRequestAccepted" )
         {
-
             notifyFriendRequestAccepted(data.from);
         } else if ( name === "notify" )
         {

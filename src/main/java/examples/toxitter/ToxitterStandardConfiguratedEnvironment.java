@@ -1,7 +1,8 @@
 package examples.toxitter;
 
 import Toxitter.Core.*;
-import Toxitter.Core.remake.Friends;
+import Toxitter.Core.realtime.Chat;
+import Toxitter.Core.realtime.Friends;
 
 public class ToxitterStandardConfiguratedEnvironment
 {
@@ -18,10 +19,11 @@ public class ToxitterStandardConfiguratedEnvironment
         ToxitterClassRouter.serve(Post.class);
         ToxitterClassRouter.serve(Feed.class);
         ToxitterClassRouter.serve(UserReservoir.class);
-        ToxitterClassRouter.serve(ToxitterSecurity.class);
+        ToxitterClassRouter.serve(Login.class);
         ToxitterClassRouter.serve(Notifications.class);
         ToxitterClassRouter.serve(User.class);
         ToxitterClassRouter.serve(Friends.class);
+        ToxitterClassRouter.serve(Chat.class);
     }
 
     public static void up() throws Exception

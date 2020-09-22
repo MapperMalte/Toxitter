@@ -22,8 +22,8 @@ ws.onmessage = function (evt)
     {
         if (received_msg.startsWith(routes[i].route)) {
             console.log("FOUND ROUTE! "+routes[i].route);
-            console.log("JSON: "+received_msg.substr(routes[i].route.length+2));
-            var json_data = JSON.parse(received_msg.substr(routes[i].route.length+2));
+            console.log("JSON: "+received_msg.substr(routes[i].route.length+1));
+            var json_data = JSON.parse(received_msg.substr(routes[i].route.length+1));
             console.log("Method "+routes[i].method);
             var fname = routes[i].method;
             var params = "";

@@ -3,17 +3,15 @@ package Toxitter.Core;
 import Toxitter.Core.annotations.FetchAt;
 import Toxitter.Core.annotations.RequestParam;
 import Toxitter.Core.annotations.Route;
-import Toxitter.Core.realtime.Online;
-import Toxitter.Core.realtime.ToxitterWebsocketHandler;
+import Toxitter.Core.realtime.OnlineStateManager;
+import Toxitter.Core.remake.dto.LoginSuccess;
 import Toxitter.Model.ID;
-import Toxitter.Core.User;
-import Toxitter.Core.UserReservoir;
 import Toxitter.Security.UserPrivileges;
 
 import java.util.TreeMap;
 
 @FetchAt(route = "auth")
-public class ToxitterSecurity
+public class Login
 {
     private static TreeMap<String,AccessToken> tokens = new TreeMap<>();
     private static TreeMap<String,AccessToken> refreshTokens = new TreeMap<>();
@@ -25,6 +23,7 @@ public class ToxitterSecurity
         String token;
         public AccessToken(String scope, String token)
         {
+            token = token.replaceAll("\"","");
             this.scope = scope;
             this.token = token;
         }
@@ -65,6 +64,7 @@ public class ToxitterSecurity
         if ( user.pwdCorrect(password) )
         {
             String id = ID.makeId();
+            System.out.println("Put token with id "+id+" for scope "+scope);
             tokens.put(id,new AccessToken(scope,id));
             return id;
         } else {
@@ -92,24 +92,27 @@ public class ToxitterSecurity
     }
 
     @Route(route = "login")
-    public static String attemptLogin(
+    public static LoginSuccess attemptLogin(
             @RequestParam(name = "email", obligatory = true) String email,
             @RequestParam(name="password", obligatory = true) String password)
     {
         if ( !UserReservoir.userExists(email) )
         {
-            return "User with email "+email+" does not exist!";
+            LoginSuccess loginSuccess = new LoginSuccess();
+            loginSuccess.errormsg = "User with email "+email+" does not exist!";
+            return loginSuccess;
         }
         User user = UserReservoir.getUserByMail(email);
         String userId = UserReservoir.getUserIdByMail(email);
-        Online.connect(ToxitterWebsocketHandler.current,user);
+        //Online.connect(ToxitterWebsocketHandler.current,user);
 
-        return "{\"userId\": \""+userId+"\", "
-                +"\"accessToken\": \""+ getTokenForScope(userId,password,"user")+"\", "
-                +"\"userId\": \""+ user.getId()+"\", "
-                +"\"userName\": \""+ user.getName()+"\", "
-                +"\"photoUrl\": \""+ user.photoUrl
-                +"\"}";
+        LoginSuccess loginSuccess = new LoginSuccess();
+        loginSuccess.accessToken = getTokenForScope(userId,password,"user");
+        loginSuccess.userId = user.getId();
+        loginSuccess.userNamer = user.getName();
+        loginSuccess.photoUrl = user.photoUrl;
+
+        return loginSuccess;
     }
 
     @Route(route="register")
@@ -125,12 +128,10 @@ public class ToxitterSecurity
             return "User with email "+email+" already exists!";
         }
         String newUserId = UserReservoir.registerUser((surname+" "+name),email,password);
-        UserPrivileges.add(newUserId,"user");
         User user = UserReservoir.getUserByMail(email);
 
         return "{\"userId\": \""+newUserId+"\", "
                 +"\"accessToken\": \""+ getTokenForScope(newUserId,password,"user")+"\", "
-                +"\"userId\": \""+ user.getId()+"\", "
                 +"\"userName\": \""+ user.getName()+"\", "
                 +"\"photoUrl\": \""+ user.photoUrl
                 +"\"}";
@@ -174,16 +175,25 @@ public class ToxitterSecurity
      */
     public static boolean hasAccesToRoute(String token, String route)
     {
-        System.out.println("CheckAccess");
+        System.out.println("Checking Access of token "+token+" to route "+route);
+        token = token.replaceAll("\"","");
         if ( routeRequiredScope.containsKey(route) )
         {
             AccessToken accessToken = toToken(token);
             if ( accessToken == null )
+            {
+                System.out.println("No tokken associated");
                 return false;
+            }
             return routeRequiredScope.get(route).equals(accessToken.scope);
         } else {
             return true;
         }
+    }
+
+    public static String getRequiredPrivilege(String route)
+    {
+        return routeRequiredScope.get(route);
     }
 
     public static boolean routeRequiresAnyPrivilege(String route)

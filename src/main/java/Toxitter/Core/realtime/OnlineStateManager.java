@@ -5,7 +5,7 @@ import org.java_websocket.WebSocket;
 
 import java.util.TreeMap;
 
-public class Online
+public class OnlineStateManager
 {
     private static TreeMap<String, User> onlineUsers = new TreeMap<>();
     private static TreeMap<String,WebSocket> websocketsByUserId = new TreeMap<>();

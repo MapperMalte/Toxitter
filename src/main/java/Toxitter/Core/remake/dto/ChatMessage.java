@@ -1,11 +1,11 @@
 package Toxitter.Core.remake.dto;
 
 import Toxitter.Core.annotations.PushTo;
-import Toxitter.Core.realtime.OutputDTO;
+import Toxitter.Core.realtime.TransferrableDataAtom;
 import com.google.gson.Gson;
 
 @PushTo(route = "/receiveChatMessage", method = "chatMessageReceived")
-public class ChatMessage extends OutputDTO
+public class ChatMessage extends TransferrableDataAtom
 {
     public String fromUserName;
     public String fromUserId;

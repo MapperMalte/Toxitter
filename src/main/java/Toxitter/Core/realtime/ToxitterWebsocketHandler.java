@@ -1,11 +1,12 @@
 package Toxitter.Core.realtime;
 
-import Toxitter.Core.ToxitterSecurity;
+import Toxitter.Core.Login;
 import Toxitter.Core.ToxitterServer;
-import Toxitter.Core.User;
 import Toxitter.Core.UserReservoir;
+import Toxitter.Core.annotations.PushTo;
 import Toxitter.Core.http.ToxitterHttpHandler;
 import Toxitter.Core.http.ToxitterModelSignature;
+import Toxitter.Core.remake.dto.LoginSuccess;
 import Toxitter.Logging.Ullog;
 import Toxitter.Security.ToxitterSecurityMiddleware;
 import com.google.gson.Gson;
@@ -54,10 +55,19 @@ public class ToxitterWebsocketHandler extends WebSocketServer
                 conn.getRemoteSocketAddress().getAddress().getHostAddress() + " entered the room!");
     }
 
-    public static void push(String userId, String route, OutputDTO outputDTO)
+    public static void push(String userId, TransferrableDataAtom outputDTO)
     {
-        Ullog.put(ToxitterWebsocketHandler.class, "Pushing: "+route+" "+outputDTO.asJSON());
-        Online.getWebsocketByUserId(userId).send(route+" "+outputDTO.asJSON());
+        Ullog.put(ToxitterWebsocketHandler.class,"==== {PUSH! Called Targeting user with ID "+userId+" and outputDTO "+outputDTO.getClass().getName());
+        if ( outputDTO.getClass().isAnnotationPresent(PushTo.class) )
+        {
+            Ullog.put(ToxitterWebsocketHandler.class,"Found PushTo Annotation!");
+            PushTo pushTo = outputDTO.getClass().getAnnotation(PushTo.class);
+            Ullog.put(ToxitterWebsocketHandler.class, "Pushing to client data "+outputDTO.asJSON()+" on route "+pushTo.route());
+            Ullog.put(ToxitterWebsocketHandler.class,"UserId of target client: "+userId);
+            Ullog.put(ToxitterWebsocketHandler.class,"Associated websocket: "+OnlineStateManager.getWebsocketByUserId(userId));
+            OnlineStateManager.getWebsocketByUserId(userId).send("/"+pushTo.route()+" "+outputDTO.asJSON());
+            Ullog.put(ToxitterWebsocketHandler.class,"PushTo Annotation for route /"+pushTo.route()+" resolved. }====");
+        }
     }
 
     @Override
@@ -83,29 +93,55 @@ public class ToxitterWebsocketHandler extends WebSocketServer
         if ( knownRoute(route) )
         {
             Ullog.put(ToxitterWebsocketHandler.class,"Found route: "+route);
+            Ullog.put(ToxitterWebsocketHandler.class,"Full message: "+message);
             ToxitterModelSignature tms = ToxitterServer.routeSignatures.get(route);
             String json = message.substring(message.indexOf(" ")+1);
             Ullog.put("JSON: "+json);
-            ToxitterHttpHandler.extractJsonParametersIntoToxitterModelSignature(tms, json);
-            Ullog.put(ToxitterHttpHandler.class,"Signature: "+tms.toString());
-            Ullog.put(ToxitterHttpHandler.class,"Complete: "+tms.isComplete());
+
             JsonObject jsonObject = new Gson().fromJson(json,JsonObject.class);
-            String token = ToxitterSecurityMiddleware.extractPostParam(jsonObject,ToxitterSecurityMiddleware.TOKEN_IDENTIFIER);
+            String token = ToxitterSecurityMiddleware.extractPostParam(jsonObject,ToxitterSecurityMiddleware.TOKEN_IDENTIFIER_2);
             Ullog.put(ToxitterWebsocketHandler.class,"Extracted token: "+token);
-            if ( !ToxitterSecurity.hasAccesToRoute(token,route) )
+
+            if ( !Login.hasAccesToRoute(token,route) )
             {
                 Ullog.put(ToxitterWebsocketHandler.class,"Token does not have access to route!");
+                Ullog.put("Required privilege: "+ Login.getRequiredPrivilege(route));
                 conn.send("You do not have access to this route!");
+
                 return;
             }
+
+            ToxitterHttpHandler.extractJsonParametersIntoToxitterModelSignature(tms, json);
+            Ullog.put(ToxitterWebsocketHandler.class,"Signature: "+tms.toString());
+            Ullog.put(ToxitterWebsocketHandler.class,"Complete: "+tms.isComplete());
+
             Object[] args = tms.splurpIntoParameters();
             tms.releaseForNextRequest();
             try {
-                String response = tms.getMethod().method.invoke(tms.toxiClass, args).toString();
                 Ullog.put(ToxitterWebsocketHandler.class,"Invoking Method "+tms.getMethod().name+" on class "+tms.toxiClass.getCanonicalName());
-                response = tms.getMethod().method.invoke(tms.toxiClass, args).toString();
-                Ullog.put(ToxitterWebsocketHandler.class,"Response from Server: "+response);
-                conn.send("/login/success/ "+response);
+                Object result = (tms.getMethod().method.invoke(tms.toxiClass, args));
+                if ( result.getClass().equals(String.class) )
+                {
+                    Ullog.put(ToxitterWebsocketHandler.class,"Response from Server: "+result);
+                } else
+                {
+                    TransferrableDataAtom response = (TransferrableDataAtom)(tms.getMethod().method.invoke(tms.toxiClass, args));
+                    Ullog.put(ToxitterWebsocketHandler.class,"Response from Server: "+response.asJSON());
+                    if ( response.getClass().equals(LoginSuccess.class) )
+                    {
+                        OnlineStateManager.connect(conn, UserReservoir.getUserByUserId(((LoginSuccess)(response)).userId));
+                    }
+                    if ( response.getClass().isAnnotationPresent(PushTo.class) )
+                    {
+                        Ullog.put(ToxitterWebsocketHandler.class,"Found PushTo annotation in OnMessage Response!");
+                        PushTo pushTo = response.getClass().getDeclaredAnnotation(PushTo.class);
+                        Ullog.put(ToxitterWebsocketHandler.class,"Pushing to route "+pushTo.route()+" data "+response.asJSON());
+                        conn.send(pushTo.route()+" "+response.asJSON());
+                    } else {
+                        Ullog.put(ToxitterWebsocketHandler.class,"Not sending response back to client, because client is connected via websocket");
+                    }
+                }
+                //conn.send("/login/success/ "+response);
             } catch (Exception e) {
                 e.printStackTrace();
                 conn.send("Sth. went wrong!");

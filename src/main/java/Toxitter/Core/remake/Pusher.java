@@ -1,13 +1,13 @@
 package Toxitter.Core.remake;
 
 import Toxitter.Core.User;
-import Toxitter.Core.realtime.Online;
-import Toxitter.Core.realtime.OutputDTO;
+import Toxitter.Core.realtime.OnlineStateManager;
+import Toxitter.Core.realtime.TransferrableDataAtom;
 
 public class Pusher
 {
-    public static void push(OutputDTO outputDTO, User toUser)
+    public static void push(TransferrableDataAtom outputDTO, User toUser)
     {
-        Online.getWebsocketByUserId(toUser.userId).send(outputDTO.asJSON());
+        OnlineStateManager.getWebsocketByUserId(toUser.userId).send(outputDTO.asJSON());
     }
 }

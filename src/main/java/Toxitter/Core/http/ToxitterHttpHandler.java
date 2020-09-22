@@ -2,7 +2,7 @@ package Toxitter.Core.http;
 
 import Toxitter.Infusion.Umlauter;
 import Toxitter.Logging.Ullog;
-import Toxitter.Core.ToxitterSecurity;
+import Toxitter.Core.Login;
 import Toxitter.Security.ToxitterSecurityMiddleware;
 import com.google.gson.Gson;
 import com.google.gson.JsonElement;
@@ -150,7 +150,7 @@ public class ToxitterHttpHandler implements HttpHandler
             return;
         }
         Ullog.put(ToxitterHttpHandler.class,"Route "+route+" known!");
-        if ( !ToxitterSecurity.hasAccesToRoute(token,route) )
+        if ( !Login.hasAccesToRoute(token,route) )
         {
             Ullog.put(ToxitterHttpHandler.class,"Token does not have access to route!");
             cancelAs403NotAllowed(httpExchange);
