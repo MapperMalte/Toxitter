@@ -16,6 +16,7 @@ public class UserReservoir
 {
     private static TreeMap<String, User> usersByMail = new TreeMap<>();
     private static TreeMap<String,User> usersById = new TreeMap<>();
+    private static TreeMap<String,User> usersByName = new TreeMap<>();
 
     /**
      *
@@ -35,6 +36,11 @@ public class UserReservoir
     public static User getUserByUserId(String id)
     {
         return  usersById.get(id);
+    }
+
+    public static User getUserByUserName(String name)
+    {
+        return  usersByName.get(name);
     }
 
     /**
@@ -72,6 +78,7 @@ public class UserReservoir
         newUser.pwd = pwd;
         usersByMail.put(email,newUser);
         usersById.put(newUser.userId,newUser);
+        usersByName.put(newUser.name,newUser);
         UserPrivileges.add(newUser.userId,"user");
         return newUser.userId;
     }

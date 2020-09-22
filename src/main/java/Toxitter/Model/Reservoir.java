@@ -24,12 +24,12 @@ public class Reservoir
         switch (PERSIST_LIKE)
         {
             case RESERVOIR_PERSISTENCE_WIPE_ALL:
-                oneToMany = new OneToMany<K,K2,V> (
+                oneToMany = new OneToMany<K,K2,V>(
                         Reservoir.CACHED_ELEMENT_COUNT,
                         new NirvanaQueueSleeper<K,ReservoirEntityList<K2,V>>()
                 );
             case RESERVOIR_PERSISTENCE_SIMPLE_DB:
-                oneToMany = new OneToMany<K,K2,V> (
+                oneToMany = new OneToMany<K,K2,V>(
                         Reservoir.CACHED_ELEMENT_COUNT,
                         new SimpleDBQueueSleeper<K,ReservoirEntityList<K2,V>>()
                 );

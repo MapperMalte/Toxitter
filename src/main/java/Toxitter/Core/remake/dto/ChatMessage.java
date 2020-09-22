@@ -5,7 +5,7 @@ import Toxitter.Core.realtime.TransferrableDataAtom;
 import com.google.gson.Gson;
 
 @PushTo(route = "/receiveChatMessage", method = "chatMessageReceived")
-public class ChatMessage extends TransferrableDataAtom
+public class ChatMessage implements TransferrableDataAtom
 {
     public String fromUserName;
     public String fromUserId;
@@ -18,5 +18,15 @@ public class ChatMessage extends TransferrableDataAtom
         output.append("/receiveChatMessage ");
         output.append(new Gson().toJson(this));
         return output.toString();
+    }
+
+    @Override
+    public String asJavaScript() {
+        return null;
+    }
+
+    @Override
+    public String asJavaCode() {
+        return null;
     }
 }

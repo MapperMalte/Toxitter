@@ -2,7 +2,6 @@ package Toxitter.Model.test;
 
 import Toxitter.Boxfresh.NirvanaQueueSleeper;
 import Toxitter.Model.OneToMany;
-import Toxitter.Model.OneToOne;
 import Toxitter.Model.ReservoirEntityList;
 import org.junit.Test;
 import theory.DiamondList;

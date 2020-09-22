@@ -47,12 +47,12 @@
           "description": "AccessToken of the user that sends a friend request. Scope USER"
         },
         {
-          "name": "userId",
+          "name": "acceptingUserId",
           "type": "String",
           "obligatory": true
         },
         {
-          "name": "targetUserId",
+          "name": "fromUserName",
           "type": "String",
           "obligatory": true
         }

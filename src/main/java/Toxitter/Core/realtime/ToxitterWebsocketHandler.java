@@ -120,6 +120,7 @@ public class ToxitterWebsocketHandler extends WebSocketServer
             try {
                 Ullog.put(ToxitterWebsocketHandler.class,"Invoking Method "+tms.getMethod().name+" on class "+tms.toxiClass.getCanonicalName());
                 Object result = (tms.getMethod().method.invoke(tms.toxiClass, args));
+                if ( !(result == null) )
                 if ( result.getClass().equals(String.class) )
                 {
                     Ullog.put(ToxitterWebsocketHandler.class,"Response from Server: "+result);

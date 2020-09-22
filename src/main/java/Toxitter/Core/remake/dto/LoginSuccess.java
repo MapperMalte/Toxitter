@@ -5,7 +5,7 @@ import Toxitter.Core.realtime.TransferrableDataAtom;
 import com.google.gson.Gson;
 
 @PushTo(route = "/login/success",method="onLoginSuccess")
-public class LoginSuccess extends TransferrableDataAtom
+public class LoginSuccess implements TransferrableDataAtom
 {
     public String userId;
     public String accessToken;
@@ -18,5 +18,15 @@ public class LoginSuccess extends TransferrableDataAtom
     public String asJSON()
     {
         return new Gson().toJson(this).toString();
+    }
+
+    @Override
+    public String asJavaScript() {
+        return null;
+    }
+
+    @Override
+    public String asJavaCode() {
+        return null;
     }
 }

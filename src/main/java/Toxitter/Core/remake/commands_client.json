@@ -1,6 +1,6 @@
   [
   {
-    "route": "/notify",
+    "route": "/xnotify",
     "method": "notify",
     "sent_params": [
       {
@@ -48,7 +48,7 @@
     ]
   },
   {
-    "route": "/notify/friendRequestAccepted",
+    "route": "/notifyFriendRequestAccepted",
     "method": "notifyFriendRequestAccepted",
     "sent_params": [
       {
