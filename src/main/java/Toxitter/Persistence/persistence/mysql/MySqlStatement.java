@@ -4,9 +4,15 @@ import Toxitter.Persistence.ReservoirEntityDataPresenter;
 
 public class MySqlStatement
 {
+    public static final int STATEMENT_TYPE_CREATE_TABLE_OR_DATABASE = 0;
+    public static final int STATEMENT_TYPE_INSERT_OR_UPDATE_DATA = 1;
+    public static final int STATEMENT_TYPE_READ_DATA = 2;
+    public static final int STATEMENT_TYPE_DELETE_DATA = 3;
+
     public String prefix;
     public String middlefix;
     public String postfix;
+    public int type;
 
     private MySqlTypeTransformer tf;
 
@@ -19,9 +25,9 @@ public class MySqlStatement
                 +redp.escape(redp.getTable().tableName())+" (";
 
         stmt.middlefix = redp.getFieldsSeparatedBy(", ", new MySqlTypeTransformer());
-
         stmt.postfix = ", PRIMARY KEY ("+redp.escape(redp.getTable().primaryKey())+")" + ") ENGINE=InnoDB DEFAULT CHARSET=latin1;";
         System.out.println(stmt.prefix+stmt.middlefix+stmt.postfix);
+        stmt.type = MySqlStatement.STATEMENT_TYPE_CREATE_TABLE_OR_DATABASE;
         return stmt;
     }
 
@@ -38,6 +44,7 @@ public class MySqlStatement
 
         stmt.middlefix = redp.getValueStringSeparatedBy(", ", new MySqlTypeTransformer());
         stmt.postfix = ")";
+        stmt.type = MySqlStatement.STATEMENT_TYPE_INSERT_OR_UPDATE_DATA;
         return stmt;
     }
 
@@ -52,6 +59,7 @@ public class MySqlStatement
                 redp.escapeValue(redp.getTable().primaryKey(),
                         redp.getAccess().get(redp.getTable().primaryKey()).toString(),
         new MySqlTypeTransformer());
+        stmt.type = MySqlStatement.STATEMENT_TYPE_DELETE_DATA;
 
         return stmt;
     }
@@ -69,6 +77,7 @@ public class MySqlStatement
                 redp.getAccess().get(redp.getTable().primaryKey()).toString(),
                         new MySqlTypeTransformer());
         stmt.postfix = "";
+        stmt.type = MySqlStatement.STATEMENT_TYPE_READ_DATA;
 
         return stmt;
     }
@@ -96,6 +105,25 @@ public class MySqlStatement
                 redp.escapeValue(redp.getTable().primaryKey(),
                         redp.getAccess().get(redp.getTable().primaryKey()).toString(),
                         new MySqlTypeTransformer());
+        stmt.type = MySqlStatement.STATEMENT_TYPE_INSERT_OR_UPDATE_DATA;
+
         return stmt;
+    }
+
+    public static MySqlStatement getCreateDatabaseStatement()
+    {
+        MySqlStatement stmt = new MySqlStatement();
+        stmt.prefix = "CREATE DATABASE toxitter";
+        stmt.middlefix = "";
+        stmt.postfix = "";
+        stmt.type = MySqlStatement.STATEMENT_TYPE_CREATE_TABLE_OR_DATABASE;
+
+        return  stmt;
+    }
+
+    @Override
+    public String toString()
+    {
+        return this.prefix+this.middlefix+this.postfix;
     }
 }

@@ -301,16 +301,22 @@
     <div class="col-md-12 col-xl-10">
         <div class="navbar">
             <div class="navbar-item navactive">
-                <img src="./img/chat2.png">
+                <img src="img/chat.png">
                 <div class="down"><span style="margin: 0 auto">Chat</span></div>
             </div>
             <div class="navbar-item">
-                <img src="./img/friends2.png">
+                <img src="img/friends.png">
                 <div class="down">
                     <span style="margin: 0 auto">Freunde</span>
                 </div>
             </div>
             <div class="navbar-item">
+                <img src="./img/notifications.png">
+                <div class="down">
+                    <span style="margin: 0 auto">Notifications</span>
+                </div>
+            </div>
+            <div class="navbar-item" style="position: absolute; right: 0px;">
                 <img src="./img/notifications.png">
                 <div class="down">
                     <span style="margin: 0 auto">Notifications</span>
@@ -391,6 +397,20 @@
 </div>
 </body>
 <script>
+    let accessToken = "";
+    let userId = "";
+    let chatpartner = "all";
+
+    let sendChatMessageToServer = function (fromUserId, targetUserName, chatMessage){
+        let json = {
+            "fromUserId" : fromUserId,
+            "accessToken" : accessToken,
+            "targetUserName" : targetUserName,
+            "chatmessage" : chatMessage
+        };
+        ws.send("/chat/send "+JSON.stringify(json));
+    }
+
     let sendOwn = function (fromUserName, time, message, photoUrl)
     {
         var ul = document.getElementById("chatmessages");

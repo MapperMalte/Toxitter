@@ -73,13 +73,7 @@ public class DataAccessToReservoirEntity
     public void set(String field, Object value)
     {
         try {
-            if ( setters.get(field).getParameterTypes()[0].getName().equals("int") )
-            {
-                setters.get(field).invoke(object,Integer.valueOf((String)value));
-            } else
-            {
-                setters.get(field).invoke(object,value);
-            }
+            setters.get(field).invoke(object,value);
         } catch (IllegalAccessException e) {
             e.printStackTrace();
         } catch (InvocationTargetException e) {
@@ -89,8 +83,8 @@ public class DataAccessToReservoirEntity
 
     public static class DataAccessField
     {
-        String fieldName;
-        Class type;
+        public String fieldName;
+        public Class type;
     }
 
     public DiamondList<DataAccessField> getAllFields()

@@ -10,7 +10,7 @@ import static org.junit.Assert.assertEquals;
 
 public class MySqlStatementTest
 {
-    private ReservoirEntityDataPresenter getPresenterMock()
+    public static ReservoirEntityDataPresenter getPresenterMock()
     {
         TestReservoirEntity test = new TestReservoirEntity("Malte",9034);
         test.setId("#id");
@@ -19,12 +19,17 @@ public class MySqlStatementTest
         return depp;
     }
 
+    public void testCreateDatabaseStatementCorrect()
+    {
+        MySqlStatement stmt = MySqlStatement.getCreateDatabaseStatement();
+    }
+
     @Test
     public void testCreateTableStatementCorrect()
     {
         ReservoirEntityDataPresenter depp = getPresenterMock();
-
         MySqlStatement stmt = MySqlStatement.getCreateTableStatement(depp);
+
         assertEquals(
                 "CREATE TABLE `toxitter`.`testreservoir` (" +
                         "`id` VARCHAR(255) NOT NULL, " +

@@ -20,3 +20,16 @@ services:
       SERVICE_NAME: mysql-toxitter
     networks:
       - toxitter
+
+  phpmyadmin-toxitter:
+    depends_on:
+      - mysql-toxitter
+    image: phpmyadmin/phpmyadmin
+    restart: always
+    ports:
+      - '8080:80'
+    environment:
+      PMA_HOST: mysql-toxitter
+      MYSQL_ROOT_PASSWORD: secret
+    networks:
+      - toxitter
