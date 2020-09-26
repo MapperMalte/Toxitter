@@ -7,6 +7,7 @@ import Toxitter.Core.annotations.PushTo;
 import Toxitter.Core.http.ToxitterHttpHandler;
 import Toxitter.Core.http.ToxitterModelSignature;
 import Toxitter.Core.remake.dto.LoginSuccess;
+import Toxitter.Core.remake.dto.output.Transferrable;
 import Toxitter.Logging.Ullog;
 import Toxitter.Security.ToxitterSecurityMiddleware;
 import com.google.gson.Gson;

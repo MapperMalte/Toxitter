@@ -1,4 +1,4 @@
-package Toxitter.Core.realtime;
+package Toxitter.Core.remake.dto.output;
 
 public interface Transferrable
 {

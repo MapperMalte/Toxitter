@@ -5,7 +5,7 @@ import Toxitter.Core.UserReservoir;
 import Toxitter.Core.annotations.FetchAt;
 import Toxitter.Core.annotations.RequestParam;
 import Toxitter.Core.annotations.Route;
-import Toxitter.Core.realtime.Transferrable;
+import Toxitter.Core.remake.dto.output.Transferrable;
 import Toxitter.Persistence.annotations.Table;
 import com.google.gson.Gson;
 import Toxitter.Infusion.Umlauter;

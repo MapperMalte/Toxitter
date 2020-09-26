@@ -1,7 +1,7 @@
 package Toxitter.Core.remake.dto;
 
 import Toxitter.Core.annotations.PushTo;
-import Toxitter.Core.realtime.Transferrable;
+import Toxitter.Core.remake.dto.output.Transferrable;
 
 @PushTo(route = "/incomingLikeInfo", method = "notifyIncomingLike")
 public class Like implements Transferrable

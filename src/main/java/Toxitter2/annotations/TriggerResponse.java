@@ -1,6 +1,6 @@
 package Toxitter2.annotations;
 
-import Toxitter.Core.realtime.Transferrable;
+import Toxitter.Core.remake.dto.output.Transferrable;
 
 public @interface TriggerResponse
 {

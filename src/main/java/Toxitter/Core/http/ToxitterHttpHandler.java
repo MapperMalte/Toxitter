@@ -1,6 +1,6 @@
 package Toxitter.Core.http;
 
-import Toxitter.Core.realtime.Transferrable;
+import Toxitter.Core.remake.dto.output.Transferrable;
 import Toxitter.Infusion.Umlauter;
 import Toxitter.Logging.Ullog;
 import Toxitter.Core.LoginAndRegister;

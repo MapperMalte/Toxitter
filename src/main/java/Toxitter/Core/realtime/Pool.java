@@ -1,12 +1,13 @@
 package Toxitter.Core.realtime;
 
 import Toxitter.Core.User;
+import Toxitter.Core.remake.dto.output.Transferrable;
 import Toxitter.Model.Many;
 import theory.DiamondList;
 
 public class Pool
 {
-    private static final Many<String,Transferrable> undeliveredPool = new Many<>();
+    private static final Many<String, Transferrable> undeliveredPool = new Many<>();
     private static final Many<String,User> subscribersByTelekey = new Many<>();
 
     private final String telekey = "";
@@ -14,6 +15,19 @@ public class Pool
     public void subscribe(User user)
     {
         subscribersByTelekey.put(telekey,user);
+    }
+
+    public static void fetchForUser(String userId)
+    {
+        if ( OnlineStateManager.isUserOnline(userId) )
+        {
+            DiamondList<Transferrable> open = undeliveredPool.get(userId);
+            open.bottom();
+            while (!open.isPointerNull()) {
+                ToxitterWebsocketHandler.push(userId, open.getCurrent());
+                open.next();
+            }
+        }
     }
 
     public static void pullForUserIdIfUserOnline(String userId)

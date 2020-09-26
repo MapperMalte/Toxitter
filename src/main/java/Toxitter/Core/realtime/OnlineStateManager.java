@@ -23,6 +23,7 @@ public class OnlineStateManager
         websocketsByUserId.put(user.userId,webSocket);
         onlineUsers.put(webSocket.getRemoteSocketAddress().getHostString(),user);
         ping(user.userId);
+        Pool.fetchForUser(user.userId);
     }
 
     public static void addDisconnectHandler(String userId, DisconnectHandler disconnectHandler)

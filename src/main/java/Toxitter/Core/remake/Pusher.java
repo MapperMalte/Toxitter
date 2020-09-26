@@ -2,7 +2,7 @@ package Toxitter.Core.remake;
 
 import Toxitter.Core.User;
 import Toxitter.Core.realtime.OnlineStateManager;
-import Toxitter.Core.realtime.Transferrable;
+import Toxitter.Core.remake.dto.output.Transferrable;
 
 public class Pusher
 {
