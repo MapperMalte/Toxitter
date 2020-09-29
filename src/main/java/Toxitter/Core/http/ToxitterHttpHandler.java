@@ -1,9 +1,8 @@
 package Toxitter.Core.http;
 
-import Toxitter.Core.remake.dto.output.Transferrable;
-import Toxitter.Infusion.Umlauter;
+import Toxitter.Core.OUTPUT;
 import Toxitter.Logging.Ullog;
-import Toxitter.Core.LoginAndRegister;
+import Toxitter.Boxfresh.routes.LoginAndRegister;
 import Toxitter.Security.ToxitterSecurityMiddleware;
 import com.google.gson.Gson;
 import com.google.gson.JsonElement;
@@ -12,7 +11,7 @@ import com.sun.net.httpserver.Headers;
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
 import Toxitter.Core.ToxitterServer;
-import theory.ReplenisherStack;
+import Toxitter.Model.elemental.sky.ReplenisherStack;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -23,7 +22,6 @@ import java.util.Map;
 public class ToxitterHttpHandler implements HttpHandler
 {
     private void sendWithCode(HttpExchange httpExchange, String response, int code) throws IOException {
-        response = Umlauter.umlaut(response);
         Headers headers= httpExchange.getResponseHeaders();
         headers.add("Access-Control-Allow-Origin", "*");
         OutputStream outputStream = httpExchange.getResponseBody();
@@ -173,8 +171,8 @@ public class ToxitterHttpHandler implements HttpHandler
                 Ullog.put(ToxitterHttpHandler.class,"String-Response from Server: "+response);
                 sendStringAs200Success(httpExchange,(String)response);
             } else {
-                Ullog.put(ToxitterHttpHandler.class,"Transferrable-Response from Server: "+((Transferrable)response).asJSON());
-                sendStringAs200Success(httpExchange,((Transferrable)response).asJSON());
+                Ullog.put(ToxitterHttpHandler.class,"Transferrable-Response from Server: "+((OUTPUT)response).asJSON());
+                sendStringAs200Success(httpExchange,((OUTPUT)response).asJSON());
             }
         } catch (Exception e) {
             e.printStackTrace();

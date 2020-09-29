@@ -1,11 +1,11 @@
 package Toxitter.Model.test;
 
-import Toxitter.Model.ID;
-import Toxitter.Model.ReservoirEntity;
-import Toxitter.Persistence.annotations.Table;
+import Toxitter.Model.elemental.matter.ID;
+import Toxitter.Model.elemental.matter.ReservoirEntity;
+import Toxitter.Annotations.persistence.Persist;
 
-@Table(primaryKey = "id",tableName = "testreservoir")
-public class TestReservoirEntity extends ReservoirEntity<String>
+@Persist(primaryKey = "id",tableName = "testreservoir")
+public class TestReservoirEntity extends ReservoirEntity
 {
     private String id;
     private String name;
@@ -30,7 +30,7 @@ public class TestReservoirEntity extends ReservoirEntity<String>
     }
 
     @Override
-    public String getId() { return id; }
+    public ID getId() { return new ID(id); }
     public void setId(String id) { this.id = id; }
     public String getName() { return name; }
     public void setName(String name) { this.name = name; }

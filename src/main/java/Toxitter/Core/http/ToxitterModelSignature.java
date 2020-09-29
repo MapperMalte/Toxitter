@@ -1,6 +1,6 @@
 package Toxitter.Core.http;
 
-import theory.ReplenisherStack;
+import Toxitter.Model.elemental.sky.ReplenisherStack;
 
 import java.lang.reflect.Parameter;
 

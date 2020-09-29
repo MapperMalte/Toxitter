@@ -1,19 +1,18 @@
 package Toxitter.Core.realtime;
 
-import Toxitter.Core.LoginAndRegister;
+import Toxitter.Boxfresh.routes.LoginAndRegister;
 import Toxitter.Core.ToxitterServer;
-import Toxitter.Core.UserReservoir;
-import Toxitter.Core.annotations.PushTo;
+import Toxitter.Boxfresh.routes.UserReservoir;
+import Toxitter.Annotations.core.PushTo;
 import Toxitter.Core.http.ToxitterHttpHandler;
 import Toxitter.Core.http.ToxitterModelSignature;
-import Toxitter.Core.remake.dto.LoginSuccess;
-import Toxitter.Core.remake.dto.output.Transferrable;
+import Toxitter.Boxfresh.output.LoginSuccess;
+import Toxitter.Core.OUTPUT;
+import Toxitter.Boxfresh.state.OnlineStateManager;
 import Toxitter.Logging.Ullog;
 import Toxitter.Security.ToxitterSecurityMiddleware;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
-import examples.chat.FriendRequestDTO;
-import examples.chat.Reservoir;
 import org.java_websocket.WebSocket;
 import org.java_websocket.drafts.Draft;
 import org.java_websocket.drafts.Draft_6455;
@@ -56,7 +55,7 @@ public class ToxitterWebsocketHandler extends WebSocketServer
                 conn.getRemoteSocketAddress().getAddress().getHostAddress() + " entered the room!");
     }
 
-    public static void push(String userId, Transferrable outputDTO)
+    public static void push(String userId, OUTPUT outputDTO)
     {
         Ullog.put(ToxitterWebsocketHandler.class,"==== {PUSH! Called Targeting user with ID "+userId+" and outputDTO "+outputDTO.getClass().getName());
         if ( outputDTO.getClass().isAnnotationPresent(PushTo.class) )
@@ -65,7 +64,7 @@ public class ToxitterWebsocketHandler extends WebSocketServer
             PushTo pushTo = outputDTO.getClass().getAnnotation(PushTo.class);
             Ullog.put(ToxitterWebsocketHandler.class, "Pushing to client data "+outputDTO.asJSON()+" on route "+pushTo.route());
             Ullog.put(ToxitterWebsocketHandler.class,"UserId of target client: "+userId);
-            Ullog.put(ToxitterWebsocketHandler.class,"Associated websocket: "+OnlineStateManager.getWebsocketByUserId(userId));
+            Ullog.put(ToxitterWebsocketHandler.class,"Associated websocket: "+ OnlineStateManager.getWebsocketByUserId(userId));
             OnlineStateManager.getWebsocketByUserId(userId).send(pushTo.route()+" "+outputDTO.asJSON());
             Ullog.put(ToxitterWebsocketHandler.class,"PushTo Annotation for route "+pushTo.route()+" resolved. }====");
             OnlineStateManager.ping(userId);
@@ -78,7 +77,6 @@ public class ToxitterWebsocketHandler extends WebSocketServer
         System.out.println(conn + " has left the room!");
         OnlineStateManager.disconnect(conn);
     }
-    Reservoir<String, FriendRequestDTO> receivedUnresolvedFriendRequestes = new Reservoir<>();
 
     private boolean knownRoute(String route)
     {
@@ -128,7 +126,7 @@ public class ToxitterWebsocketHandler extends WebSocketServer
                     Ullog.put(ToxitterWebsocketHandler.class,"Response from Server: "+result);
                 } else
                 {
-                    Transferrable response = (Transferrable)(tms.getMethod().method.invoke(tms.toxiClass, args));
+                    OUTPUT response = (OUTPUT)(tms.getMethod().method.invoke(tms.toxiClass, args));
                     Ullog.put(ToxitterWebsocketHandler.class,"Response from Server: "+response.asJSON());
                     if ( response.getClass().equals(LoginSuccess.class) )
                     {

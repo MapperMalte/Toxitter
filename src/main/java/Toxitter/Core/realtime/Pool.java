@@ -1,42 +1,45 @@
 package Toxitter.Core.realtime;
 
-import Toxitter.Core.User;
-import Toxitter.Core.remake.dto.output.Transferrable;
-import Toxitter.Model.Many;
-import theory.DiamondList;
+import Toxitter.Boxfresh.routes.User;
+import Toxitter.Core.OUTPUT;
+import Toxitter.Boxfresh.state.OnlineStateManager;
+import Toxitter.Model.elemental.matter.ID;
+import Toxitter.Model.elemental.matter.Relation;
+import Toxitter.Model.elemental.matter.ReservoirEntity;
+import Toxitter.Model.elemental.sky.DiamondList;
 
-public class Pool
+public class Pool extends ReservoirEntity
 {
-    private static final Many<String, Transferrable> undeliveredPool = new Many<>();
-    private static final Many<String,User> subscribersByTelekey = new Many<>();
+    private static final Relation<User, OUTPUT> undeliveredPool = new Relation<>();
+    private static final Relation<Pool, User> subscribersByPool = new Relation<>();
 
-    private final String telekey = "";
+    private final ID telekey = new ID();
 
     public void subscribe(User user)
     {
-        subscribersByTelekey.put(telekey,user);
+        subscribersByPool.put(this,user);
     }
 
-    public static void fetchForUser(String userId)
+    public static void fetchForUser(User user)
     {
-        if ( OnlineStateManager.isUserOnline(userId) )
+        if ( OnlineStateManager.isUserOnline(user.userId) )
         {
-            DiamondList<Transferrable> open = undeliveredPool.get(userId);
+            DiamondList<OUTPUT> open = undeliveredPool.forwardGet(user);
             open.bottom();
             while (!open.isPointerNull()) {
-                ToxitterWebsocketHandler.push(userId, open.getCurrent());
+                ToxitterWebsocketHandler.push(user.userId, open.getCurrent());
                 open.next();
             }
         }
     }
 
-    public static void pullForUserIdIfUserOnline(String userId)
+    public static void pullForUserIdIfUserOnline(User user)
     {
-        if ( OnlineStateManager.isUserOnline(userId) ) {
-            DiamondList<Transferrable> open = undeliveredPool.get(userId);
+        if ( OnlineStateManager.isUserOnline(user.userId) ) {
+            DiamondList<OUTPUT> open = undeliveredPool.forwardGet(user);
             open.bottom();
             while (!open.isPointerNull()) {
-                ToxitterWebsocketHandler.push(userId, open.getCurrent());
+                ToxitterWebsocketHandler.push(user.userId, open.getCurrent());
                 open.removeCurrent();
             }
         }
@@ -44,11 +47,11 @@ public class Pool
 
     public void pull()
     {
-        DiamondList<User> subscribers = subscribersByTelekey.get(telekey);
+        DiamondList<User> subscribers = subscribersByPool.forwardGet(this);
         subscribers.bottom();
         while (!subscribers.isPointerNull())
         {
-            pullForUserIdIfUserOnline(subscribers.getCurrent().userId);
+            pullForUserIdIfUserOnline(subscribers.getCurrent());
             subscribers.next();
         }
     }
@@ -56,9 +59,9 @@ public class Pool
      * Pushes the data to all users that subscribed to this pool
      * @param tda
      */
-    public void push(Transferrable tda)
+    public void push(OUTPUT tda)
     {
-        DiamondList<User> subscribers = subscribersByTelekey.get(telekey);
+        DiamondList<User> subscribers = subscribersByPool.forwardGet(this);
         subscribers.bottom();
         while (!subscribers.isPointerNull())
         {
@@ -68,9 +71,8 @@ public class Pool
                 ToxitterWebsocketHandler.push(userId, tda);
             } else
             {
-                undeliveredPool.put(userId,tda);
+                undeliveredPool.put(subscribers.getCurrent(),tda);
             }
-
             subscribers.next();
         }
     }

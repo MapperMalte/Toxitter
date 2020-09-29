@@ -1,6 +1,6 @@
 package Toxitter.Security;
 
-import theory.DiamondList;
+import Toxitter.Model.elemental.sky.DiamondList;
 
 import java.util.TreeMap;
 

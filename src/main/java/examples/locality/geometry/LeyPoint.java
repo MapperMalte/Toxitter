@@ -1,6 +1,6 @@
 package examples.locality.geometry;
 
-import theory.DiamondList;
+import Toxitter.Model.elemental.sky.DiamondList;
 
 public class LeyPoint {
     public double x;

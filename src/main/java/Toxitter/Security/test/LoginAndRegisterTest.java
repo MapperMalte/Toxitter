@@ -1,7 +1,7 @@
 package Toxitter.Security.test;
 
-import Toxitter.Core.UserReservoir;
-import Toxitter.Core.LoginAndRegister;
+import Toxitter.Boxfresh.routes.UserReservoir;
+import Toxitter.Boxfresh.routes.LoginAndRegister;
 import Toxitter.Security.UserPrivileges;
 import org.junit.Test;
 
@@ -12,7 +12,7 @@ public class LoginAndRegisterTest
     @Test
     public void testTokenHub()
     {
-        System.out.println("---- SecruityTest");
+        System.out.println("---- SecurityTest");
         System.out.println("testTokenHub");
         String userId = UserReservoir.registerUser("Malte","mail","drölf");
         String unprivilegedUserId = UserReservoir.registerUser("Peter","mail2","vierzehn");

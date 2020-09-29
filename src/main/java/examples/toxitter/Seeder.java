@@ -1,7 +1,7 @@
 package examples.toxitter;
 
-import Toxitter.Core.User;
-import Toxitter.Core.UserReservoir;
+import Toxitter.Boxfresh.routes.User;
+import Toxitter.Boxfresh.routes.UserReservoir;
 import Toxitter.Security.UserPrivileges;
 
 public class Seeder
@@ -70,52 +70,5 @@ public class Seeder
         userId = UserReservoir.registerUser("Mister X","mrx@gmx.de","HAHAHAHAHA");
         user = UserReservoir.getUserByUserId(userId);
         user.photoUrl = "https://randomuser.me/api/portraits/men/47.jpg";
-    }
-
-    public static void seedSamplePostsWithReactions()
-    {
-        String gottPharaohId = UserReservoir.getUserByMail("gott@pharaoh.de").getId();
-        String malteId = UserReservoir.getUserByMail("malte@gmx.de").getId();
-        String niklasId = UserReservoir.getUserByMail("nkoehler@gmx.de").getId();
-        String trumpId = UserReservoir.getUserByMail("trump@hell.covfefe").getId();
-
-        Post p1 = Post.create (
-                gottPharaohId,
-                "Liebe Gemeinde",
-                "Der Gott-Pharaoh wünscht euch allen schöne Ostern. \n" +
-                        "Mögen tausend Kristalle sich in eurem Leben zu Rosen entfalten. \n" +
-                        "Wir werden eine neue Ära des Friedens und des Wohlstands einleiten.\n "
-        );
-        p1.react(trumpId, "heart");
-        p1.react(malteId, "satisfied");
-        p1.react(niklasId, "rage");
-
-        Post p2 = Post.create(
-                niklasId,
-                "DOOMED",
-                "Das ist megamäßig doomed dumm. Das Überunternehmen des Grauens hat gesprochen, " +
-                        "und an seiner Spitze steht unser geliebter Gott-Pharaoh. Wollen wir uns nicht endlich" +
-                        " gegen unsere gewaltsamen Unterdrücker auflehnen? Es ist im Gewand, der Sicherheit, " +
-                        "dass wir unsere Freiheiten aufgeben mussten. Dass wir nun mit Drohnengeld zahlen und" +
-                        " digitale Halsbänder tragen. Dass sie mit Prothesen unseren Verstand gekapert haben! " +
-                        "Es ist Zeit, das wir uns auflehnen!");
-        p2.react(trumpId, "rage");
-
-        Post p3 = Post.create(
-                trumpId,
-                "FAKE NEWS!",
-                "FAKE NEWS! FEWK NEWS @Niklas.");
-        p3.react(gottPharaohId, "heart");
-        p3.react(malteId, "cry");
-        p3.react(niklasId, "cry");
-
-        Post p4 = Post.create(
-                malteId,
-                "Der Schatten des Abendgleidfüßlers",
-                "Der Schatten des Abendgleidfüßlers \n" +
-                        "Sang abends sein Abendlied für das\n "+
-                        "MAN ICH BIN DER ZERBÜRSTER"
-        );
-        p4.react(niklasId, "flushed");
     }
 }

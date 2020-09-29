@@ -1,8 +1,8 @@
 package examples.locality.geometry;
 
-import Toxitter.Model.ReservoirEntity;
+import Toxitter.Model.elemental.matter.ReservoirEntity;
 
-public class Coordinate extends ReservoirEntity<Integer>
+public class Coordinate extends ReservoirEntity
 {
     private double x;
     private double y;
@@ -21,15 +21,5 @@ public class Coordinate extends ReservoirEntity<Integer>
 
     public void setX(double x) {
         this.x = x;
-    }
-
-    @Override
-    public Integer getId() {
-        return null;
-    }
-
-    @Override
-    public void setId(Integer key) {
-
     }
 }

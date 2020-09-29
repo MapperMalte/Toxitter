@@ -1,15 +1,10 @@
 package Toxitter.Model.test;
 
-import Toxitter.Boxfresh.NirvanaQueueSleeper;
-import Toxitter.Model.OneToMany;
-import Toxitter.Model.ReservoirEntityList;
-import org.junit.Test;
-import theory.DiamondList;
-
 import static org.junit.Assert.assertEquals;
 
 public class OneToManyTest
 {
+    /*
     @Test
     public void testInsertMultipleAndRead()
     {
@@ -58,5 +53,5 @@ public class OneToManyTest
         ids.putput(1,gott.getId(),peter);
         assertEquals(ids.getget(1,gott.getId()).getName(),"Peter");
 
-    }
+    }*/
 }

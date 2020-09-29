@@ -1,25 +1,11 @@
 package examples.locality;
 
-import Toxitter.Boxfresh.Email;
-import Toxitter.Core.annotations.FetchAt;
-import Toxitter.Model.ReservoirEntity;
-import Toxitter.Persistence.annotations.Table;
+import Toxitter.Annotations.core.FetchAt;
+import Toxitter.Model.elemental.matter.ReservoirEntity;
+import Toxitter.Annotations.persistence.Persist;
 
-@FetchAt(route="post")
-@Table(primaryKey = "id", tableName = "user")
-public class User extends ReservoirEntity<String>
+@FetchAt(route="user")
+@Persist(primaryKey = "id", tableName = "user")
+public class User extends ReservoirEntity
 {
-    private String id;
-    private Email mail;
-
-    @Override
-    public String getId()
-    {
-        return id;
-    }
-
-    public void setId(String id)
-    {
-        this.id = id;
-    }
 }

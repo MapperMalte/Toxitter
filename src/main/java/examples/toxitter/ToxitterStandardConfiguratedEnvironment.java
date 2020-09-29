@@ -1,8 +1,12 @@
 package examples.toxitter;
 
+import Toxitter.Boxfresh.routes.LoginAndRegister;
+import Toxitter.Boxfresh.routes.User;
+import Toxitter.Boxfresh.routes.UserReservoir;
 import Toxitter.Core.*;
-import Toxitter.Core.realtime.Chat;
-import Toxitter.Core.realtime.Friends;
+import Toxitter.Boxfresh.routes.Chat;
+import Toxitter.Boxfresh.routes.Friends;
+import Toxitter.Core.ToxitterClassRouter;
 
 public class ToxitterStandardConfiguratedEnvironment
 {
@@ -11,16 +15,12 @@ public class ToxitterStandardConfiguratedEnvironment
         Seeder.seedServeStandardModels();
         Seeder.seedAdmin("adminpwd");
         Seeder.seedStandardTestUsers();
-        Seeder.seedSamplePostsWithReactions();
     }
 
     public static void serveStandardModels()
     {
-        ToxitterClassRouter.serve(Post.class);
-        ToxitterClassRouter.serve(Feed.class);
         ToxitterClassRouter.serve(UserReservoir.class);
         ToxitterClassRouter.serve(LoginAndRegister.class);
-        ToxitterClassRouter.serve(Notifications.class);
         ToxitterClassRouter.serve(User.class);
         ToxitterClassRouter.serve(Friends.class);
         ToxitterClassRouter.serve(Chat.class);

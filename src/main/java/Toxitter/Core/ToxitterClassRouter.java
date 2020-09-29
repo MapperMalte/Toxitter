@@ -1,10 +1,11 @@
 package Toxitter.Core;
 
-import Toxitter.Core.annotations.FetchAt;
+import Toxitter.Annotations.core.FetchAt;
+import Toxitter.Boxfresh.routes.LoginAndRegister;
+import Toxitter.Annotations.route.RequestParam;
 import Toxitter.Core.http.ToxitterModelSignature;
-import Toxitter.Security.annotations.Protected;
-import Toxitter.Core.annotations.RequestParam;
-import Toxitter.Core.annotations.Route;
+import Toxitter.Annotations.security.Protected;
+import Toxitter.Annotations.core.Route;
 import Toxitter.Logging.Ullog;
 
 import java.lang.reflect.Method;
