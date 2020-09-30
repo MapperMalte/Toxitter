@@ -1,7 +1,7 @@
 package Toxitter.Connection;
 
-import Toxitter.Core.http.ToxitterModelSignature;
-import Toxitter.Model.elemental.sky.DiamondList;
+import Toxitter.Core.Elemental.aether.ToxitterModelSignature;
+import Toxitter.Core.Elemental.wind.DiamondList;
 
 import java.util.Date;
 

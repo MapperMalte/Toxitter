@@ -1,8 +1,6 @@
 package Toxitter.Boxfresh.state;
 
 import Toxitter.Boxfresh.routes.User;
-import Toxitter.Core.realtime.DisconnectHandler;
-import Toxitter.Core.realtime.Pool;
 import org.java_websocket.WebSocket;
 
 import java.util.TreeMap;

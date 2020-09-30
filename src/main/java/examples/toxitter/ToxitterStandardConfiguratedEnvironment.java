@@ -3,10 +3,10 @@ package examples.toxitter;
 import Toxitter.Boxfresh.routes.LoginAndRegister;
 import Toxitter.Boxfresh.routes.User;
 import Toxitter.Boxfresh.routes.UserReservoir;
-import Toxitter.Core.*;
 import Toxitter.Boxfresh.routes.Chat;
 import Toxitter.Boxfresh.routes.Friends;
-import Toxitter.Core.ToxitterClassRouter;
+import Toxitter.Core.Elemental.aether.ToxitterClassRouter;
+import Toxitter.Core.Elemental.aether.ToxitterServer;
 
 public class ToxitterStandardConfiguratedEnvironment
 {

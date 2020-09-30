@@ -3,7 +3,7 @@ package examples.toxitter.test;
 import Toxitter.Boxfresh.routes.User;
 import Toxitter.Boxfresh.routes.UserReservoir;
 import Toxitter.Logging.Ullog;
-import Toxitter.Model.elemental.matter.ID;
+import Toxitter.Core.Elemental.earth.ID;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;

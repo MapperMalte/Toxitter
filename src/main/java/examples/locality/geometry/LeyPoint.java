@@ -1,6 +1,6 @@
 package examples.locality.geometry;
 
-import Toxitter.Model.elemental.sky.DiamondList;
+import Toxitter.Core.Elemental.wind.DiamondList;
 
 public class LeyPoint {
     public double x;

@@ -1,9 +1,9 @@
 package Toxitter.Boxfresh.routes;
 
-import Toxitter.Model.elemental.matter.ID;
-import Toxitter.Model.elemental.matter.ReservoirEntity;
+import Toxitter.Core.Elemental.earth.ID;
+import Toxitter.Core.Elemental.earth.ReservoirEntity;
 import Toxitter.Annotations.core.FetchAt;
-import Toxitter.Annotations.persistence.Persist;
+import Toxitter.Core.Elemental.earth.Persist;
 import Toxitter.Annotations.security.Protected;
 import Toxitter.Annotations.core.Route;
 

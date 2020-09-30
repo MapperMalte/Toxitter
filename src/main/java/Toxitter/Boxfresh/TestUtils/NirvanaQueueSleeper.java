@@ -1,10 +1,9 @@
 package Toxitter.Boxfresh.TestUtils;
 
-import Toxitter.Model.elemental.wind.QueueSleeper;
+import Toxitter.Core.Elemental.water.QueueSleeper;
 
 public class NirvanaQueueSleeper<K extends Comparable, V> extends QueueSleeper<K, V>
 {
-
     @Override
     public void putToSleep(K key, V value) {
 

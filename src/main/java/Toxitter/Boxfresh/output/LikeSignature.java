@@ -1,6 +1,6 @@
 package Toxitter.Boxfresh.output;
 
-import Toxitter.Core.OUTPUT;
+import Toxitter.Core.Elemental.water.OUTPUT;
 
 public class LikeSignature extends OUTPUT
 {

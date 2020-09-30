@@ -1,14 +1,11 @@
 package Toxitter.Connection;
 
-import Toxitter.Core.Toxitter;
 import Toxitter.Logging.Ullog;
 import Toxitter.Security.ToxitterSecurityMiddleware;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import com.sun.jndi.toolkit.url.Uri;
 
 import java.util.Map;
-import java.util.TreeMap;
 
 public abstract class Middleware
 {

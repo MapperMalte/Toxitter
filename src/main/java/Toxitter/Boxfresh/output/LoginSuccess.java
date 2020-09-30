@@ -1,7 +1,7 @@
 package Toxitter.Boxfresh.output;
 
 import Toxitter.Annotations.core.PushTo;
-import Toxitter.Core.OUTPUT;
+import Toxitter.Core.Elemental.water.OUTPUT;
 import com.google.gson.Gson;
 
 @PushTo(route = "/login/success",method="onLoginSuccess")

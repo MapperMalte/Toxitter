@@ -1,7 +1,7 @@
 package Toxitter.Boxfresh.routes;
 
 import Toxitter.Annotations.core.FetchAt;
-import Toxitter.Core.realtime.ToxitterWebsocketHandler;
+import Toxitter.Core.Elemental.aether.ToxitterWebsocketHandler;
 import Toxitter.Annotations.core.Route;
 import Toxitter.Boxfresh.output.ChatMessage;
 import Toxitter.Annotations.security.Protected;

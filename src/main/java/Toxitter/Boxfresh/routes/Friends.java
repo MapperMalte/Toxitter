@@ -1,11 +1,11 @@
 package Toxitter.Boxfresh.routes;
 
 import Toxitter.Annotations.core.FetchAt;
-import Toxitter.Core.realtime.ToxitterWebsocketHandler;
+import Toxitter.Core.Elemental.aether.ToxitterWebsocketHandler;
 import Toxitter.Annotations.core.Route;
 import Toxitter.Boxfresh.output.FriendRequestAccepted;
 import Toxitter.Boxfresh.output.FriendRequestReceived;
-import Toxitter.Model.elemental.matter.ReservoirEntity;
+import Toxitter.Core.Elemental.earth.ReservoirEntity;
 import Toxitter.Annotations.security.Protected;
 
 @FetchAt(route = "friends")
