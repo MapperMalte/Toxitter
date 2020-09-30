@@ -1,6 +1,6 @@
 package Toxitter.Annotations.security;
 
-import Toxitter.Core.Elemental.earth.ReservoirEntity;
+import Toxitter.Elemental.earth.ReservoirEntity;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;

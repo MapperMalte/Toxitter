@@ -1,11 +1,11 @@
 package Toxitter.Boxfresh.routes;
 
-import Toxitter.Core.Elemental.earth.Relation;
-import Toxitter.Core.Elemental.earth.ReservoirEntity;
-import Toxitter.Core.Elemental.earth.ReservoirEntityList;
-import Toxitter.Core.Elemental.fire.ai_stimulanziae.Dopamine;
-import Toxitter.Core.Elemental.fire.ai_stimulanziae.GABA;
-import Toxitter.Core.Elemental.fire.StimulatesAI;
+import Toxitter.Elemental.earth.Relation;
+import Toxitter.Elemental.earth.ReservoirEntity;
+import Toxitter.Elemental.earth.ReservoirEntityList;
+import Toxitter.Elemental.fire.ai_stimulanziae.Dopamine;
+import Toxitter.Elemental.fire.ai_stimulanziae.GABA;
+import Toxitter.Elemental.fire.StimulatesAI;
 
 @StimulatesAI
 public class Like extends ReservoirEntity

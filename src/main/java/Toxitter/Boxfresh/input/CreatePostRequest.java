@@ -1,6 +1,6 @@
 package Toxitter.Boxfresh.input;
 
-import Toxitter.Core.Elemental.INPUT;
+import Toxitter.Elemental.Elemental.INPUT;
 
 public class CreatePostRequest extends INPUT
 {

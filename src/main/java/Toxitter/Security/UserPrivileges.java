@@ -1,6 +1,6 @@
 package Toxitter.Security;
 
-import Toxitter.Core.Elemental.wind.DiamondList;
+import Toxitter.Elemental.wind.DiamondList;
 
 import java.util.TreeMap;
 

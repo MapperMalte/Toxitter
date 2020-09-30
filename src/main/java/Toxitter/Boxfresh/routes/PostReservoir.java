@@ -1,6 +1,6 @@
 package Toxitter.Boxfresh.routes;
 
-import Toxitter.Core.Elemental.earth.Relation;
+import Toxitter.Elemental.earth.Relation;
 
 public class PostReservoir
 {

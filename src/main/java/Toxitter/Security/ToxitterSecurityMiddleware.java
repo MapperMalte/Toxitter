@@ -1,8 +1,6 @@
 package Toxitter.Security;
 
-import Toxitter.Connection.Middleware;
-
-import java.io.IOException;
+import Toxitter.Elemental.aether.Middleware;
 
 public class ToxitterSecurityMiddleware extends Middleware
 {

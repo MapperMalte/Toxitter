@@ -1,7 +1,7 @@
 package Toxitter.Boxfresh.relations;
 
 import Toxitter.Boxfresh.routes.User;
-import Toxitter.Core.Elemental.earth.SymmetricRelation;
+import Toxitter.Elemental.earth.SymmetricRelation;
 
 public class Friendslist
 {
