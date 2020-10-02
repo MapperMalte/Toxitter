@@ -1,8 +1,8 @@
 package Examples.locality;
 
-import Toxitter.Annotations.core.FetchAt;
-import Toxitter.Elemental.earth.ReservoirEntity;
-import Toxitter.Elemental.earth.Persist;
+import Avatar.Annotations.core.FetchAt;
+import Avatar.Elemental.earth.ReservoirEntity;
+import Avatar.Elemental.earth.Persist;
 
 @FetchAt(route="user")
 @Persist(primaryKey = "id", tableName = "user")

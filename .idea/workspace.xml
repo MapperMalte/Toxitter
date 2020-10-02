@@ -23,136 +23,83 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1a6799fa-3d81-404d-97ed-2e1ce054a946" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_tensorflow_libtensorflow_1_15_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_tensorflow_libtensorflow_jni_1_15_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_tensorflow_tensorflow_1_15_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Elemental/earth/test/RelationTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Elemental/fire/AI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Elemental/fire/ai_stimulanziae/Connectin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Elemental/fire/ai_stimulanziae/Investin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Elemental/fire/ai_stimulanziae/Lymbidin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Elemental/fire/ai_stimulanziae/Primidin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Elemental/wind/BookOfRass.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Elemental/earth/BookOfGrabbadur.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Elemental/fire/BookOfSamrosh.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Elemental/fire/ai_stimulanziae/Noveltin.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Elemental/fire/homunculus/Neuron.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Elemental/fire/homunculus/test/CostFunction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Elemental/fire/homunculus/test/NeuronTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_tensorflow_libtensorflow_1_15_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_tensorflow_libtensorflow_jni_1_15_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_tensorflow_tensorflow_1_15_0.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ToxitterBackend2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ToxitterBackend2.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Annotations/security/Owned.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Annotations/security/Owned.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Boxfresh/TestUtils/NirvanaQueueSleeper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Boxfresh/testutils/NirvanaQueueSleeper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Examples/toxitter/test/UllTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Examples/toxitter/test/UllTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Annotations/core/TeleReservoir.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Boxfresh/ToxitterStandardConfiguratedEnvironment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Boxfresh/ToxitterStandardConfiguratedEnvironment.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Boxfresh/input/CreatePostRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Boxfresh/input/CreatePostRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Boxfresh/output/ChatMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Boxfresh/output/ChatMessage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Boxfresh/output/FriendRequestAccepted.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Boxfresh/output/FriendRequestAccepted.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Boxfresh/output/FriendRequestReceived.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Boxfresh/output/FriendRequestReceived.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Boxfresh/output/LikeReceived.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Boxfresh/output/LikeReceived.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Boxfresh/output/LikeSignature.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Boxfresh/output/LikeSignature.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Boxfresh/output/LoginSuccess.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Boxfresh/output/LoginSuccess.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Boxfresh/output/PostCreated.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Boxfresh/output/PostCreated.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Boxfresh/relations/Friendslist.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Boxfresh/relations/Friendslist.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Boxfresh/routes/Chat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Boxfresh/routes/Chat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Boxfresh/routes/Friends.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Boxfresh/routes/Friends.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Boxfresh/routes/Like.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Boxfresh/routes/Like.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Boxfresh/routes/LoginAndRegister.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Boxfresh/routes/LoginAndRegister.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Boxfresh/routes/Post.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Boxfresh/routes/Post.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Boxfresh/routes/PostReservoir.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Boxfresh/routes/PostReservoir.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Boxfresh/routes/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Boxfresh/routes/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Boxfresh/routes/UserReservoir.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Boxfresh/routes/UserReservoir.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Connection/Middleware.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Elemental/aether/Middleware.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Connection/ToxitterSessionMiddleware.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Connection/ToxitterSessionReservoir.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Elemental/aether/ToxitterSessionReservoir.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Core/Elemental/aether/ToxitterClassRouter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Elemental/aether/ToxitterClassRouter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Core/Elemental/aether/ToxitterHttpHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Elemental/aether/ToxitterHttpHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Core/Elemental/aether/ToxitterModelSignature.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Elemental/aether/ToxitterModelSignature.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Core/Elemental/aether/ToxitterServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Elemental/aether/ToxitterServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Core/Elemental/aether/ToxitterWebsocketHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Elemental/aether/ToxitterWebsocketHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Core/Elemental/earth/ID.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Elemental/earth/ID.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Core/Elemental/earth/Persist.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Elemental/earth/Persist.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Core/Elemental/earth/Relation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Elemental/earth/Relation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Core/Elemental/earth/Reservoir.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Elemental/earth/Reservoir.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Core/Elemental/earth/ReservoirEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Elemental/earth/ReservoirEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Core/Elemental/earth/ReservoirEntityList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Elemental/earth/ReservoirEntityList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Core/Elemental/earth/SymmetricRelation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Elemental/earth/SymmetricRelation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Core/Elemental/earth/persistence/mysql/MySql.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Elemental/earth/persistence/mysql/MySql.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Core/Elemental/earth/persistence/mysql/MySqlQueueOneToManySleeper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Elemental/earth/persistence/mysql/MySqlQueueOneToManySleeper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Core/Elemental/earth/persistence/mysql/MySqlQueueOneToOneSleeper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Elemental/earth/persistence/mysql/MySqlQueueOneToOneSleeper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Core/Elemental/earth/persistence/mysql/MySqlStatement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Elemental/earth/persistence/mysql/MySqlStatement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Core/Elemental/earth/persistence/mysql/MySqlTypeTransformer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Elemental/earth/persistence/mysql/MySqlTypeTransformer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Core/Elemental/earth/persistence/mysql/RelationQueueSleeper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Elemental/earth/persistence/mysql/RelationQueueSleeper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Core/Elemental/earth/persistence/mysql/test/MySqlQueueSleeperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Elemental/earth/persistence/mysql/test/MySqlQueueSleeperTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Core/Elemental/earth/persistence/mysql/test/MySqlResultToModelTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Elemental/earth/persistence/mysql/test/MySqlResultToModelTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Core/Elemental/earth/persistence/mysql/test/MySqlStatementTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Elemental/earth/persistence/mysql/test/MySqlStatementTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Core/Elemental/earth/persistence/mysql/test/MySqlTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Elemental/earth/persistence/mysql/test/MySqlTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Core/Elemental/earth/persistence/mysql/test/OneToOneRelationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Elemental/earth/persistence/mysql/test/OneToOneRelationTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Core/Elemental/earth/persistence/simpledb/SimpleDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Elemental/earth/persistence/simpledb/SimpleDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Core/Elemental/earth/persistence/simpledb/SimpleDBQueueSleeper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Elemental/earth/persistence/simpledb/SimpleDBQueueSleeper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Core/Elemental/earth/persistence/simpledb/SimpleDBTypeTransformer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Elemental/earth/persistence/simpledb/SimpleDBTypeTransformer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Core/Elemental/earth/persistence/simpledb/test/SimpleDBTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Elemental/earth/persistence/simpledb/test/SimpleDBTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Core/Elemental/earth/persistence/test/DataAccessTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Elemental/earth/persistence/test/DataAccessTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Core/Elemental/earth/persistence/test/ReservoirEntityDataPresenterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Elemental/earth/persistence/test/ReservoirEntityDataPresenterTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Core/Elemental/fire/CostFunction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Elemental/fire/CostFunction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Core/Elemental/fire/Dopamine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Elemental/fire/Dopamine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Core/Elemental/fire/NeuroCocktail.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Elemental/fire/NeuroCocktail.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Core/Elemental/fire/Stimulantia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Elemental/fire/Stimulantia.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Core/Elemental/fire/StimulantiaGraph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Elemental/fire/StimulantiaGraph.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Core/Elemental/fire/StimulatesAI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Elemental/fire/StimulatesAI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Core/Elemental/fire/User_Stimulus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Elemental/fire/User_Stimulus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Core/Elemental/fire/ai_stimulanziae/Amygdalin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Elemental/fire/ai_stimulanziae/Amygdalin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Core/Elemental/fire/ai_stimulanziae/Antipamin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Elemental/fire/ai_stimulanziae/Antipamin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Core/Elemental/fire/ai_stimulanziae/Connectidin.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Core/Elemental/fire/ai_stimulanziae/Cortexidin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Elemental/fire/ai_stimulanziae/Cortexidin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Core/Elemental/fire/ai_stimulanziae/Dopamine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Elemental/fire/ai_stimulanziae/Dopamine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Core/Elemental/fire/ai_stimulanziae/Echsidin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Elemental/fire/ai_stimulanziae/Echsidin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Core/Elemental/fire/ai_stimulanziae/Entropin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Elemental/fire/ai_stimulanziae/Entropin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Core/Elemental/fire/ai_stimulanziae/GABA.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Elemental/fire/ai_stimulanziae/GABA.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Core/Elemental/fire/ai_stimulanziae/Narcidin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Elemental/fire/ai_stimulanziae/Narcidin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Core/Elemental/fire/ai_stimulanziae/Oxytocin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Elemental/fire/ai_stimulanziae/Oxytocin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Core/Elemental/fire/ai_stimulanziae/Serotonin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Elemental/fire/ai_stimulanziae/Serotonin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Core/Elemental/fire/ai_stimulanziae/Tribalidin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Elemental/fire/ai_stimulanziae/Tribalidin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Core/Elemental/fire/gods/DemocracyCrushingAI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Elemental/fire/gods/DemocracyCrushingAI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Core/Elemental/fire/gods/GodAI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Elemental/fire/gods/GodAI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Core/Elemental/fire/gods/Session.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Elemental/fire/Session.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Core/Elemental/fire/gods/impl/Connectidin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Elemental/fire/Connectidin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Core/Elemental/fire/gods/impl/CrushDemocracyCostFunction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Elemental/fire/gods/impl/CrushDemocracyCostFunction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Core/Elemental/water/DataAccessToReservoirEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Elemental/water/DataAccessToReservoirEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Core/Elemental/water/DiamondListAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Elemental/water/DiamondListAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Core/Elemental/water/INPUT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Elemental/water/INPUT.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Core/Elemental/water/OUTPUT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Elemental/water/OUTPUT.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Core/Elemental/water/QueueSleeper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Elemental/water/QueueSleeper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Core/Elemental/water/ReservoirEntityAnalyzer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Elemental/water/ReservoirEntityAnalyzer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Core/Elemental/water/ReservoirEntityDataPresenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Elemental/water/ReservoirEntityDataPresenter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Core/Elemental/water/Stream.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Elemental/water/Stream.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Core/Elemental/water/TypeTransformer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Elemental/water/TypeTransformer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Core/Elemental/wind/DiamondList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Elemental/wind/DiamondList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Core/Elemental/wind/Pool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Elemental/water/Pool.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Core/Elemental/wind/ReplenisherStack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Elemental/wind/ReplenisherStack.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Core/Elemental/wind/SimpleStack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Elemental/wind/SimpleStack.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Core/Elemental/wind/TemporalQueue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Elemental/wind/TemporalQueue.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Core/remake/socket.refactor.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Elemental/socket.refactor.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Core/remake/toxitter.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Elemental/toxitter.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Security/ToxitterSecurityMiddleware.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Security/ToxitterSecurityMiddleware.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Security/UserPrivileges.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Security/UserPrivileges.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/test/OneToManyTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Test/OneToManyTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/test/ReservoirTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Test/ReservoirTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/test/TemporalQueueTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Test/TemporalQueueTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/test/TestReservoirEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Test/TestReservoirEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/examples/locality/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Examples/locality/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/examples/locality/data/plz-1stellig.geojson" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Examples/locality/data/plz-1stellig.geojson" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/examples/locality/demo/MapDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Examples/locality/demo/MapDemo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/examples/locality/geometry/Coordinate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Examples/locality/geometry/Coordinate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/examples/locality/geometry/LeyMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Examples/locality/geometry/LeyMap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/examples/locality/geometry/LeyPoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Examples/locality/geometry/LeyPoint.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/examples/locality/test/TestJsonReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Examples/locality/test/TestJsonReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/examples/toxitter/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Boxfresh/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/examples/toxitter/Seeder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Boxfresh/Seeder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/examples/toxitter/ToxitterStandardConfiguratedEnvironment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Boxfresh/ToxitterStandardConfiguratedEnvironment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/examples/toxitter/UI/char.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Examples/toxitter/UI/char.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/examples/toxitter/UI/css/grid.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Examples/toxitter/UI/css/grid.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/examples/toxitter/UI/css/screen.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Examples/toxitter/UI/css/screen.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/examples/toxitter/UI/friendslist.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Examples/toxitter/UI/friendslist.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/examples/toxitter/UI/img/chat.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Examples/toxitter/UI/img/chat.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/examples/toxitter/UI/img/friends.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Examples/toxitter/UI/img/friends.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/examples/toxitter/UI/img/notifications.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Examples/toxitter/UI/img/notifications.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/examples/toxitter/commands_client.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Examples/toxitter/commands_client.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/examples/toxitter/commands_server.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Examples/toxitter/commands_server.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/examples/toxitter/test/UllTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Examples/toxitter/test/UllTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Boxfresh/state/OnlineStateManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Boxfresh/state/OnlineStateManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Elemental/aether/Middleware.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Elemental/aether/Middleware.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Elemental/aether/ToxitterClassRouter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Elemental/aether/ToxitterClassRouter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Elemental/aether/ToxitterHttpHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Elemental/aether/ToxitterHttpHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Elemental/aether/ToxitterServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Elemental/aether/BookOfGorlon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Elemental/aether/ToxitterWebsocketHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Elemental/aether/ToxitterWebsocketHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Elemental/fire/AI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Elemental/fire/AI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Elemental/fire/Connectidin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Elemental/fire/classical/Connectidin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Elemental/fire/CostFunction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Elemental/fire/Stimulans_CostFunction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Elemental/fire/Dopamine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Elemental/fire/classical/Dopamine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Elemental/fire/NeuroCocktail.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Elemental/fire/NeuroCocktail.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Elemental/fire/Session.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Elemental/fire/Session.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Elemental/fire/User_Stimulus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Elemental/fire/UserReactionToReservoirEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Elemental/fire/ai_stimulanziae/Antipamin.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Elemental/fire/ai_stimulanziae/Connectin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Elemental/fire/ai_stimulanziae/Connectin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Elemental/fire/ai_stimulanziae/Cortexidin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Elemental/fire/ai_stimulanziae/Cortexidin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Elemental/fire/ai_stimulanziae/Lymbidin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Elemental/fire/ai_stimulanziae/Lymbidin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Elemental/fire/ai_stimulanziae/Tribalidin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Elemental/fire/ai_stimulanziae/Tribalidin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Elemental/fire/gods/DemocracyCrushingAI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Elemental/fire/homunculus/DemocracyCrushingAI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Elemental/fire/gods/GodAI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Elemental/fire/gods/impl/CrushDemocracyCostFunction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Elemental/fire/homunculus/impl/CrushDemocracyCostFunction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Elemental/wind/BookOfRass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Elemental/wind/BookOfRass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Logging/Ullog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Elemental/water/BookOfIlaan.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Toxitter/Security/LoginHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toxitter/Security/LoginHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Toxitter/Annotations/core/TeleReservoir.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Toxitter/Annotations/persistence/Persist.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Toxitter/Annotations/route/Stream.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Toxitter/Boxfresh/input/CreatePostRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Toxitter/Boxfresh/input/CreatePostRequest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Toxitter/Boxfresh/output/ChatMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Toxitter/Boxfresh/output/ChatMessage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Toxitter/Boxfresh/output/FriendRequestAccepted.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Toxitter/Boxfresh/output/FriendRequestAccepted.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Toxitter/Boxfresh/output/FriendRequestReceived.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Toxitter/Boxfresh/output/FriendRequestReceived.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Toxitter/Boxfresh/output/Like.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Toxitter/Boxfresh/output/LikeSignature.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Toxitter/Boxfresh/output/LikeSignature.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Toxitter/Boxfresh/output/LoginSuccess.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Toxitter/Boxfresh/output/LoginSuccess.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Toxitter/Boxfresh/output/PostCreated.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Toxitter/Boxfresh/output/PostCreated.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Toxitter/Boxfresh/routes/Chat.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Toxitter/Boxfresh/routes/Chat.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Toxitter/Boxfresh/routes/Injector.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Toxitter/Boxfresh/state/OnlineStateManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Toxitter/Boxfresh/state/OnlineStateManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Toxitter/Connection/Middleware.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Toxitter/Connection/ToxitterSessionMiddleware.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Toxitter/Core/INPUT.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Toxitter/Core/Toxitter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Toxitter/Core/ToxitterClassRouter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Toxitter/Core/ToxitterServer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Toxitter/Core/realtime/DisconnectHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Toxitter/Core/realtime/ToxitterWebsocketHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Toxitter/Logging/Ullog.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Toxitter/Model/test/OneToManyTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Toxitter/Model/test/ReservoirTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Toxitter/Security/LoginHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Toxitter/Security/LoginHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Toxitter/Security/ToxitterSecurityMiddleware.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Toxitter/Security/ToxitterSecurityMiddleware.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/examples/locality/demo/MapDemo$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/examples/locality/demo/MapDemo$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/examples/locality/demo/MapDemo$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/examples/locality/demo/MapDemo$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/examples/locality/demo/MapDemo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/examples/locality/demo/MapDemo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/examples/locality/test/TestJsonReader.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/examples/locality/test/TestJsonReader.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/examples/toxitter/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/examples/toxitter/Seeder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/examples/toxitter/ToxitterStandardConfiguratedEnvironment.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -249,15 +196,15 @@
       <recent name="ToxitterModel" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ToxitterServer">
+  <component name="RunManager" selected="JUnit.NeuronTest">
     <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ToxitterServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Toxitter.Elemental.aether.ToxitterServer" />
+    <configuration name="BookOfGorlon" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Toxitter.Elemental.aether.BookOfGorlon" />
       <module name="ToxitterBackend2" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
@@ -276,15 +223,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -293,6 +238,22 @@
       <module name="ToxitterBackend2" />
       <option name="PACKAGE_NAME" value="" />
       <option name="TEST_OBJECT" value="package" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="NeuronTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ToxitterBackend2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Toxitter.Elemental.fire.homunculus.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Toxitter.Elemental.fire.homunculus.test" />
+      <option name="MAIN_CLASS_NAME" value="Toxitter.Elemental.fire.homunculus.test.NeuronTest" />
+      <option name="TEST_OBJECT" value="class" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -328,21 +289,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Toxitter.Elemental.earth.persistence.mysql.test in ToxitterBackend2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ToxitterBackend2" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Toxitter.Elemental.earth.persistence.mysql.test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="Toxitter.Elemental.earth.persistence.mysql.test" />
-      <option name="TEST_OBJECT" value="package" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <option name="TEST_OBJECT" value="class" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
@@ -370,11 +316,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.ToxitterServer" />
+        <item itemvalue="JUnit.NeuronTest" />
+        <item itemvalue="Application.BookOfGorlon" />
         <item itemvalue="JUnit.Toxitter in ToxitterBackend2" />
         <item itemvalue="JUnit.All in ToxitterBackend2 (1)" />
         <item itemvalue="JUnit.Toxitter.Elemental.earth.persistence.mysql in ToxitterBackend2" />
-        <item itemvalue="JUnit.Toxitter.Elemental.earth.persistence.mysql.test in ToxitterBackend2" />
       </list>
     </recent_temporary>
   </component>
@@ -414,7 +360,8 @@
       <workItem from="1601063978407" duration="22241000" />
       <workItem from="1601172971203" duration="4523000" />
       <workItem from="1601353203610" duration="7725000" />
-      <workItem from="1601396325249" duration="25062000" />
+      <workItem from="1601396325249" duration="25927000" />
+      <workItem from="1601504985816" duration="32279000" />
     </task>
     <servers />
   </component>
@@ -452,10 +399,10 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="489" y="351" width="503" height="205" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1440.900@0.0.1440.900" timestamp="1601421134186" />
-    <state x="329" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1601421281018">
+    <state x="329" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1601598398616">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="329" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1440.900@0.0.1440.900" timestamp="1601421281018" />
+    <state x="329" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1440.900@0.0.1440.900" timestamp="1601598398616" />
     <state x="329" y="75" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.23.1440.823@0.23.1440.823" timestamp="1600691897132" />
     <state x="329" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.23.1440.825@0.23.1440.825" timestamp="1600750978390" />
     <state x="329" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.23.1440.826@0.23.1440.826" timestamp="1601083337618" />
@@ -466,38 +413,42 @@
     <state x="466" y="188" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1440.823@0.23.1440.823" timestamp="1600650449982" />
     <state x="466" y="188" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1440.825@0.23.1440.825" timestamp="1600742182632" />
     <state x="466" y="188" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1440.826@0.23.1440.826" timestamp="1601083253121" />
-    <state width="1398" height="283" key="GridCell.Tab.0.bottom" timestamp="1601405484588">
+    <state width="1398" height="577" key="GridCell.Tab.0.bottom" timestamp="1601610815847">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="283" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1601405484588" />
+    <state width="1398" height="577" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1601610815847" />
     <state width="1398" height="213" key="GridCell.Tab.0.bottom/0.23.1440.823@0.23.1440.823" timestamp="1600693830170" />
     <state width="1398" height="232" key="GridCell.Tab.0.bottom/0.23.1440.825@0.23.1440.825" timestamp="1600790446050" />
     <state width="1398" height="233" key="GridCell.Tab.0.bottom/0.23.1440.826@0.23.1440.826" timestamp="1601075752128" />
     <state width="1398" height="233" key="GridCell.Tab.0.bottom/0.23.1440.827@0.23.1440.827" timestamp="1601069736405" />
-    <state width="1398" height="283" key="GridCell.Tab.0.center" timestamp="1601405484586">
+    <state width="1398" height="315" key="GridCell.Tab.0.bottom/0.23.1440.830@0.23.1440.830" timestamp="1601608567677" />
+    <state width="1398" height="577" key="GridCell.Tab.0.center" timestamp="1601610815845">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="283" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1601405484586" />
+    <state width="1398" height="577" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1601610815845" />
     <state width="1398" height="213" key="GridCell.Tab.0.center/0.23.1440.823@0.23.1440.823" timestamp="1600693830169" />
     <state width="1398" height="232" key="GridCell.Tab.0.center/0.23.1440.825@0.23.1440.825" timestamp="1600790446049" />
     <state width="1398" height="233" key="GridCell.Tab.0.center/0.23.1440.826@0.23.1440.826" timestamp="1601075752127" />
     <state width="1398" height="233" key="GridCell.Tab.0.center/0.23.1440.827@0.23.1440.827" timestamp="1601069736404" />
-    <state width="1398" height="283" key="GridCell.Tab.0.left" timestamp="1601405484585">
+    <state width="1398" height="315" key="GridCell.Tab.0.center/0.23.1440.830@0.23.1440.830" timestamp="1601608567673" />
+    <state width="1398" height="577" key="GridCell.Tab.0.left" timestamp="1601610815844">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="283" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1601405484585" />
+    <state width="1398" height="577" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1601610815844" />
     <state width="1398" height="213" key="GridCell.Tab.0.left/0.23.1440.823@0.23.1440.823" timestamp="1600693830169" />
     <state width="1398" height="232" key="GridCell.Tab.0.left/0.23.1440.825@0.23.1440.825" timestamp="1600790446048" />
     <state width="1398" height="233" key="GridCell.Tab.0.left/0.23.1440.826@0.23.1440.826" timestamp="1601075752127" />
     <state width="1398" height="233" key="GridCell.Tab.0.left/0.23.1440.827@0.23.1440.827" timestamp="1601069736404" />
-    <state width="1398" height="283" key="GridCell.Tab.0.right" timestamp="1601405484587">
+    <state width="1398" height="315" key="GridCell.Tab.0.left/0.23.1440.830@0.23.1440.830" timestamp="1601608567672" />
+    <state width="1398" height="577" key="GridCell.Tab.0.right" timestamp="1601610815846">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="283" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1601405484587" />
+    <state width="1398" height="577" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1601610815846" />
     <state width="1398" height="213" key="GridCell.Tab.0.right/0.23.1440.823@0.23.1440.823" timestamp="1600693830170" />
     <state width="1398" height="232" key="GridCell.Tab.0.right/0.23.1440.825@0.23.1440.825" timestamp="1600790446050" />
     <state width="1398" height="233" key="GridCell.Tab.0.right/0.23.1440.826@0.23.1440.826" timestamp="1601075752128" />
     <state width="1398" height="233" key="GridCell.Tab.0.right/0.23.1440.827@0.23.1440.827" timestamp="1601069736405" />
+    <state width="1398" height="315" key="GridCell.Tab.0.right/0.23.1440.830@0.23.1440.830" timestamp="1601608567675" />
     <state x="229" y="75" width="1211" height="722" key="SettingsEditor" timestamp="1601063858324">
       <screen x="0" y="23" width="1440" height="827" />
     </state>

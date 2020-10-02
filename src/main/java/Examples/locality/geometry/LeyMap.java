@@ -1,6 +1,6 @@
 package Examples.locality.geometry;
 
-import Toxitter.Elemental.wind.DiamondList;
+import Avatar.Elemental.wind.DiamondList;
 
 public class LeyMap
 {

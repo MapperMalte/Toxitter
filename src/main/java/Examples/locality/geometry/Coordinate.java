@@ -1,6 +1,6 @@
 package Examples.locality.geometry;
 
-import Toxitter.Elemental.earth.ReservoirEntity;
+import Avatar.Elemental.earth.ReservoirEntity;
 
 public class Coordinate extends ReservoirEntity
 {
