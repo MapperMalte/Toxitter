@@ -9,7 +9,7 @@ public class NeuroCocktail
 
     public void put(Stimulantia stimulantia, double amount)
     {
-
+        
     }
 
     public double[] toArray()

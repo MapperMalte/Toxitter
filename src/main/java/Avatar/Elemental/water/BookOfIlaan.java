@@ -46,6 +46,25 @@ public class BookOfIlaan
         return row.toString();
     }
 
+    public static String printInt(int[][] data)
+    {
+        StringBuilder out = new StringBuilder();
+        for(int i = 0; i < data.length; i++)
+        {
+            StringBuilder row = new StringBuilder();
+            for(int x = 0 ; x < data[i].length; x++)
+            {
+                row.append("data[").append(i).append("][").append(x).append("]: ").append(data[i][x]);
+                if ( !(x==data[i].length-1) )
+                {
+                    row.append(", ");
+                }
+            }
+            out.append(row).append(System.getProperty("line.separator"));
+        }
+        return out.toString();
+    }
+
     public static String printDouble(double[][] data)
     {
         StringBuilder out = new StringBuilder();
