@@ -1,4 +1,4 @@
-package Avatar.Elemental.fire.homunculus.Neuron.test;
+package Avatar.Elemental.fire.artifacts.test;
 
 import Avatar.Elemental.fire.homunculus.Neuron.WeightSeeder;
 import Avatar.Elemental.water.BookOfIlaan;

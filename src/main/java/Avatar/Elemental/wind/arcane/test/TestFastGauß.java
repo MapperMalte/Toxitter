@@ -28,7 +28,7 @@ public class TestFastGauß
         FastGauß fastGauß = new FastGauß();
         for(int i = -250; i <= 250; i++)
         {
-            System.out.println("Erf("+(i*0.015)+"): "+(fastGauß.getErf(i*0.015)));
+            System.out.println("Erf("+(i*0.015)+"): "+(FastGauß.getErf(i*0.015)));
 
             //System.out.println("G("+(i*0.015)+"): "+fastGauß.getErf(i*0.015));
         }

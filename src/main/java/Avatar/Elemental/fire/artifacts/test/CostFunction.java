@@ -1,4 +1,4 @@
-package Avatar.Elemental.fire.homunculus.Neuron.test;
+package Avatar.Elemental.fire.artifacts.test;
 
 public interface CostFunction
 {

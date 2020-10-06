@@ -1,36 +1,34 @@
 package Avatar.Elemental.fire.homunculus.Neuron;
 
-import Avatar.Elemental.water.Signal;
+import Avatar.Elemental.water.VectorSignal;
 
 public class InputLayer
 {
-    protected HiddenLayer hiddenLayer;
-    private Signal value;
+    protected HiddenLayerSlice hiddenLayer;
+    private VectorSignal value;
 
     public InputLayer(int dimension)
     {
 
     }
 
-    public void setHiddenLayer(HiddenLayer hiddenLayer)
+    public void setHiddenLayer(HiddenLayerSlice hiddenLayer)
     {
         this.hiddenLayer = hiddenLayer;
     }
 
-    public HiddenLayer getHiddenLayer(HiddenLayer hiddenLayer)
+    public HiddenLayerSlice getHiddenLayer(HiddenLayerSlice hiddenLayer)
     {
         return this.hiddenLayer;
     }
 
-    public Signal getValue()
+    public VectorSignal getValue()
     {
         return this.value;
     }
 
     public synchronized void forwardPropagate(double[] input)
     {
-        this.value = new Signal(input);
-        hiddenLayer.setInputLayer(this);
-        hiddenLayer.propagate();
+        this.value = new VectorSignal(input);
     }
 }

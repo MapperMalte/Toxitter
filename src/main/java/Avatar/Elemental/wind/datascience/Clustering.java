@@ -2,16 +2,17 @@ package Avatar.Elemental.wind.datascience;
 
 import Avatar.Elemental.water.BookOfIlaan;
 import Avatar.Elemental.wind.BookOfRass;
+import Avatar.Elemental.wind.arcane.FastGauß;
 
 import java.awt.print.Book;
 import java.util.Arrays;
+import java.util.TreeMap;
 
 public class Clustering
 {
     public void cluster(double[][] data, int samplesPerDimension)
     {
         //Indexed by DIMENSION SAMPLE instead of SAMPLE DIMENSION
-
         int datasetIndex = 0;
         // Assume all data to have equal length
         int dataDimension = data[0].length;
@@ -40,10 +41,8 @@ public class Clustering
                 }
             }
         }
-
         System.out.println("MAX: "+ BookOfIlaan.printDouble(maxValues));
         System.out.println("MIN: "+BookOfIlaan.printDouble(minValues));
-
         int[][] grid = new int[dataDimension][];
         double[][] density = new double[dataDimension][];
         for(int dimension = 0; dimension < dataDimension; dimension++)
@@ -61,7 +60,7 @@ public class Clustering
             while ( (sample < samplesPerDimension) )
             {
                 density[dimension][sample] = 0;
-                grid[dimension][sample] = 3;
+                grid[dimension][sample] = 30;
                 //System.out.println("DataSample ["+sample+"]["+dimension+"]: " +data[sample][dimension]);
 
                 while ( dataReverseIndexed[dimension][sample+sIndex] < minValues[dimension]+delta*sample)
@@ -78,7 +77,7 @@ public class Clustering
         System.out.println("Density: "+BookOfIlaan.printDouble(density));
 
         // Now stochastically flow.
-        for(int epoch = 0; epoch < 10; epoch++)
+        for(int epoch = 0; epoch < 3; epoch++)
         {
             System.out.println("EPOCH "+epoch);
             for(int sample = 0; sample < samplesPerDimension; sample++)
@@ -120,7 +119,7 @@ public class Clustering
                 for(int dimension = 0; dimension < dataDimension; dimension++)
                 {
                     System.out.println("Grid: "+grid[dimension][sample]);
-                    int strength = (int)(grid[dimension][sample]* BookOfRass.getErf(localGravityGradientInDimensionDirection[dimension]*localGravityGradientInDimensionDirection[dimension]/locallizedInformationalGravity));
+                    int strength = (int)(grid[dimension][sample]* FastGauß.getErf(localGravityGradientInDimensionDirection[dimension]*localGravityGradientInDimensionDirection[dimension]/locallizedInformationalGravity));
                     strength = Math.abs(strength);
                     System.out.println("Strength: "+strength);
                     if ( grid[dimension][sample] < strength )
@@ -148,10 +147,9 @@ public class Clustering
                 }
             }
         }
-
         System.out.println("New grid: "+BookOfIlaan.printInt(grid));
         double[] strength = new double[samplesPerDimension];
-
+        TreeMap<Double,Integer> indizes = new TreeMap<>();
         for(int sample = 0; sample < samplesPerDimension; sample++) {
             strength[sample] = 0;
             double[] actualCoordinates = new double[dataDimension];
@@ -161,8 +159,15 @@ public class Clustering
                 strength[sample] += (double)(grid[dimension][sample]*grid[dimension][sample]);
             }
             strength[sample] = Math.sqrt(strength[sample]);
+            indizes.put(strength[sample],sample);
             System.out.println("Sample Strength: "+strength[sample]);
             System.out.println("Actual coordinates: About "+BookOfIlaan.printDouble(actualCoordinates));
+        }
+        Arrays.sort(strength);
+
+        for(int i = 0; i < strength.length; i++)
+        {
+            System.out.println("Strength: "+strength[i]+" / Index "+indizes.get(strength[i]));
         }
     }
 }

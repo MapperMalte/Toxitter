@@ -9,7 +9,7 @@ public class ClusteringTest
     @Test
     public void test()
     {
-        int factor = 500;
+        int factor = 100;
         double[][] data = new double[5*factor][10];
         for(int i = 0; i < factor; i++)
         {
@@ -22,7 +22,7 @@ public class ClusteringTest
         {
             for(int x = 0; x < 10; x++)
             {
-                data[i][x] = (Math.random()-0.5)*100+1000;
+                data[i][x] = (Math.random()-0.5)*400+1500;
             }
         }
         for(int i = 2*factor; i < 3*factor; i++)
@@ -54,7 +54,7 @@ public class ClusteringTest
         // -400+48*16
         System.out.println("Testdata: "+ BookOfIlaan.printDouble(data));
         Clustering clustering = new Clustering();
-        clustering.cluster(data,250);
+        clustering.cluster(data,100);
         // Bei 21, bei 70, bei 72
     }
 }
