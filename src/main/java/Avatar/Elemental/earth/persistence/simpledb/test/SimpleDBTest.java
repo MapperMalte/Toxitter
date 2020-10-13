@@ -4,7 +4,7 @@ import Avatar.Test.TestReservoirEntity;
 import Avatar.Elemental.water.DataAccessToReservoirEntity;
 import Avatar.Elemental.earth.persistence.simpledb.SimpleDB;
 import org.junit.Test;
-import Avatar.Elemental.wind.DiamondList;
+import Avatar.Elemental.wind.artifacts.DiamondList;
 
 import static org.junit.Assert.assertEquals;
 

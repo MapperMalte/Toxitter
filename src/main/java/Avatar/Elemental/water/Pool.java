@@ -2,11 +2,11 @@ package Avatar.Elemental.water;
 
 import Avatar.Boxfresh.routes.User;
 import Avatar.Elemental.aether.ToxitterWebsocketHandler;
-import Avatar.Boxfresh.state.OnlineStateManager;
+import Avatar.Elemental.aether.OnlineStateManager;
 import Avatar.Elemental.earth.ID;
 import Avatar.Elemental.earth.Relation;
 import Avatar.Elemental.earth.ReservoirEntity;
-import Avatar.Elemental.wind.DiamondList;
+import Avatar.Elemental.wind.artifacts.DiamondList;
 
 public class Pool extends ReservoirEntity
 {

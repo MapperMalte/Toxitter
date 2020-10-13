@@ -1,6 +1,6 @@
 package Avatar.Elemental.earth;
 
-import Avatar.Elemental.wind.DiamondList;
+import Avatar.Elemental.wind.artifacts.DiamondList;
 
 import java.util.TreeMap;
 

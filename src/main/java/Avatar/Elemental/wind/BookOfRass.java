@@ -1,13 +1,16 @@
 package Avatar.Elemental.wind;
 
 import Avatar.Elemental.wind.math.Function;
-import Avatar.Elemental.wind.math.functions.Sigmoid;
+import Avatar.Elemental.wind.math.functions.*;
 
 public class BookOfRass
 {
     private static final double p1 = 1/Math.sqrt(2*Math.PI);
     public static Function Sigmoid = new Sigmoid();
-
+    public static Function GELU = new GELU();
+    public static Function RELU = new LeakyRELU();
+    public static FastGauß FastGauß = new FastGauß();
+    public static GammaFunction GammaFunction = new GammaFunction();
     /**
      * Quickly returns approximate values for a skewed normal distribution with expectation 0, variance 1 and skew parameter lambda.
      * Where g(z) = 2 * \phi(z)Phi(\lambda z), where \phi(z) is the normal distribution and \Phi(z) its CDF
@@ -58,12 +61,12 @@ public class BookOfRass
 
     public static double sigmoid(double x)
     {
-        return 1/(1+Math.exp(-x));
+        return Sigmoid.getValue(x);
     }
 
     public static double getSigmoidDerivative(double x)
     {
-        return sigmoid(x)*(1-sigmoid(x));
+        return Sigmoid.getDerivative(x);
     }
 
     public static double[] CartesianToSphericalCoordinates3D(double[] xyz)

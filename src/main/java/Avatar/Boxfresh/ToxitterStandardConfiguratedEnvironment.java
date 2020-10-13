@@ -7,8 +7,10 @@ import Avatar.Boxfresh.routes.Chat;
 import Avatar.Boxfresh.routes.Friends;
 import Avatar.Elemental.aether.ToxitterClassRouter;
 import Avatar.Elemental.aether.BookOfGorlon;
+import Avatar.Elemental.earth.BookOfGrabbadur;
 
-public class ToxitterStandardConfiguratedEnvironment
+public class
+ToxitterStandardConfiguratedEnvironment
 {
     public static void seed()
     {

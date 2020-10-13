@@ -3,10 +3,10 @@ package Avatar.Boxfresh.routes;
 import Avatar.Elemental.earth.Relation;
 import Avatar.Elemental.earth.ReservoirEntity;
 import Avatar.Elemental.earth.ReservoirEntityList;
-import Avatar.Elemental.fire.ai_stimulanziae.Dopamine;
-import Avatar.Elemental.fire.ai_stimulanziae.GABA;
-import Avatar.Elemental.fire.StimulatesAI;
-import Avatar.Elemental.fire.ai_stimulanziae.Narcidin;
+import Avatar.Elemental.fire.AI.stimulanziae.Dopamine;
+import Avatar.Elemental.fire.AI.stimulanziae.GABA;
+import Avatar.Elemental.fire.AI.StimulatesAI;
+import Avatar.Elemental.fire.AI.stimulanziae.Narcidin;
 
 @StimulatesAI
 public class Like extends ReservoirEntity

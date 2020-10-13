@@ -4,5 +4,5 @@ import Avatar.Elemental.water.VectorSignal;
 
 public abstract class ManyToOne extends Gem
 {
-    public abstract double transform(VectorSignal a, VectorSignal b);
+    public abstract double compute(VectorSignal signal);
 }

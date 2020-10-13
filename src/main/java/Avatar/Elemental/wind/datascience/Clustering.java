@@ -1,10 +1,8 @@
 package Avatar.Elemental.wind.datascience;
 
 import Avatar.Elemental.water.BookOfIlaan;
-import Avatar.Elemental.wind.BookOfRass;
-import Avatar.Elemental.wind.arcane.FastGauß;
+import Avatar.Elemental.wind.math.functions.FastGauß;
 
-import java.awt.print.Book;
 import java.util.Arrays;
 import java.util.TreeMap;
 

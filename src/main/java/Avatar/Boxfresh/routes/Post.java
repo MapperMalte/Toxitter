@@ -8,7 +8,7 @@ import Avatar.Boxfresh.output.PostCreated;
 import Avatar.Elemental.earth.ID;
 import Avatar.Elemental.earth.ReservoirEntity;
 import Avatar.Elemental.earth.ReservoirEntityList;
-import Avatar.Elemental.fire.ai_stimulanziae.Investin;
+import Avatar.Elemental.fire.AI.stimulanziae.Investin;
 
 @Persist(primaryKey = "postId", tableName = "user")
 @FetchAt(route = "post")

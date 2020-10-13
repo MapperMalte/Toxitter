@@ -2,7 +2,7 @@ package Avatar.Test;
 
 import org.junit.Test;
 import Avatar.Elemental.water.QueueSleeper;
-import Avatar.Elemental.wind.TemporalQueue;
+import Avatar.Elemental.wind.artifacts.TemporalQueue;
 
 import java.util.TreeMap;
 

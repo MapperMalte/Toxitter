@@ -1,7 +1,7 @@
 package Avatar.Elemental.water;
 
 import Avatar.Elemental.earth.Persist;
-import Avatar.Elemental.wind.DiamondList;
+import Avatar.Elemental.wind.artifacts.DiamondList;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;

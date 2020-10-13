@@ -36,7 +36,7 @@ public class BookOfIlaan
         row.append("(");
         for(int x = 0 ; x < data.length; x++)
         {
-            row.append(x).append(": ").append(data[x]);
+            row.append(data[x]);
             if ( !(x==data.length-1) )
             {
                 row.append(", ");

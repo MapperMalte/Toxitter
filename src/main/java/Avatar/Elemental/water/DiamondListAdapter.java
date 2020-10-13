@@ -1,6 +1,6 @@
 package Avatar.Elemental.water;
 
-import Avatar.Elemental.wind.DiamondList;
+import Avatar.Elemental.wind.artifacts.DiamondList;
 import com.google.gson.*;
 
 import java.lang.reflect.Type;

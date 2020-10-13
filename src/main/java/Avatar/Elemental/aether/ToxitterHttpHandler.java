@@ -10,7 +10,7 @@ import com.google.gson.JsonObject;
 import com.sun.net.httpserver.Headers;
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
-import Avatar.Elemental.wind.ReplenisherStack;
+import Avatar.Elemental.wind.artifacts.ReplenisherStack;
 
 import java.io.IOException;
 import java.io.InputStream;

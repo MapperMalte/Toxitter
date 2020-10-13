@@ -1,6 +1,6 @@
 package Examples.locality.geometry;
 
-import Avatar.Elemental.wind.DiamondList;
+import Avatar.Elemental.wind.artifacts.DiamondList;
 
 public class LeyMap
 {

@@ -4,7 +4,7 @@ import Avatar.Elemental.earth.ID;
 import Avatar.Elemental.earth.ReservoirEntity;
 import Avatar.Elemental.water.DataAccessToReservoirEntity;
 import Avatar.Elemental.water.ReservoirEntityDataPresenter;
-import Avatar.Elemental.wind.DiamondList;
+import Avatar.Elemental.wind.artifacts.DiamondList;
 
 import java.sql.*;
 

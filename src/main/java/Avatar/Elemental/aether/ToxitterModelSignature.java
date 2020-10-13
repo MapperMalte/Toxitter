@@ -1,6 +1,6 @@
 package Avatar.Elemental.aether;
 
-import Avatar.Elemental.wind.ReplenisherStack;
+import Avatar.Elemental.wind.artifacts.ReplenisherStack;
 
 import java.lang.reflect.Parameter;
 

@@ -6,7 +6,7 @@ import Avatar.Annotations.core.FetchAt;
 import Avatar.Elemental.earth.Persist;
 import Avatar.Annotations.security.Protected;
 import Avatar.Annotations.core.Route;
-import Avatar.Elemental.fire.ai_stimulanziae.Investin;
+import Avatar.Elemental.fire.AI.stimulanziae.Investin;
 
 @FetchAt(route = "user")
 @Persist(primaryKey = "userId", tableName = "user")

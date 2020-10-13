@@ -1,6 +1,6 @@
 package Avatar.Elemental.earth;
 
-import Avatar.Elemental.wind.TemporalQueue;
+import Avatar.Elemental.wind.artifacts.TemporalQueue;
 
 public class Relation<V extends ReservoirEntity, T extends ReservoirEntity>
 {
