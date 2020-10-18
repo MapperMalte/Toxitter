@@ -1,7 +1,7 @@
 package Avatar.Elemental.fire.AI.test;
 
-import Avatar.Elemental.fire.AI.classic.Neuron;
-import Avatar.Elemental.water.VectorSignal;
+import Avatar.Elemental.fire.AI.classic.graveyard.Neuron;
+import Avatar.Elemental.water.signals.VectorSignal;
 import Avatar.Elemental.wind.BookOfRass;
 import org.junit.Test;
 
@@ -32,21 +32,21 @@ public class NeuronTest
         int inputDimension = 1;
         int outputDimension = 1;
 
-        int[] hiddenLayers = new int[1];
+        int[] hiddenLayers = new int[3];
 
         for(int i = 0; i < hiddenLayers.length; i++)
         {
-            hiddenLayers[i] = 2;
+            hiddenLayers[i] = 1;
         }
 
         double[] outputData1 = new double[outputDimension];
-        outputData1[0] = 1;
+        outputData1[0] = 10;
         double[] inputData1 = {1};
 
         VectorSignal input1 = new VectorSignal(inputData1);
         VectorSignal output1 = new VectorSignal(outputData1);
 
-        Neuron neuron = new Neuron(inputDimension, BookOfRass.GELU, hiddenLayers, outputDimension);
+        Neuron neuron = new Neuron(inputDimension, BookOfRass.RELU, hiddenLayers, outputDimension);
         for(int i = 0; i < 100; i++)
         {
             neuron.forwardPropagate(input1,output1);

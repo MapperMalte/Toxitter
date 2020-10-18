@@ -1,6 +1,6 @@
 package Avatar.Elemental.fire.AI.test;
 
-import Avatar.Elemental.fire.AI.classic.TensorNeuron;
+import Avatar.Elemental.fire.AI.classic.graveyard.TensorNeuron;
 import Avatar.Elemental.water.BookOfIlaan;
 import org.junit.Test;
 

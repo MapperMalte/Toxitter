@@ -1,10 +1,9 @@
 package Avatar.Elemental.wind.artifacts.gems;
 
-import Avatar.Elemental.water.VectorSignal;
+import Avatar.Elemental.water.signals.VectorSignal;
 
-public class Sum extends ManyToOne
+public class Sum
 {
-    @Override
     public double compute(VectorSignal signal)
     {
         double sum = 0;

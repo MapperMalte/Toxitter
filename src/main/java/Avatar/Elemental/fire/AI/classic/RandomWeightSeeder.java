@@ -1,5 +1,7 @@
 package Avatar.Elemental.fire.AI.classic;
 
+import Avatar.Elemental.fire.AI.classic.artifacts.WeightSeeder;
+
 public class RandomWeightSeeder implements WeightSeeder
 {
     private double amplitude = 3;
@@ -11,7 +13,7 @@ public class RandomWeightSeeder implements WeightSeeder
         {
             for(int y = 0; y < yL; y++)
             {
-                randomMatrix[x][y] = (Math.random())*amplitude;
+                randomMatrix[x][y] = 1;//(Math.random())*amplitude;
             }
         }
         return randomMatrix;
