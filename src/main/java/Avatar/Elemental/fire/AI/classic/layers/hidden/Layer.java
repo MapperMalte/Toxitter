@@ -1,5 +1,6 @@
-package Avatar.Elemental.fire.AI.classic.galance.hidden;
+package Avatar.Elemental.fire.AI.classic.layers.hidden;
 
+import Avatar.Elemental.fire.AI.classic.NeuralNetwork;
 import Avatar.Elemental.water.signals.MatrixSignal;
 
 public class Layer
@@ -8,7 +9,7 @@ public class Layer
     private MatrixSignal weights;
     private int index = 0;
 
-    public Layer()
+    public Layer(NeuralNetwork parent)
     {
         index = runningId;
         runningId++;

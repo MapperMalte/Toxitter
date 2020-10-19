@@ -1,9 +1,11 @@
-package Avatar.Elemental.fire.AI.classic.galance.hidden;
+package Avatar.Elemental.fire.AI.classic.layers.output;
 
 import Avatar.Elemental.fire.AI.classic.artifacts.OutputActivationFunction;
 import Avatar.Elemental.fire.AI.classic.artifacts.WeightSeeder;
-import Avatar.Elemental.fire.AI.classic.galance.hidden.exceptions.IllegalOperationOrderException;
-import Avatar.Elemental.fire.AI.classic.galance.hidden.exceptions.IllegalyConnectedLayersException;
+import Avatar.Elemental.fire.AI.classic.Backpropagation;
+import Avatar.Elemental.fire.AI.classic.layers.hidden.Layer;
+import Avatar.Elemental.fire.AI.classic.exceptions.IllegalOperationOrderException;
+import Avatar.Elemental.fire.AI.classic.exceptions.IllegalyConnectedLayersException;
 import Avatar.Elemental.water.signals.MatrixSignal;
 import Avatar.Elemental.water.signals.VectorSignal;
 
@@ -31,7 +33,7 @@ public class OutputNetAlgorithm
             output.data[h] = 0;
             for(int l = 0; l < lastLayer.getHeight(); l++)
             {
-                output.data[h] += lastLayer.getWeight(l,h)* backpropagation.getOutputOfLayer(lastLayer).data[l];
+                output.data[h] += lastLayer.getWeight(l,h) * backpropagation.getOutputOfLayer(lastLayer).data[l];
             }
         }
         outputActivationFunction.transform(output);

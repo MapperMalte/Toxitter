@@ -11,7 +11,6 @@ import Avatar.Annotations.security.Protected;
 @FetchAt(route = "friends")
 public class Friends
 {
-
     private static class ReceivedFriendRequest extends ReservoirEntity {
         String id;
 

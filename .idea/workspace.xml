@@ -23,115 +23,35 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1a6799fa-3d81-404d-97ed-2e1ce054a946" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/fire/AI/classic/artifacts/OutputActivationFunction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/fire/AI/classic/galance/hidden/Backpropagation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/fire/AI/classic/galance/hidden/HiddenNet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/fire/AI/classic/galance/hidden/HiddenNetSpecifications.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/fire/AI/classic/galance/hidden/Layer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/fire/AI/classic/galance/hidden/NeuralNetwork.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/fire/AI/classic/galance/hidden/NeuralNetworkSpecification.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/fire/AI/classic/galance/hidden/OutputNetAlgorithm.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/fire/AI/classic/galance/hidden/exceptions/IllegalInputDimensionException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/fire/AI/classic/galance/hidden/exceptions/IllegalOperationOrderException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/fire/AI/classic/galance/hidden/exceptions/IllegalyConnectedLayersException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/fire/AI/classic/galance/hidden/test/NeuralNetworkTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/water/signals/Composer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/water/signals/MatrixSignal.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/water/signals/Signal.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/water/signals/SignalTransformer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/fire/AI/classic/artifacts/BackpropagationFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/fire/AI/classic/layers/hidden/HiddenNetBackpropagationAlgorithm.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/fire/AI/classic/layers/hidden/HiddenNetPropagationAlgorithm.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/fire/AI/classic/layers/input/InputNet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/fire/AI/classic/layers/input/InputNetSpecifications.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/fire/AI/Stimulans_CostFunction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/fire/AI/Stimulans_CostFunction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/fire/AI/classic/ActivationFunction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/fire/AI/classic/artifacts/ActivationFunction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/fire/AI/classic/Connectidin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/fire/AI/classic/graveyard/Connectidin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/fire/AI/classic/CostFunction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/fire/AI/classic/artifacts/CostFunction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/fire/AI/classic/CrushDemocracyCostFunction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/fire/AI/classic/graveyard/CrushDemocracyCostFunction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/fire/AI/classic/DemocracyCrushingAI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/fire/AI/classic/graveyard/DemocracyCrushingAI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/fire/AI/classic/Dopamine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/fire/AI/classic/graveyard/Dopamine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/fire/AI/classic/HiddenLayerSlice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/fire/AI/classic/graveyard/HiddenLayerSlice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/fire/AI/classic/InputLayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/fire/AI/classic/galance/InputLayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/fire/AI/classic/Neuron.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/fire/AI/classic/graveyard/Neuron.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/fire/AI/classic/OutputLayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/fire/AI/classic/graveyard/OutputLayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/fire/AI/classic/Propagator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/fire/AI/classic/artifacts/Propagator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/fire/AI/classic/RandomWeightSeeder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/fire/AI/classic/RandomWeightSeeder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/fire/AI/classic/TensorNeuron.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/fire/AI/classic/graveyard/TensorNeuron.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/fire/AI/classic/WeightSeeder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/fire/AI/classic/artifacts/WeightSeeder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/fire/AI/experimental/Neurid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/fire/AI/experimental/Neurid.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/fire/AI/test/NeuronTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/fire/AI/test/NeuronTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/fire/AI/test/TensorNeuronTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/fire/AI/test/TensorNeuronTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/water/VectorSignal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/water/signals/VectorSignal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/wind/artifacts/ComputationGraph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/wind/artifacts/ComputationGraph.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/wind/artifacts/gems/ManyToMany.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/wind/artifacts/gems/ManyToOne.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/wind/artifacts/gems/OneToMany.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/wind/artifacts/gems/OneToOne.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/wind/artifacts/gems/Sigmoid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/wind/artifacts/gems/Sigmoid.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/wind/artifacts/gems/Sum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/wind/artifacts/gems/Sum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/wind/artifacts/gems/Weigh.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/wind/artifacts/gems/Weigh.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/wind/artifacts/test/TowerOfRassTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Avatar/Boxfresh/ToxitterStandardConfiguratedEnvironment.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Avatar/Boxfresh/ToxitterStandardConfiguratedEnvironment.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Avatar/Boxfresh/routes/Like.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Avatar/Boxfresh/routes/Like.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Avatar/Boxfresh/routes/Post.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Avatar/Boxfresh/routes/Post.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Avatar/Boxfresh/routes/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Avatar/Boxfresh/routes/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Avatar/Boxfresh/state/OnlineStateManager.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Avatar/Elemental/aether/ToxitterWebsocketHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Avatar/Elemental/aether/ToxitterWebsocketHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Avatar/Elemental/fire/AI$Layer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Avatar/Elemental/fire/AI$Neuron.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Avatar/Elemental/fire/AI.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Avatar/Elemental/fire/NeuroCocktail.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Avatar/Elemental/fire/Session.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Avatar/Elemental/fire/Stimulans_CostFunction.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Avatar/Elemental/fire/Stimulantia.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Avatar/Elemental/fire/StimulantiaGraph.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Avatar/Elemental/fire/StimulatesAI.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Avatar/Elemental/fire/UserReactionToReservoirEntity.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Avatar/Elemental/fire/ai_stimulanziae/Amygdalin.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Avatar/Elemental/fire/ai_stimulanziae/Connectin.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Avatar/Elemental/fire/ai_stimulanziae/Cortexidin.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Avatar/Elemental/fire/ai_stimulanziae/Dopamine.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Avatar/Elemental/fire/ai_stimulanziae/Echsidin.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Avatar/Elemental/fire/ai_stimulanziae/Entropin.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Avatar/Elemental/fire/ai_stimulanziae/GABA.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Avatar/Elemental/fire/ai_stimulanziae/Investin.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Avatar/Elemental/fire/ai_stimulanziae/Lymbidin.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Avatar/Elemental/fire/ai_stimulanziae/Narcidin.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Avatar/Elemental/fire/ai_stimulanziae/Noveltin.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Avatar/Elemental/fire/ai_stimulanziae/Oxytocin.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Avatar/Elemental/fire/ai_stimulanziae/Primidin.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Avatar/Elemental/fire/ai_stimulanziae/Serotonin.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Avatar/Elemental/fire/ai_stimulanziae/Tribalidin.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Avatar/Elemental/fire/classical/Connectidin.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Avatar/Elemental/fire/classical/Dopamine.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Avatar/Elemental/fire/homunculus/DemocracyCrushingAI.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Avatar/Elemental/fire/homunculus/Neuron/ActivationFunction.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Avatar/Elemental/fire/homunculus/Neuron/CostFunction.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Avatar/Elemental/fire/homunculus/Neuron/HiddenLayerSlice.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Avatar/Elemental/fire/homunculus/Neuron/InputLayer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Avatar/Elemental/fire/homunculus/Neuron/Neuron.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Avatar/Elemental/fire/homunculus/Neuron/OutputLayer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Avatar/Elemental/fire/homunculus/Neuron/Propagator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Avatar/Elemental/fire/homunculus/Neuron/RandomWeightSeeder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Avatar/Elemental/fire/homunculus/Neuron/TensorNeuron.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Avatar/Elemental/fire/homunculus/Neuron/WeightSeeder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Avatar/Elemental/fire/homunculus/Neuron/test/CostFunction.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Avatar/Elemental/fire/homunculus/Neuron/test/NeuronTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Avatar/Elemental/fire/homunculus/Neuron/test/TensorNeuronTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Avatar/Elemental/fire/homunculus/Neuron/test/WeightSeederTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Avatar/Elemental/fire/homunculus/impl/CrushDemocracyCostFunction.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Avatar/Elemental/water/Pool.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Avatar/Elemental/water/Pool.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Avatar/Elemental/water/VectorSignal.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Avatar/Elemental/wind/artifacts/ComputationGraph.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Avatar/Elemental/wind/artifacts/ComputationGraph.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Avatar/Elemental/wind/artifacts/gems/ManyToMany.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Avatar/Elemental/wind/artifacts/gems/ManyToOne.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Avatar/Elemental/wind/artifacts/gems/OneToMany.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Avatar/Elemental/wind/artifacts/gems/OneToOne.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Avatar/Elemental/wind/artifacts/gems/Sigmoid.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Avatar/Elemental/wind/artifacts/gems/Sigmoid.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Avatar/Elemental/wind/artifacts/gems/SigmoidDerivative.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Avatar/Elemental/wind/artifacts/gems/Sum.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Avatar/Elemental/wind/artifacts/gems/Sum.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Avatar/Elemental/wind/artifacts/gems/Weigh.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Avatar/Elemental/wind/artifacts/gems/Weigh.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Avatar/Elemental/wind/artifacts/test/TowerOfRassTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Avatar/Elemental/wind/math/arcane/UnitSphere.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Avatar/Elemental/wind/math/arcane/UnitSphere.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Avatar/Elemental/wind/math/filters/GaussKernel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Avatar/Elemental/wind/math/filters/GaussKernel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Avatar/Elemental/wind/math/functions/GammaFunction.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Avatar/Elemental/wind/math/functions/GammaFunction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Avatar/Boxfresh/routes/Friends.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Avatar/Boxfresh/routes/Friends.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/fire/AI/classic/galance/InputLayer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/fire/AI/classic/galance/hidden/Backpropagation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/fire/AI/classic/Backpropagation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/fire/AI/classic/galance/hidden/HiddenNet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/fire/AI/classic/layers/hidden/HiddenNet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/fire/AI/classic/galance/hidden/HiddenNetSpecifications.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/fire/AI/classic/galance/hidden/Layer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/fire/AI/classic/layers/hidden/Layer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/fire/AI/classic/galance/hidden/NeuralNetwork.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/fire/AI/classic/NeuralNetwork.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/fire/AI/classic/galance/hidden/NeuralNetworkSpecification.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/fire/AI/classic/NeuralNetworkSpecification.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/fire/AI/classic/galance/hidden/OutputNetAlgorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/fire/AI/classic/layers/output/OutputNetAlgorithm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/fire/AI/classic/galance/hidden/exceptions/IllegalInputDimensionException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/fire/AI/classic/exceptions/IllegalInputDimensionException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/fire/AI/classic/galance/hidden/exceptions/IllegalOperationOrderException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/fire/AI/classic/exceptions/IllegalOperationOrderException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/fire/AI/classic/galance/hidden/exceptions/IllegalyConnectedLayersException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/fire/AI/classic/exceptions/IllegalyConnectedLayersException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/fire/AI/classic/galance/hidden/test/NeuralNetworkTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/fire/AI/classic/test/NeuralNetworkTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/fire/AI/classic/graveyard/Connectidin.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/fire/AI/classic/graveyard/CrushDemocracyCostFunction.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/fire/AI/classic/graveyard/DemocracyCrushingAI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/fire/AI/classic/graveyard/Dopamine.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/fire/AI/classic/graveyard/HiddenLayerSlice.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/fire/AI/classic/graveyard/Neuron.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/fire/AI/classic/graveyard/OutputLayer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/fire/AI/classic/graveyard/TensorNeuron.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/fire/AI/test/NeuronTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/fire/AI/test/TensorNeuronTest.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -237,6 +157,17 @@
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -389,7 +320,7 @@
       <workItem from="1602640949510" duration="2409000" />
       <workItem from="1602728066075" duration="18153000" />
       <workItem from="1602858084298" duration="3263000" />
-      <workItem from="1603043129461" duration="251000" />
+      <workItem from="1603043129461" duration="3562000" />
     </task>
     <servers />
   </component>
@@ -436,10 +367,10 @@
     <state x="329" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.23.1440.825@0.23.1440.825" timestamp="1600750978390" />
     <state x="329" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.23.1440.826@0.23.1440.826" timestamp="1601083337618" />
     <state x="329" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.23.1440.828@0.23.1440.828" timestamp="1601861865108" />
-    <state x="466" y="180" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1602735310965">
+    <state x="466" y="180" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1603073184141">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="466" y="180" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1440.900@0.0.1440.900" timestamp="1602735310965" />
+    <state x="466" y="180" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1440.900@0.0.1440.900" timestamp="1603073184141" />
     <state x="466" y="188" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1440.823@0.23.1440.823" timestamp="1600650449982" />
     <state x="466" y="188" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1440.825@0.23.1440.825" timestamp="1600742182632" />
     <state x="466" y="188" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1440.826@0.23.1440.826" timestamp="1601083253121" />

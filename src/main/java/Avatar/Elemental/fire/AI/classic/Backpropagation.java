@@ -1,5 +1,6 @@
-package Avatar.Elemental.fire.AI.classic.galance.hidden;
+package Avatar.Elemental.fire.AI.classic;
 
+import Avatar.Elemental.fire.AI.classic.layers.hidden.Layer;
 import Avatar.Elemental.water.signals.VectorSignal;
 
 public class Backpropagation

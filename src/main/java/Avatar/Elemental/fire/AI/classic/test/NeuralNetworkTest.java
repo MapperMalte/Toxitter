@@ -1,9 +1,8 @@
-package Avatar.Elemental.fire.AI.classic.galance.hidden.test;
+package Avatar.Elemental.fire.AI.classic.test;
 
 import Avatar.Elemental.fire.AI.classic.RandomWeightSeeder;
-import Avatar.Elemental.fire.AI.classic.galance.hidden.HiddenNetSpecifications;
-import Avatar.Elemental.fire.AI.classic.galance.hidden.NeuralNetwork;
-import Avatar.Elemental.fire.AI.classic.galance.hidden.NeuralNetworkSpecification;
+import Avatar.Elemental.fire.AI.classic.NeuralNetwork;
+import Avatar.Elemental.fire.AI.classic.NeuralNetworkSpecification;
 import org.junit.Test;
 
 public class NeuralNetworkTest

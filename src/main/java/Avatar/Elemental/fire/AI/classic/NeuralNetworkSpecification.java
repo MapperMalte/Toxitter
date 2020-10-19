@@ -1,6 +1,7 @@
-package Avatar.Elemental.fire.AI.classic.galance.hidden;
+package Avatar.Elemental.fire.AI.classic;
 
 import Avatar.Elemental.fire.AI.classic.artifacts.ActivationFunction;
+import Avatar.Elemental.fire.AI.classic.layers.hidden.Layer;
 
 public class NeuralNetworkSpecification
 {
