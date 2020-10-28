@@ -13,7 +13,7 @@ public class RandomWeightSeeder implements WeightSeeder
         {
             for(int y = 0; y < yL; y++)
             {
-                randomMatrix[x][y] = 1;//(Math.random())*amplitude;
+                randomMatrix[x][y] = (Math.random())*amplitude;
             }
         }
         return randomMatrix;

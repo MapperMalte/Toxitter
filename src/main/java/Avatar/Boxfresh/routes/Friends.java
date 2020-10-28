@@ -7,10 +7,13 @@ import Avatar.Boxfresh.output.FriendRequestAccepted;
 import Avatar.Boxfresh.output.FriendRequestReceived;
 import Avatar.Elemental.earth.ReservoirEntity;
 import Avatar.Annotations.security.Protected;
+import Avatar.Elemental.water.Pool;
 
 @FetchAt(route = "friends")
 public class Friends
 {
+    private static Pool<FriendRequestReceived> requestReceivedPool;
+
     private static class ReceivedFriendRequest extends ReservoirEntity {
         String id;
 
@@ -24,37 +27,38 @@ public class Friends
 
     @Protected(scope = "user")
     @Route(route = "add")
-    public static String sendFriendRequest(
+    public static String sendFriendRequestFromTo(
             String fromUserId,
             String targetUserName
     ) {
 
         String targetUserId = UserReservoir.getUserIdByMail(targetUserName);
+
         FriendRequestReceived friendRequestReceived = new FriendRequestReceived();
         friendRequestReceived.fromUserId = fromUserId;
         friendRequestReceived.fromUserName = UserReservoir.getUserByUserId(fromUserId).name;
 
         ReceivedFriendRequest receivedFriendRequest = new ReceivedFriendRequest(friendRequestReceived);
 
-        ToxitterWebsocketHandler.push(targetUserId, friendRequestReceived);
+        requestReceivedPool.push(friendRequestReceived);
+
+        ToxitterWebsocketHandler.get().push(targetUserId, friendRequestReceived);
+
         return "Friend request sent!";
     }
 
     @Protected(scope = "user")
     @Route(route = "accept")
-    public static String acceptFriendRequest(
+    public static String acceptFriendRequestFromBy(
             String fromUserName,
             String acceptingUserId
     ) {
         String requestSentFromUserId = UserReservoir.getUserByUserName(fromUserName).userId;
-        //ReceivedFriendRequest receivedFriendRequest = sentRequests.getget(requestSentFromUserId,acceptingUserId);
-        /*FriendRequestAccepted answer2 = new FriendRequestAccepted();
-        answer2.from = fromUserName;
-        ToxitterWebsocketHandler.push(receivedFriendRequest.friendRequestReceived.fromUserId, answer2);
-        */
+
         FriendRequestAccepted answer = new FriendRequestAccepted();
         answer.from = UserReservoir.getUserByUserId(acceptingUserId).name;
-        ToxitterWebsocketHandler.push(requestSentFromUserId, answer);
+        ToxitterWebsocketHandler.get().push(requestSentFromUserId, answer);
+
         return "Freundschaft Angenommen!";
     }
 }

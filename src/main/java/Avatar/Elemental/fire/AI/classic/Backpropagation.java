@@ -12,6 +12,13 @@ public class Backpropagation
     private VectorSignal expectedInOutputLayer;
     private VectorSignal actualOutput = null;
 
+    public Backpropagation(NeuralNetworkSpecification neuralNetworkSpecification)
+    {
+        this.inputIntoLayers = new VectorSignal[neuralNetworkSpecification.getWidthOfHiddenNetAndOutputLayer()];
+        this.outputOfLayers = new VectorSignal[neuralNetworkSpecification.getWidthOfHiddenNetAndOutputLayer()];
+        this.DELTA_OF_LAYER = new VectorSignal[neuralNetworkSpecification.getWidthOfHiddenNetAndOutputLayer()];
+    }
+
     public VectorSignal getExpectedInOutputLayer()
     {
         return expectedInOutputLayer;
@@ -60,5 +67,9 @@ public class Backpropagation
     public void setInputIntoLayer(Layer one, VectorSignal input)
     {
         inputIntoLayers[one.getIndex()] = input;
+    }
+
+    public void setActualOutput(VectorSignal output) {
+        this.actualOutput = output;
     }
 }

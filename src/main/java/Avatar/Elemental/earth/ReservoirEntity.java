@@ -18,6 +18,7 @@ public abstract class ReservoirEntity implements Comparable<ReservoirEntity>
 
     public ID getId()
     {
+        if ( id == null ) id = new ID();
         return id;
     }
 
@@ -28,6 +29,6 @@ public abstract class ReservoirEntity implements Comparable<ReservoirEntity>
 
     @Override
     public int compareTo(ReservoirEntity o) {
-        return o.id.compareTo(id);
+        return o.getId().compareTo(this.getId());
     }
 }

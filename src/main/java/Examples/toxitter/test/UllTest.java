@@ -13,8 +13,8 @@ public class UllTest
     @Test
     public void testUserReservoir()
     {
-        BookOfIlaan.write(UserReservoir.registerUser("Malte Nolden","malte_nolden@yahoo.de", User.getPwdHashMock()));
-        BookOfIlaan.write(UserReservoir.registerUser("Niklas Köhler","nkoehler@gmx.de", User.getPwdHashMock()));
+        BookOfIlaan.write(UserReservoir.registerUser("Malte Nolden","malte_nolden@yahoo.de", User.getPwdHashMock()).userId);
+        BookOfIlaan.write(UserReservoir.registerUser("Niklas Köhler","nkoehler@gmx.de", User.getPwdHashMock()).userId);
         BookOfIlaan.write(UserReservoir.getUserIdByMail("malte_nolden@yahoo.de"));
 
         assertEquals(UserReservoir.getUserByUserId(UserReservoir.getUserIdByMail("malte_nolden@yahoo.de")).getName(),"Malte Nolden");

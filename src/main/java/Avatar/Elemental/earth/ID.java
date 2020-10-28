@@ -2,10 +2,15 @@ package Avatar.Elemental.earth;
 
 import java.util.TreeMap;
 
-public class ID extends ReservoirEntity
+public class ID implements Comparable<ID>
 {
     private String id = "";
     private static TreeMap<String, Boolean> IDs = new TreeMap<>();
+
+    @Override
+    public int compareTo(ID nid) {
+        return id.compareTo(nid.id);
+    }
 
     public ID()
     {

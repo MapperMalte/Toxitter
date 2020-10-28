@@ -43,9 +43,4 @@ public abstract class ContentAI
         currentState.put(stimulantia,value);
 
     }
-
-    public void WANT(NeuroCocktail stimulans, Stimulans_CostFunction costFunction)
-    {
-
-    }
 }

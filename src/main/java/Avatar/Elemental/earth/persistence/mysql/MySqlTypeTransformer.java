@@ -9,6 +9,11 @@ public class MySqlTypeTransformer extends TypeTransformer
 
     @Override
     public String transform(Class type) {
+        System.out.println("comp: "+type.getName());
+        if ( type.equals(ID.class) )
+        {
+            return "VARCHAR(255) NOT NULL";
+        }
         switch (type.getName()){
             case "java.lang.String":
                 return "VARCHAR(255) NOT NULL";
@@ -18,10 +23,7 @@ public class MySqlTypeTransformer extends TypeTransformer
             case "java.lang.Double":
                 return "DOUBLE NOT NULL";
         }
-        if ( type.equals(ID.class) )
-        {
-            return "VARCHAR(255) NOT NULL";
-        }
+
         System.out.println("Type: "+type.getName());
         throw new IllegalArgumentException("");
     }

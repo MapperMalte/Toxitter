@@ -64,7 +64,7 @@ public class UserReservoir
      * @param pwd
      * @return
      */
-    public static String registerUser(
+    public static User registerUser(
             String name,
             String email,
             String pwd)
@@ -79,7 +79,7 @@ public class UserReservoir
         usersById.put(newUser.userId,newUser);
         usersByName.put(newUser.name,newUser);
         UserPrivileges.add(newUser.userId,"user");
-        return newUser.userId;
+        return newUser;
     }
 
     @Route(route = "all")

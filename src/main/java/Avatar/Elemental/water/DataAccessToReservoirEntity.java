@@ -103,6 +103,7 @@ public class DataAccessToReservoirEntity
     public Object get(String field)
     {
         try {
+            System.out.println("Field: "+field);
             Object o = getters.get(field).invoke(object);
             if ( o.getClass().equals(ID.class) )
             {

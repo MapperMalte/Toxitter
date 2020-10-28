@@ -1,5 +1,6 @@
 package Avatar.Elemental.earth.persistence.mysql.test;
 
+import Avatar.Elemental.earth.ID;
 import Avatar.Test.TestReservoirEntity;
 import Avatar.Elemental.water.DataAccessToReservoirEntity;
 import Avatar.Elemental.water.ReservoirEntityDataPresenter;
@@ -13,7 +14,7 @@ public class MySqlStatementTest
     public static ReservoirEntityDataPresenter getPresenterMock()
     {
         TestReservoirEntity test = new TestReservoirEntity("Malte",9034);
-        test.setId("#id");
+        test.setId(new ID("#id"));
         DataAccessToReservoirEntity dataAccess = test.getDataAccess();
         ReservoirEntityDataPresenter depp = new ReservoirEntityDataPresenter(dataAccess);
         return depp;

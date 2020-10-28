@@ -1,11 +1,13 @@
 package Avatar.Elemental.aether;
 
 import Avatar.Boxfresh.routes.LoginAndRegister;
+import Avatar.Boxfresh.routes.User;
 import Avatar.Boxfresh.routes.UserReservoir;
 import Avatar.Annotations.core.PushTo;
 import Avatar.Boxfresh.output.LoginSuccess;
 import Avatar.Elemental.water.OUTPUT;
 import Avatar.Elemental.water.BookOfIlaan;
+import Avatar.Elemental.water.Pusher;
 import Avatar.Security.ToxitterSecurityMiddleware;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
@@ -19,16 +21,31 @@ import java.net.InetSocketAddress;
 import java.net.UnknownHostException;
 import java.nio.ByteBuffer;
 import java.util.Collections;
+import java.util.TreeMap;
 
 /**
  * A simple WebSocketServer implementation. Keeps track of a "chatroom".
  */
-public class ToxitterWebsocketHandler extends WebSocketServer
+public class ToxitterWebsocketHandler extends WebSocketServer implements Pusher
 {
+    private static TreeMap<Integer,ToxitterWebsocketHandler> websocketHandlerTreeMap = new TreeMap<>();
+    private static ToxitterWebsocketHandler newest = null;
+    private User owner;
+
+    public static ToxitterWebsocketHandler getByPort(int port)
+    {
+        return websocketHandlerTreeMap.get(port);
+    }
+
+    public static ToxitterWebsocketHandler get()
+    {
+        return newest;
+    }
 
     public ToxitterWebsocketHandler(int port) throws UnknownHostException
     {
         super(new InetSocketAddress(port));
+        websocketHandlerTreeMap.put(port,this);
     }
 
     public ToxitterWebsocketHandler(InetSocketAddress address)
@@ -39,6 +56,7 @@ public class ToxitterWebsocketHandler extends WebSocketServer
     public ToxitterWebsocketHandler(int port, Draft_6455 draft)
     {
         super(new InetSocketAddress(port), Collections.<Draft>singletonList(draft));
+        websocketHandlerTreeMap.put(port,this);
     }
 
     @Override
@@ -51,19 +69,19 @@ public class ToxitterWebsocketHandler extends WebSocketServer
                 conn.getRemoteSocketAddress().getAddress().getHostAddress() + " entered the room!");
     }
 
-    public static void push(String userId, OUTPUT outputDTO)
+    public void push(User user, OUTPUT outputDTO)
     {
-        BookOfIlaan.write(ToxitterWebsocketHandler.class,"==== {PUSH! Called Targeting user with ID "+userId+" and outputDTO "+outputDTO.getClass().getName());
+        BookOfIlaan.write(ToxitterWebsocketHandler.class,"==== {PUSH! Called Targeting user with ID "+user.userId+" and outputDTO "+outputDTO.getClass().getName());
         if ( outputDTO.getClass().isAnnotationPresent(PushTo.class) )
         {
             BookOfIlaan.write(ToxitterWebsocketHandler.class,"Found PushTo Annotation!");
             PushTo pushTo = outputDTO.getClass().getAnnotation(PushTo.class);
             BookOfIlaan.write(ToxitterWebsocketHandler.class, "Pushing to client data "+outputDTO.asJSON()+" on route "+pushTo.route());
-            BookOfIlaan.write(ToxitterWebsocketHandler.class,"UserId of target client: "+userId);
-            BookOfIlaan.write(ToxitterWebsocketHandler.class,"Associated websocket: "+ OnlineStateManager.getWebsocketByUserId(userId));
-            OnlineStateManager.getWebsocketByUserId(userId).send(pushTo.route()+" "+outputDTO.asJSON());
+            BookOfIlaan.write(ToxitterWebsocketHandler.class,"UserId of target client: "+user.userId);
+            WebSocket webSocket = ((WebsocketConnection)ConnectionManager.getConnectionByType(user,WebsocketConnection.class)).getSocket();
+            BookOfIlaan.write(ToxitterWebsocketHandler.class,"Associated websocket: "+ webSocket);
+            webSocket.send(pushTo.route()+" "+outputDTO.asJSON());
             BookOfIlaan.write(ToxitterWebsocketHandler.class,"PushTo Annotation for route "+pushTo.route()+" resolved. }====");
-            OnlineStateManager.ping(userId);
         }
     }
 
@@ -71,7 +89,6 @@ public class ToxitterWebsocketHandler extends WebSocketServer
     public void onClose(WebSocket conn, int code, String reason, boolean remote)
     {
         System.out.println(conn + " has left the room!");
-        OnlineStateManager.disconnect(conn);
     }
 
     private boolean knownRoute(String route)
@@ -126,7 +143,7 @@ public class ToxitterWebsocketHandler extends WebSocketServer
                     BookOfIlaan.write(ToxitterWebsocketHandler.class,"Response from Server: "+response.asJSON());
                     if ( response.getClass().equals(LoginSuccess.class) )
                     {
-                        OnlineStateManager.connect(conn, UserReservoir.getUserByUserId(((LoginSuccess)(response)).userId));
+                        ConnectionManager.connect(new WebsocketConnection(conn),UserReservoir.getUserByUserId(((LoginSuccess)(response)).userId));
                     }
                     if ( response.getClass().isAnnotationPresent(PushTo.class) )
                     {

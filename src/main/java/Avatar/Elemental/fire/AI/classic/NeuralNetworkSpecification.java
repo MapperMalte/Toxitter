@@ -1,18 +1,29 @@
 package Avatar.Elemental.fire.AI.classic;
 
-import Avatar.Elemental.fire.AI.classic.artifacts.ActivationFunction;
 import Avatar.Elemental.fire.AI.classic.layers.hidden.Layer;
+import Avatar.Elemental.wind.math.Function;
 
 public class NeuralNetworkSpecification
 {
-    public ActivationFunction activationFunction;
+    public Function activationFunction;
     private int inputDimension;
     private int[] hiddenLayerDimensions;
     private int outputDimension;
+    private int runningId = -1;
+
+    public int makeLayerIndex()
+    {
+        runningId++;
+        return runningId;
+    }
 
     public NeuralNetworkSpecification()
     {
 
+    }
+    public void setActivationFunction(Function function)
+    {
+        this.activationFunction = function;
     }
 
     public boolean hasHiddenLayers()
@@ -20,9 +31,19 @@ public class NeuralNetworkSpecification
         return ( !(hiddenLayerDimensions == null) && hiddenLayerDimensions.length > 0 );
     }
 
-    public int getWidth()
+    public int getWidthOfHiddenNet()
     {
         return hiddenLayerDimensions.length;
+    }
+
+    public int getWidthOfHiddenNetAndOutputLayer()
+    {
+        return hiddenLayerDimensions.length+1;
+    }
+
+    public int getWidthWithInputAndOutputLayers()
+    {
+        return hiddenLayerDimensions.length +2 ;
     }
 
     public NeuralNetworkSpecification(int inputDimension, int[] hiddenLayerDimensions, int outputDimension)

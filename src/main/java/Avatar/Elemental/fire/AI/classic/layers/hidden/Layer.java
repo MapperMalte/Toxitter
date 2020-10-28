@@ -1,18 +1,21 @@
 package Avatar.Elemental.fire.AI.classic.layers.hidden;
 
 import Avatar.Elemental.fire.AI.classic.NeuralNetwork;
+import Avatar.Elemental.fire.AI.classic.NeuralNetworkSpecification;
 import Avatar.Elemental.water.signals.MatrixSignal;
 
 public class Layer
 {
-    public static int runningId = 0;
     private MatrixSignal weights;
     private int index = 0;
+    private int height;
+    private NeuralNetworkSpecification neuralNetworkSpecification;
 
-    public Layer(NeuralNetwork parent)
+    public Layer(int height, NeuralNetworkSpecification neuralNetworkSpecification)
     {
-        index = runningId;
-        runningId++;
+        this.height = height;
+        this.neuralNetworkSpecification = neuralNetworkSpecification;
+        index = neuralNetworkSpecification.makeLayerIndex();
     }
 
     public void setWeights(MatrixSignal weights)
@@ -32,12 +35,12 @@ public class Layer
 
     public boolean isPreviousLayerOf(Layer two)
     {
-        return index-two.index == 1;
+        return index-two.index == -1;
     }
 
     public boolean hasNextLayer()
     {
-        return !(index == runningId-1);
+        return ( index == neuralNetworkSpecification.getWidthOfHiddenNet()-1 );
     }
 
     public int getIndex()
@@ -65,6 +68,6 @@ public class Layer
     }
 
     public int getHeight() {
-        return weights.data.length;
+        return height;
     }
 }

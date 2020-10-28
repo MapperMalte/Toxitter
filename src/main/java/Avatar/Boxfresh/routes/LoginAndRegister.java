@@ -125,7 +125,7 @@ public class LoginAndRegister
         {
             return "User with email "+email+" already exists!";
         }
-        String newUserId = UserReservoir.registerUser((surname+" "+name),email,password);
+        String newUserId = UserReservoir.registerUser((surname+" "+name),email,password).userId;
         User user = UserReservoir.getUserByMail(email);
 
         return "{\"userId\": \""+newUserId+"\", "

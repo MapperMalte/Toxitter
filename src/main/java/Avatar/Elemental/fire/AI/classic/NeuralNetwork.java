@@ -20,7 +20,7 @@ public class NeuralNetwork
 
     private void createFromSpec()
     {
-        this.inputLayer = new Layer(this);
+        this.inputLayer = new Layer(specification.getInputDimension(),specification);
         if ( specification.hasHiddenLayers() )
         {
             MatrixSignal weights = new MatrixSignal(weightSeeder.seedRandomMatrix(specification.getInputDimension(), specification.getLayerHeight(0)));
@@ -29,17 +29,20 @@ public class NeuralNetwork
             MatrixSignal weights = new MatrixSignal(weightSeeder.seedRandomMatrix(specification.getInputDimension(), specification.getOutputDimension() ));
         }
 
-        hiddenNet = new HiddenNet(
+        hiddenNet = new HiddenNet (
                 specification,
                 new HiddenNetPropagationAlgorithm(),
                 new HiddenNetBackpropagationAlgorithm(),
-                new BackpropagationFactory());
+                new BackpropagationFactory()
+        );
         hiddenNet.seed(weightSeeder);
     }
 
     public NeuralNetwork(NeuralNetworkSpecification specification, WeightSeeder weightSeeder)
     {
         this.specification = specification;
+        this.weightSeeder = weightSeeder;
+        this.createFromSpec();
     }
 
     public VectorSignal predict(VectorSignal input)
@@ -48,12 +51,8 @@ public class NeuralNetwork
         {
             throw new IllegalInputDimensionException("Input vector signal should have dimension "+specification.getInputDimension()+" but has dimension "+input.length());
         }
-        Backpropagation backpropagation = new Backpropagation();
-
-
-
-
-
-        return null;
+        Backpropagation backpropagation = hiddenNet.propagate(input);
+        hiddenNet.backpropagate(backpropagation);
+        return backpropagation.getActualOutput();
     }
 }

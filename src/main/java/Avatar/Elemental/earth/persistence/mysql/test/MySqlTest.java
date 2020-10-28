@@ -1,5 +1,6 @@
 package Avatar.Elemental.earth.persistence.mysql.test;
 
+import Avatar.Elemental.earth.ID;
 import Avatar.Test.TestReservoirEntity;
 import Avatar.Elemental.water.ReservoirEntityDataPresenter;
 import Avatar.Elemental.earth.persistence.mysql.MySql;
@@ -32,7 +33,7 @@ public class MySqlTest
     public void testReadModel()
     {
         TestReservoirEntity test = new TestReservoirEntity();
-        test.setId("#id");
+        test.setId(new ID("#id"));
         MySql.selectIntoReservoirEntity(test);
         System.out.println("ID: "+test.getId());
         System.out.println("Name: "+test.getName());

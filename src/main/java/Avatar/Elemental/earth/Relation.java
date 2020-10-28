@@ -1,5 +1,6 @@
 package Avatar.Elemental.earth;
 
+import Avatar.Boxfresh.testutils.NirvanaQueueSleeper;
 import Avatar.Elemental.wind.artifacts.TemporalQueue;
 
 public class Relation<V extends ReservoirEntity, T extends ReservoirEntity>
@@ -9,9 +10,13 @@ public class Relation<V extends ReservoirEntity, T extends ReservoirEntity>
     // Queue-Sleeper: Save only ID-connections, only relation.
     // Table: CLASS_NAME, ID_ONE, ID_TWO
     TemporalQueue<ID, ReservoirEntityList<T>> forward;
-    TemporalQueue<ID,ReservoirEntityList<V>> backward;
+    TemporalQueue<ID, ReservoirEntityList<V>> backward;
 
-    TemporalQueue<ID,ReservoirEntityList<ID>> backwardX;
+    public Relation()
+    {
+        forward = new TemporalQueue<>(100, new NirvanaQueueSleeper<>());
+        backward = new TemporalQueue<>(100, new NirvanaQueueSleeper<>());
+    }
 
     public void put(V value1, T value2)
     {
@@ -23,8 +28,10 @@ public class Relation<V extends ReservoirEntity, T extends ReservoirEntity>
 
     public boolean hasLink(V value1, T value2)
     {
-        if ( !backward.exists(value1.getId()) ) return false;
-        return backward.get(value1.getId()).movePointerToKey(value2.getId());
+        if ( !backward.exists(value1.getId()) && !forward.exists(value1.getId()) ) return false;
+        if ( backward.exists(value1.getId()) )
+            return backward.get(value1.getId()).movePointerToKey(value2.getId());
+        return forward.get(value1.getId()).movePointerToKey(value2.getId());
     }
 
     /**
@@ -41,5 +48,4 @@ public class Relation<V extends ReservoirEntity, T extends ReservoirEntity>
     {
         return backward.get(key.getId());
     }
-
 }

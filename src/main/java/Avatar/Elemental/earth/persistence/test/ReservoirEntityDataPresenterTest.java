@@ -1,5 +1,6 @@
 package Avatar.Elemental.earth.persistence.test;
 
+import Avatar.Elemental.earth.ID;
 import Avatar.Test.TestReservoirEntity;
 import Avatar.Elemental.water.DataAccessToReservoirEntity;
 import Avatar.Elemental.water.ReservoirEntityDataPresenter;
@@ -13,7 +14,7 @@ public class ReservoirEntityDataPresenterTest
     public void testDataRepresentationCorrect()
     {
         TestReservoirEntity test = new TestReservoirEntity("Malte",9034);
-        test.setId("#id");
+        test.setId(new ID("#id"));
         DataAccessToReservoirEntity dataAccess = test.getDataAccess();
         assertEquals(dataAccess.get("name"),"Malte");
         assertEquals(dataAccess.get("powerlevel"),9034);

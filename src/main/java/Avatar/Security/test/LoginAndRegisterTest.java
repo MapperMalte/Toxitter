@@ -14,8 +14,8 @@ public class LoginAndRegisterTest
     {
         System.out.println("---- SecurityTest");
         System.out.println("testTokenHub");
-        String userId = UserReservoir.registerUser("Malte","mail","drölf");
-        String unprivilegedUserId = UserReservoir.registerUser("Peter","mail2","vierzehn");
+        String userId = UserReservoir.registerUser("Malte","mail","drölf").userId;
+        String unprivilegedUserId = UserReservoir.registerUser("Peter","mail2","vierzehn").userId;
         UserPrivileges.add(userId,"admin");
         UserPrivileges.add(unprivilegedUserId,"user");
 
@@ -38,7 +38,7 @@ public class LoginAndRegisterTest
     @Test
     public void testOnlyValidTokenWithCorrectCredentials()
     {
-        String userId = UserReservoir.registerUser("Malte","mail","drölf");
+        String userId = UserReservoir.registerUser("Malte","mail","drölf").userId;
         UserPrivileges.add(userId,"user");
 
         String noToken = LoginAndRegister.getTokenForScope(userId,"dröf", "user");

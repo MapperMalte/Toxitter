@@ -21,7 +21,7 @@ public class Chat
         chatMessage1.fromUserName = UserReservoir.getUserByUserId(fromUserId).name;
         chatMessage1.message = chatMessage;
 
-        ToxitterWebsocketHandler.push(UserReservoir.getUserByUserName(targetUserName).userId,chatMessage1);
+        ToxitterWebsocketHandler.get().push(UserReservoir.getUserByUserName(targetUserName).userId,chatMessage1);
         return "Chatmessage delivered!";
     }
 }

@@ -1,6 +1,6 @@
 package Avatar.Elemental.water.signals;
 
-import Avatar.Elemental.fire.AI.classic.graveyard.HiddenLayerSlice;
+
 import Avatar.Elemental.water.BookOfIlaan;
 import Avatar.Elemental.wind.math.Function;
 
@@ -33,7 +33,6 @@ public class VectorSignal extends Signal
     {
         for(int i = 0; i < data.length; i++)
         {
-            if (HiddenLayerSlice.debug) System.out.println("From "+data[i]+" to "+function.getValue(data[i]));
             data[i] = function.getValue(data[i]);
         }
     }

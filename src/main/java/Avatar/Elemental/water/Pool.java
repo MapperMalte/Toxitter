@@ -1,17 +1,18 @@
 package Avatar.Elemental.water;
 
 import Avatar.Boxfresh.routes.User;
-import Avatar.Elemental.aether.ToxitterWebsocketHandler;
 import Avatar.Elemental.aether.OnlineStateManager;
 import Avatar.Elemental.earth.ID;
 import Avatar.Elemental.earth.Relation;
 import Avatar.Elemental.earth.ReservoirEntity;
+import Avatar.Elemental.earth.ReservoirEntityList;
 import Avatar.Elemental.wind.artifacts.DiamondList;
 
-public class Pool extends ReservoirEntity
+public class Pool<T extends OUTPUT> extends ReservoirEntity
 {
-    private static final Relation<User, OUTPUT> undeliveredPool = new Relation<>();
-    private static final Relation<Pool, User> subscribersByPool = new Relation<>();
+    private Relation<User, T> undeliveredPool = new Relation<>();
+    private Relation<Pool<T>, User> subscribersByPool = new Relation<>();
+    private Pusher pusher;
 
     private final ID telekey = new ID();
 
@@ -20,55 +21,50 @@ public class Pool extends ReservoirEntity
         subscribersByPool.put(this,user);
     }
 
-    public static void fetchForUser(User user)
+    public void setPusher(Pusher pusher)
     {
-        if ( OnlineStateManager.isUserOnline(user.userId) )
+        this.pusher = pusher;
+    }
+
+    public void fetchForUser(User user)
+    {
+        if ( OnlineStateManager.isUserOnline(user) )
         {
-            DiamondList<OUTPUT> open = undeliveredPool.forwardGet(user);
+            DiamondList<T> open = undeliveredPool.forwardGet(user);
             open.bottom();
             while (!open.isPointerNull()) {
-                ToxitterWebsocketHandler.push(user.userId, open.getCurrent());
+                pusher.push(user, open.getCurrent());
                 open.next();
             }
         }
     }
 
-    public static void pullForUserIdIfUserOnline(User user)
+    public void userComesOnline(User user)
     {
-        if ( OnlineStateManager.isUserOnline(user.userId) ) {
-            DiamondList<OUTPUT> open = undeliveredPool.forwardGet(user);
-            open.bottom();
-            while (!open.isPointerNull()) {
-                ToxitterWebsocketHandler.push(user.userId, open.getCurrent());
-                open.removeCurrent();
-            }
+        DiamondList<T> open = undeliveredPool.forwardGet(user);
+        open.bottom();
+        while (!open.isPointerNull()) {
+            pusher.push(user, open.getCurrent());
+            open.removeCurrent();
         }
     }
 
-    public void pull()
+    public ReservoirEntityList<T> get(User user)
     {
-        DiamondList<User> subscribers = subscribersByPool.forwardGet(this);
-        subscribers.bottom();
-        while (!subscribers.isPointerNull())
-        {
-            pullForUserIdIfUserOnline(subscribers.getCurrent());
-            subscribers.next();
-        }
+        return undeliveredPool.forwardGet(user);
     }
     /**
      * Pushes the data to all users that subscribed to this pool
      * @param tda
      */
-    public void push(OUTPUT tda)
+    public void push(T tda)
     {
         DiamondList<User> subscribers = subscribersByPool.forwardGet(this);
         subscribers.bottom();
         while (!subscribers.isPointerNull())
         {
-            String userId = subscribers.getCurrent().userId;
-
-            if ( OnlineStateManager.isUserOnline(userId) ) {
-                ToxitterWebsocketHandler.push(userId, tda);
+            if (OnlineStateManager.isUserOnline(subscribers.getCurrent())) {
+                pusher.push(subscribers.getCurrent(), tda);
             } else
             {
                 undeliveredPool.put(subscribers.getCurrent(),tda);
