@@ -1,10 +1,17 @@
 package Avatar.Elemental.earth;
 
+import javax.crypto.KeyGenerator;
+import javax.crypto.SecretKey;
+import java.security.KeyPair;
+import java.security.KeyPairGenerator;
+import java.security.NoSuchAlgorithmException;
 import java.util.TreeMap;
 
 public class ID implements Comparable<ID>
 {
     private String id = "";
+    private static KeyPair keyPair = getRSAKeypair();
+
     private static TreeMap<String, Boolean> IDs = new TreeMap<>();
 
     @Override
@@ -12,8 +19,33 @@ public class ID implements Comparable<ID>
         return id.compareTo(nid.id);
     }
 
+    private static KeyPair getRSAKeypair()
+    {
+        KeyPairGenerator kpg = null;
+        try {
+            kpg = KeyPairGenerator.getInstance("RSA");
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        }
+        kpg.initialize(1024);
+        return kpg.generateKeyPair();
+    }
+
     public ID()
     {
+        /*
+        try {
+
+            //publicKey = kp.getPublic().toString();
+
+            KeyGenerator keyGen = KeyGenerator.getInstance("AES");
+            keyGen.init(256); // for example
+            SecretKey secretKey = keyGen.generateKey();
+            publicKey = secretKey.getEncoded();
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        }*/
+
         id = makeId();
     }
 

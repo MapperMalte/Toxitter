@@ -2,12 +2,11 @@ package Avatar.Boxfresh;
 
 import Avatar.Boxfresh.routes.LoginAndRegister;
 import Avatar.Boxfresh.routes.User;
-import Avatar.Boxfresh.routes.UserReservoir;
+import Avatar.Boxfresh.reservoirs.UserReservoir;
 import Avatar.Boxfresh.routes.Chat;
-import Avatar.Boxfresh.routes.Friends;
+import Avatar.Boxfresh.routes.Friend;
 import Avatar.Elemental.aether.ToxitterClassRouter;
 import Avatar.Elemental.aether.BookOfGorlon;
-import Avatar.Elemental.earth.BookOfGrabbadur;
 
 public class
 ToxitterStandardConfiguratedEnvironment
@@ -24,7 +23,7 @@ ToxitterStandardConfiguratedEnvironment
         ToxitterClassRouter.serve(UserReservoir.class);
         ToxitterClassRouter.serve(LoginAndRegister.class);
         ToxitterClassRouter.serve(User.class);
-        ToxitterClassRouter.serve(Friends.class);
+        ToxitterClassRouter.serve(Friend.class);
         ToxitterClassRouter.serve(Chat.class);
     }
 

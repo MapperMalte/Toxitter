@@ -4,7 +4,7 @@ import Avatar.Elemental.wind.artifacts.TemporalQueue;
 
 public class Reservoir<V extends ReservoirEntity>
 {
-    private TemporalQueue<ID, ReservoirEntity> data;
+    private TemporalQueue<ID, V> data;
 
     public void put(ID id, V reservoirEntity)
     {
@@ -12,7 +12,7 @@ public class Reservoir<V extends ReservoirEntity>
         data.put(id,null);
     }
 
-    public ReservoirEntity get(ID key)
+    public V get(ID key)
     {
         return data.get(key);
     }

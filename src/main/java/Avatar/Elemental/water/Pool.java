@@ -26,7 +26,7 @@ public class Pool<T extends OUTPUT> extends ReservoirEntity
         this.pusher = pusher;
     }
 
-    public void fetchForUser(User user)
+    private void deliver(User user)
     {
         if ( OnlineStateManager.isUserOnline(user) )
         {
@@ -49,7 +49,7 @@ public class Pool<T extends OUTPUT> extends ReservoirEntity
         }
     }
 
-    public ReservoirEntityList<T> get(User user)
+    public ReservoirEntityList<T> pull(User user)
     {
         return undeliveredPool.forwardGet(user);
     }

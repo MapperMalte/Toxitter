@@ -1,6 +1,7 @@
 package Avatar.Boxfresh.routes;
 
 import Avatar.Annotations.core.FetchAt;
+import Avatar.Boxfresh.reservoirs.UserReservoir;
 import Avatar.Elemental.aether.ToxitterWebsocketHandler;
 import Avatar.Annotations.core.Route;
 import Avatar.Boxfresh.output.ChatMessage;
@@ -21,7 +22,7 @@ public class Chat
         chatMessage1.fromUserName = UserReservoir.getUserByUserId(fromUserId).name;
         chatMessage1.message = chatMessage;
 
-        ToxitterWebsocketHandler.get().push(UserReservoir.getUserByUserName(targetUserName).userId,chatMessage1);
+        ToxitterWebsocketHandler.get().push(UserReservoir.getUserByUserName(targetUserName),chatMessage1);
         return "Chatmessage delivered!";
     }
 }

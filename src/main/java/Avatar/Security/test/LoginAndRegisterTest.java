@@ -1,6 +1,6 @@
 package Avatar.Security.test;
 
-import Avatar.Boxfresh.routes.UserReservoir;
+import Avatar.Boxfresh.reservoirs.UserReservoir;
 import Avatar.Boxfresh.routes.LoginAndRegister;
 import Avatar.Security.UserPrivileges;
 import org.junit.Test;

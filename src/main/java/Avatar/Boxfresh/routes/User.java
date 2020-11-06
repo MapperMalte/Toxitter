@@ -1,5 +1,8 @@
 package Avatar.Boxfresh.routes;
 
+import Avatar.Annotations.security.Hidden;
+import Avatar.Annotations.security.Personal;
+import Avatar.Boxfresh.reservoirs.UserReservoir;
 import Avatar.Elemental.earth.ID;
 import Avatar.Elemental.earth.ReservoirEntity;
 import Avatar.Annotations.core.FetchAt;
@@ -7,17 +10,20 @@ import Avatar.Elemental.earth.Persist;
 import Avatar.Annotations.security.Protected;
 import Avatar.Annotations.core.Route;
 import Avatar.Elemental.fire.AI.stimulanziae.Investin;
+import Avatar.Elemental.water.html.annotations.Button;
+import Avatar.Elemental.water.html.annotations.Content;
+import Avatar.Elemental.water.html.annotations.Header;
 
 @FetchAt(route = "user")
 @Persist(primaryKey = "userId", tableName = "user")
 public class User extends ReservoirEntity
 {
     public String userId;
-    public String name;
-    public String photoUrl = "";
-    public String description = "";
-    public String pwd;
-    public String email;
+    public @Header String name;
+    public @Header String photoUrl = "";
+    public @Content String description = "";
+    public @Hidden String pwd;
+    public @Personal String email;
 
     public String getName()
     {
@@ -49,6 +55,8 @@ public class User extends ReservoirEntity
     @Route(route = "setprofilephoto")
     @Protected(scope = "user")
     @Investin
+    @Button(buttonText = "Foto hochladen")
+    @Personal
     public static String setPhotoUrl(
             String userId,
             String photoUrl
@@ -57,6 +65,4 @@ public class User extends ReservoirEntity
         UserReservoir.getUserByUserId(userId).photoUrl = photoUrl;
         return photoUrl;
     }
-
-
 }

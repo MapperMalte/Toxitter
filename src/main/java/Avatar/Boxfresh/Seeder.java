@@ -1,7 +1,7 @@
 package Avatar.Boxfresh;
 
 import Avatar.Boxfresh.routes.User;
-import Avatar.Boxfresh.routes.UserReservoir;
+import Avatar.Boxfresh.reservoirs.UserReservoir;
 import Avatar.Security.UserPrivileges;
 
 public class Seeder

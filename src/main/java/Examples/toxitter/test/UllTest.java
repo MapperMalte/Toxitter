@@ -1,7 +1,7 @@
 package Examples.toxitter.test;
 
 import Avatar.Boxfresh.routes.User;
-import Avatar.Boxfresh.routes.UserReservoir;
+import Avatar.Boxfresh.reservoirs.UserReservoir;
 import Avatar.Elemental.water.BookOfIlaan;
 import Avatar.Elemental.earth.ID;
 import org.junit.Test;

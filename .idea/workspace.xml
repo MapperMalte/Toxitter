@@ -23,114 +23,97 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1a6799fa-3d81-404d-97ed-2e1ce054a946" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Avatar/Boxfresh/routes/test/FriendsTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/aether/Connectable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/aether/ConnectionManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/aether/OnlineStateChangedEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/aether/StandardConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/aether/WebsocketConnection.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/earth/test/SymmetricRelationTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/water/Pusher.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/water/html/HtmlBuilder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/water/html/annotations/Form.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/water/html/annotations/InHeaderToolbar.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/water/test/PoolTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/water/test/TestOutput.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/water/test/TestPusher.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Examples/browsergame/Ability.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Examples/browsergame/AbilityContext.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Examples/browsergame/Hero.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Examples/browsergame/HeroState.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Examples/browsergame/Location.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Examples/browsergame/Unit.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Examples/browsergame/abilities/Flamestrike.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Examples/toxitter/UI/img/calendar.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Avatar/Annotations/security/Hidden.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Avatar/Annotations/security/Personal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Avatar/Boxfresh/reservoirs/FriendsReservoir.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Avatar/Boxfresh/reservoirs/LikeReservoir.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Avatar/Boxfresh/routes/Photo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Avatar/Boxfresh/ui/ChatWindow.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Avatar/Boxfresh/ui/Root.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Avatar/Boxfresh/ui/UIElement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Avatar/Boxfresh/ui/UIOutput.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/aether/WebsocketPusher.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/aether/test/OnlineStateManagerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/water/html/HtmlPress.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/water/html/HtmlStyler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/water/html/annotations/Button.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/water/html/annotations/Card.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/water/html/annotations/Consumes.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/water/html/annotations/Content.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/water/html/annotations/Footer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/water/html/annotations/Inject.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/water/html/annotations/Produces.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/water/html/annotations/Thumbnail.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/water/html/annotations/Toolbar.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/water/html/annotations/UIGroup.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/water/html/annotations/UserEditable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/water/html/annotations/styling/Leftmost.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/water/html/annotations/styling/Middle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/water/html/annotations/styling/Rightmost.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/water/html/test/TestUIElement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/water/toxittercluster/ToxitterCluster.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/wind/datascience/Fractaloid.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/wind/datascience/Intervallic.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/wind/datascience/haromonic/Oktoid.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/wind/simulation/MonteCarlo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/wind/simulation/TO_DO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/wind/ull/Amethystium.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/wind/ull/CorpusCallosum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/wind/ull/LeftHemisphere.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/wind/ull/RightHemisphere.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/wind/ull/SensoryInformationBag.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Avatar/Annotations/core/FetchAt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Avatar/Annotations/core/FetchAt.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Avatar/Boxfresh/Seeder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Avatar/Boxfresh/Seeder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Avatar/Boxfresh/ToxitterStandardConfiguratedEnvironment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Avatar/Boxfresh/ToxitterStandardConfiguratedEnvironment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Avatar/Boxfresh/input/CreatePostRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Avatar/Boxfresh/input/CreatePostRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Avatar/Boxfresh/output/LikeReceived.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Avatar/Boxfresh/output/LikeReceived.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Avatar/Boxfresh/output/LikeSignature.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Avatar/Boxfresh/output/LikeSignature.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Avatar/Boxfresh/relations/Friendslist.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Avatar/Boxfresh/routes/Chat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Avatar/Boxfresh/routes/Chat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Avatar/Boxfresh/routes/Friends.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Avatar/Boxfresh/routes/Friends.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Avatar/Boxfresh/routes/Friends.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Avatar/Boxfresh/routes/Friend.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Avatar/Boxfresh/routes/LoginAndRegister.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Avatar/Boxfresh/routes/LoginAndRegister.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Avatar/Boxfresh/routes/UserReservoir.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Avatar/Boxfresh/routes/UserReservoir.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/aether/OnlineStateManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/aether/OnlineStateManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Avatar/Boxfresh/routes/Post.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Avatar/Boxfresh/routes/Post.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Avatar/Boxfresh/routes/PostReservoir.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Avatar/Boxfresh/reservoirs/PostReservoir.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Avatar/Boxfresh/routes/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Avatar/Boxfresh/routes/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Avatar/Boxfresh/routes/UserReservoir.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Avatar/Boxfresh/reservoirs/UserReservoir.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Avatar/Boxfresh/routes/test/FriendsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Avatar/Boxfresh/routes/test/FriendsTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/aether/ToxitterWebsocketHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/aether/ToxitterWebsocketHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/aether/WebsocketConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/aether/WebsocketConnection.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/earth/ID.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/earth/ID.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/earth/Relation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/earth/Relation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/earth/ReservoirEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/earth/ReservoirEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/earth/SymmetricRelation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/earth/SymmetricRelation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/earth/persistence/mysql/MySqlTypeTransformer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/earth/persistence/mysql/MySqlTypeTransformer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/earth/persistence/mysql/test/MySqlStatementTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/earth/persistence/mysql/test/MySqlStatementTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/earth/persistence/mysql/test/MySqlTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/earth/persistence/mysql/test/MySqlTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/earth/persistence/test/DataAccessTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/earth/persistence/test/DataAccessTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/earth/persistence/test/ReservoirEntityDataPresenterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/earth/persistence/test/ReservoirEntityDataPresenterTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/earth/test/RelationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/earth/test/RelationTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/fire/AI/ContentAI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/fire/AI/ContentAI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/fire/AI/Stimulans_CostFunction.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/fire/AI/classic/Backpropagation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/fire/AI/classic/Backpropagation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/fire/AI/classic/NeuralNetwork.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/fire/AI/classic/NeuralNetwork.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/fire/AI/classic/NeuralNetworkSpecification.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/fire/AI/classic/NeuralNetworkSpecification.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/fire/AI/classic/RandomWeightSeeder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/fire/AI/classic/RandomWeightSeeder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/fire/AI/classic/artifacts/ActivationFunction.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/fire/AI/classic/artifacts/BackpropagationFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/fire/AI/classic/artifacts/BackpropagationFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/fire/AI/classic/layers/hidden/HiddenNet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/fire/AI/classic/layers/hidden/HiddenNet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/fire/AI/classic/layers/hidden/HiddenNetBackpropagationAlgorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/fire/AI/classic/layers/hidden/HiddenNetBackpropagationAlgorithm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/fire/AI/classic/layers/hidden/HiddenNetPropagationAlgorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/fire/AI/classic/layers/hidden/HiddenNetPropagationAlgorithm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/fire/AI/classic/layers/hidden/Layer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/fire/AI/classic/layers/hidden/Layer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/fire/AI/classic/layers/input/InputNet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/fire/AI/classic/layers/input/InputNetSpecifications.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/fire/AI/classic/layers/input/InputNetSpecifications.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/fire/AI/classic/test/NeuralNetworkTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/fire/AI/classic/test/NeuralNetworkTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/water/DataAccessToReservoirEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/water/DataAccessToReservoirEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/earth/Reservoir.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/earth/Reservoir.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/water/INPUT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/water/INPUT.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/water/Pool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/water/Pool.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/water/signals/VectorSignal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/water/signals/VectorSignal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/water/html/HtmlBuilder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/water/html/annotations/InHeaderToolbar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/water/html/annotations/Header.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/water/test/PoolTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/water/test/PoolTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/water/test/TestPusher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Avatar/Elemental/water/test/TestPusher.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Avatar/Security/test/LoginAndRegisterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Avatar/Security/test/LoginAndRegisterTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Avatar/Test/TestReservoirEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Avatar/Test/TestReservoirEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Examples/toxitter/UI/char.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Examples/toxitter/UI/char.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Examples/toxitter/test/UllTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Examples/toxitter/test/UllTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Avatar/Boxfresh/Seeder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Avatar/Boxfresh/Seeder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Avatar/Boxfresh/ToxitterStandardConfiguratedEnvironment.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Avatar/Boxfresh/ToxitterStandardConfiguratedEnvironment.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Avatar/Boxfresh/input/CreatePostRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Avatar/Boxfresh/input/CreatePostRequest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Avatar/Boxfresh/output/LikeSignature.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Avatar/Boxfresh/output/LikeSignature.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Avatar/Boxfresh/relations/Friendslist.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Avatar/Boxfresh/routes/Chat.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Avatar/Boxfresh/routes/Chat.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Avatar/Boxfresh/routes/Friends$ReceivedFriendRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Avatar/Boxfresh/routes/Friends$ReceivedFriendRequest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Avatar/Boxfresh/routes/Friends.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Avatar/Boxfresh/routes/Friends.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Avatar/Boxfresh/routes/Friends$ReceivedFriendRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Avatar/Boxfresh/routes/Friends.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Avatar/Boxfresh/routes/LoginAndRegister$AccessToken.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Avatar/Boxfresh/routes/LoginAndRegister$AccessToken.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Avatar/Boxfresh/routes/LoginAndRegister.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Avatar/Boxfresh/routes/LoginAndRegister.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Avatar/Boxfresh/routes/UserReservoir.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Avatar/Boxfresh/routes/UserReservoir.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Avatar/Elemental/aether/ToxitterWebsocketHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Avatar/Elemental/aether/ToxitterWebsocketHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Avatar/Boxfresh/routes/Post.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Avatar/Boxfresh/routes/Post.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Avatar/Boxfresh/routes/PostReservoir.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Avatar/Boxfresh/routes/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Avatar/Boxfresh/routes/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Avatar/Boxfresh/routes/UserReservoir$PublicUserInfo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Avatar/Boxfresh/routes/UserReservoir.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Avatar/Boxfresh/routes/test/FriendsTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Avatar/Boxfresh/routes/test/FriendsTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Avatar/Elemental/earth/ID.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Avatar/Elemental/earth/ID.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Avatar/Elemental/earth/Relation.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Avatar/Elemental/earth/Relation.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Avatar/Elemental/earth/ReservoirEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Avatar/Elemental/earth/ReservoirEntity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Avatar/Elemental/earth/SymmetricRelation.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Avatar/Elemental/earth/SymmetricRelation.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Avatar/Elemental/earth/persistence/mysql/MySqlTypeTransformer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Avatar/Elemental/earth/persistence/mysql/MySqlTypeTransformer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Avatar/Elemental/earth/persistence/mysql/test/MySqlStatementTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Avatar/Elemental/earth/persistence/mysql/test/MySqlStatementTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Avatar/Elemental/earth/persistence/mysql/test/MySqlTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Avatar/Elemental/earth/persistence/mysql/test/MySqlTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Avatar/Elemental/earth/persistence/test/DataAccessTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Avatar/Elemental/earth/persistence/test/DataAccessTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Avatar/Elemental/earth/persistence/test/ReservoirEntityDataPresenterTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Avatar/Elemental/earth/persistence/test/ReservoirEntityDataPresenterTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Avatar/Elemental/earth/test/RelationTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Avatar/Elemental/earth/test/RelationTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Avatar/Elemental/fire/AI/ContentAI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Avatar/Elemental/fire/AI/ContentAI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Avatar/Elemental/fire/AI/Stimulans_CostFunction.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Avatar/Elemental/fire/AI/classic/RandomWeightSeeder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Avatar/Elemental/fire/AI/classic/RandomWeightSeeder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Avatar/Elemental/fire/AI/classic/TensorNeuron.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Avatar/Elemental/fire/AI/classic/artifacts/ActivationFunction.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Avatar/Elemental/fire/AI/classic/galance/InputLayer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Avatar/Elemental/fire/AI/classic/galance/hidden/Backpropagation.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Avatar/Elemental/fire/AI/classic/galance/hidden/HiddenNet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Avatar/Elemental/fire/AI/classic/galance/hidden/HiddenNetAlgorithm.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Avatar/Elemental/fire/AI/classic/galance/hidden/HiddenNetSpecifications.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Avatar/Elemental/fire/AI/classic/galance/hidden/IllegalyConnectedLayersException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Avatar/Elemental/fire/AI/classic/galance/hidden/Layer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Avatar/Elemental/fire/AI/classic/graveyard/Connectidin.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Avatar/Elemental/fire/AI/classic/graveyard/CrushDemocracyCostFunction.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Avatar/Elemental/fire/AI/classic/graveyard/DemocracyCrushingAI.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Avatar/Elemental/fire/AI/classic/graveyard/Dopamine.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Avatar/Elemental/fire/AI/classic/graveyard/HiddenLayerSlice.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Avatar/Elemental/fire/AI/classic/graveyard/Neuron.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Avatar/Elemental/fire/AI/classic/graveyard/OutputLayer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Avatar/Elemental/fire/AI/test/NeuronTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Avatar/Elemental/fire/AI/test/TensorNeuronTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Avatar/Elemental/water/DataAccessToReservoirEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Avatar/Elemental/water/DataAccessToReservoirEntity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Avatar/Elemental/water/Pool.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Avatar/Elemental/water/Pool.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Avatar/Elemental/water/signals/MatrixSignal.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Avatar/Elemental/water/signals/MatrixSignal.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Avatar/Elemental/water/signals/VectorSignal.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Avatar/Elemental/water/signals/VectorSignal.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Avatar/Elemental/earth/Reservoir.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Avatar/Elemental/earth/Reservoir.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Avatar/Elemental/water/Pusher.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Avatar/Elemental/water/Pusher.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Avatar/Elemental/water/html/HtmlBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Avatar/Elemental/water/html/HtmlBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Avatar/Elemental/water/html/annotations/InHeaderToolbar.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Avatar/Elemental/water/test/TestPusher.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Avatar/Elemental/water/test/TestPusher.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Avatar/Security/test/LoginAndRegisterTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Avatar/Security/test/LoginAndRegisterTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Avatar/Test/TestReservoirEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Avatar/Test/TestReservoirEntity.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/examples/toxitter/test/UllTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/examples/toxitter/test/UllTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testreservoir" beforeDir="false" afterPath="$PROJECT_DIR$/testreservoir" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -200,11 +183,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="Avatar.Boxfresh.ui" />
+      <recent name="Avatar.Boxfresh.routes" />
       <recent name="Avatar.Elemental.aether" />
       <recent name="Avatar.Elemental.water.test" />
       <recent name="Avatar.Elemental.fire.AI.classic.galance.hidden" />
-      <recent name="Avatar.Elemental.wind.artifacts.test" />
-      <recent name="Toxitter.Annotations.core" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/java/Examples/toxitter/UI/img" />
@@ -214,11 +197,11 @@
       <recent name="$PROJECT_DIR$/src/main/java/locality" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="Avatar.Elemental.water.html.annotations" />
       <recent name="Avatar.Elemental.wind.datascience" />
       <recent name="Toxitter.Model.use" />
       <recent name="Toxitter.Model.datastructures" />
       <recent name="Toxitter.Model" />
-      <recent name="Toxitter.Persistence.persistence.mysql" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/java/Toxitter/elemental" />
@@ -228,7 +211,7 @@
       <recent name="$PROJECT_DIR$/src/main/java/Toxitter/Core/remake" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.PoolTest.test">
+  <component name="RunManager" selected="JUnit.PoolTest">
     <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
@@ -254,15 +237,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="All in ToxitterBackend2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ToxitterBackend2" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TEST_OBJECT" value="package" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Avatar in ToxitterBackend2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ToxitterBackend2" />
       <extension name="coverage">
@@ -273,6 +247,22 @@
       </extension>
       <option name="PACKAGE_NAME" value="Avatar" />
       <option name="TEST_OBJECT" value="package" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PoolTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ToxitterBackend2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Avatar.Elemental.water.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Avatar.Elemental.water.test" />
+      <option name="MAIN_CLASS_NAME" value="Avatar.Elemental.water.test.PoolTest" />
+      <option name="TEST_OBJECT" value="class" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -354,11 +344,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.PoolTest" />
         <item itemvalue="JUnit.PoolTest.test" />
         <item itemvalue="JUnit.SymmetricRelationTest" />
         <item itemvalue="JUnit.RelationTest" />
         <item itemvalue="JUnit.Avatar in ToxitterBackend2" />
-        <item itemvalue="JUnit.All in ToxitterBackend2" />
       </list>
     </recent_temporary>
   </component>
@@ -411,7 +401,7 @@
       <workItem from="1602728066075" duration="18153000" />
       <workItem from="1602858084298" duration="3263000" />
       <workItem from="1603043129461" duration="11937000" />
-      <workItem from="1603580810555" duration="18986000" />
+      <workItem from="1603580810555" duration="53300000" />
     </task>
     <servers />
   </component>
@@ -439,14 +429,14 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="100" y="100" width="1240" height="700" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.1440.900@0.0.1440.900" timestamp="1601404984201" />
-    <state x="541" y="149" key="#com.intellij.ide.util.MemberChooser" timestamp="1603843576271">
-      <screen x="0" y="23" width="1440" height="832" />
+    <state x="541" y="148" key="#com.intellij.ide.util.MemberChooser" timestamp="1604161141261">
+      <screen x="0" y="23" width="1440" height="830" />
     </state>
     <state x="541" y="136" key="#com.intellij.ide.util.MemberChooser/0.0.1440.900@0.0.1440.900" timestamp="1603581302554" />
     <state x="541" y="148" key="#com.intellij.ide.util.MemberChooser/0.23.1440.823@0.23.1440.823" timestamp="1600636849883" />
     <state x="541" y="148" key="#com.intellij.ide.util.MemberChooser/0.23.1440.825@0.23.1440.825" timestamp="1600790398909" />
-    <state x="541" y="148" key="#com.intellij.ide.util.MemberChooser/0.23.1440.830@0.23.1440.830" timestamp="1602110083095" />
-    <state x="541" y="149" key="#com.intellij.ide.util.MemberChooser/0.23.1440.832@0.23.1440.832" timestamp="1603843576271" />
+    <state x="541" y="148" key="#com.intellij.ide.util.MemberChooser/0.23.1440.830@0.23.1440.830" timestamp="1604161141261" />
+    <state x="541" y="149" key="#com.intellij.ide.util.MemberChooser/0.23.1440.832@0.23.1440.832" timestamp="1603864826196" />
     <state x="489" y="351" width="503" height="205" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1601421134186">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
@@ -467,54 +457,54 @@
     <state x="466" y="188" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1440.825@0.23.1440.825" timestamp="1600742182632" />
     <state x="466" y="188" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1440.826@0.23.1440.826" timestamp="1601083253121" />
     <state x="466" y="189" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1440.832@0.23.1440.832" timestamp="1603863181067" />
-    <state width="1398" height="244" key="GridCell.Tab.0.bottom" timestamp="1603772277164">
-      <screen x="0" y="23" width="1440" height="832" />
+    <state width="1398" height="510" key="GridCell.Tab.0.bottom" timestamp="1604647555483">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="426" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1603153680537" />
+    <state width="1398" height="510" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1604647555483" />
     <state width="1398" height="213" key="GridCell.Tab.0.bottom/0.23.1440.823@0.23.1440.823" timestamp="1600693830170" />
     <state width="1398" height="232" key="GridCell.Tab.0.bottom/0.23.1440.825@0.23.1440.825" timestamp="1600790446050" />
     <state width="1398" height="233" key="GridCell.Tab.0.bottom/0.23.1440.826@0.23.1440.826" timestamp="1601075752128" />
     <state width="1398" height="324" key="GridCell.Tab.0.bottom/0.23.1440.827@0.23.1440.827" timestamp="1601855943895" />
     <state width="1398" height="329" key="GridCell.Tab.0.bottom/0.23.1440.828@0.23.1440.828" timestamp="1601954820131" />
     <state width="1398" height="449" key="GridCell.Tab.0.bottom/0.23.1440.829@0.23.1440.829" timestamp="1602000351972" />
-    <state width="1398" height="273" key="GridCell.Tab.0.bottom/0.23.1440.830@0.23.1440.830" timestamp="1602122042644" />
-    <state width="1398" height="244" key="GridCell.Tab.0.bottom/0.23.1440.832@0.23.1440.832" timestamp="1603772277164" />
-    <state width="1398" height="244" key="GridCell.Tab.0.center" timestamp="1603772277163">
-      <screen x="0" y="23" width="1440" height="832" />
+    <state width="1235" height="271" key="GridCell.Tab.0.bottom/0.23.1440.830@0.23.1440.830" timestamp="1604287587164" />
+    <state width="1398" height="244" key="GridCell.Tab.0.bottom/0.23.1440.832@0.23.1440.832" timestamp="1603865559081" />
+    <state width="1398" height="510" key="GridCell.Tab.0.center" timestamp="1604647555481">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="426" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1603153680535" />
+    <state width="1398" height="510" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1604647555481" />
     <state width="1398" height="213" key="GridCell.Tab.0.center/0.23.1440.823@0.23.1440.823" timestamp="1600693830169" />
     <state width="1398" height="232" key="GridCell.Tab.0.center/0.23.1440.825@0.23.1440.825" timestamp="1600790446049" />
     <state width="1398" height="233" key="GridCell.Tab.0.center/0.23.1440.826@0.23.1440.826" timestamp="1601075752127" />
     <state width="1398" height="324" key="GridCell.Tab.0.center/0.23.1440.827@0.23.1440.827" timestamp="1601855943894" />
     <state width="1398" height="329" key="GridCell.Tab.0.center/0.23.1440.828@0.23.1440.828" timestamp="1601954820122" />
     <state width="1398" height="449" key="GridCell.Tab.0.center/0.23.1440.829@0.23.1440.829" timestamp="1602000351969" />
-    <state width="1398" height="273" key="GridCell.Tab.0.center/0.23.1440.830@0.23.1440.830" timestamp="1602122042642" />
-    <state width="1398" height="244" key="GridCell.Tab.0.center/0.23.1440.832@0.23.1440.832" timestamp="1603772277163" />
-    <state width="1398" height="244" key="GridCell.Tab.0.left" timestamp="1603772277162">
-      <screen x="0" y="23" width="1440" height="832" />
+    <state width="1235" height="271" key="GridCell.Tab.0.center/0.23.1440.830@0.23.1440.830" timestamp="1604287587161" />
+    <state width="1398" height="244" key="GridCell.Tab.0.center/0.23.1440.832@0.23.1440.832" timestamp="1603865559080" />
+    <state width="1398" height="510" key="GridCell.Tab.0.left" timestamp="1604647555480">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="426" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1603153680535" />
+    <state width="1398" height="510" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1604647555480" />
     <state width="1398" height="213" key="GridCell.Tab.0.left/0.23.1440.823@0.23.1440.823" timestamp="1600693830169" />
     <state width="1398" height="232" key="GridCell.Tab.0.left/0.23.1440.825@0.23.1440.825" timestamp="1600790446048" />
     <state width="1398" height="233" key="GridCell.Tab.0.left/0.23.1440.826@0.23.1440.826" timestamp="1601075752127" />
     <state width="1398" height="324" key="GridCell.Tab.0.left/0.23.1440.827@0.23.1440.827" timestamp="1601855943893" />
     <state width="1398" height="329" key="GridCell.Tab.0.left/0.23.1440.828@0.23.1440.828" timestamp="1601954820120" />
     <state width="1398" height="449" key="GridCell.Tab.0.left/0.23.1440.829@0.23.1440.829" timestamp="1602000351966" />
-    <state width="1398" height="273" key="GridCell.Tab.0.left/0.23.1440.830@0.23.1440.830" timestamp="1602122042641" />
-    <state width="1398" height="244" key="GridCell.Tab.0.left/0.23.1440.832@0.23.1440.832" timestamp="1603772277162" />
-    <state width="1398" height="244" key="GridCell.Tab.0.right" timestamp="1603772277164">
-      <screen x="0" y="23" width="1440" height="832" />
+    <state width="1235" height="271" key="GridCell.Tab.0.left/0.23.1440.830@0.23.1440.830" timestamp="1604287587159" />
+    <state width="1398" height="244" key="GridCell.Tab.0.left/0.23.1440.832@0.23.1440.832" timestamp="1603865559080" />
+    <state width="1398" height="510" key="GridCell.Tab.0.right" timestamp="1604647555482">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="426" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1603153680536" />
+    <state width="1398" height="510" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1604647555482" />
     <state width="1398" height="213" key="GridCell.Tab.0.right/0.23.1440.823@0.23.1440.823" timestamp="1600693830170" />
     <state width="1398" height="232" key="GridCell.Tab.0.right/0.23.1440.825@0.23.1440.825" timestamp="1600790446050" />
     <state width="1398" height="233" key="GridCell.Tab.0.right/0.23.1440.826@0.23.1440.826" timestamp="1601075752128" />
     <state width="1398" height="324" key="GridCell.Tab.0.right/0.23.1440.827@0.23.1440.827" timestamp="1601855943894" />
     <state width="1398" height="329" key="GridCell.Tab.0.right/0.23.1440.828@0.23.1440.828" timestamp="1601954820129" />
     <state width="1398" height="449" key="GridCell.Tab.0.right/0.23.1440.829@0.23.1440.829" timestamp="1602000351971" />
-    <state width="1398" height="273" key="GridCell.Tab.0.right/0.23.1440.830@0.23.1440.830" timestamp="1602122042643" />
-    <state width="1398" height="244" key="GridCell.Tab.0.right/0.23.1440.832@0.23.1440.832" timestamp="1603772277164" />
+    <state width="1235" height="271" key="GridCell.Tab.0.right/0.23.1440.830@0.23.1440.830" timestamp="1604287587162" />
+    <state width="1398" height="244" key="GridCell.Tab.0.right/0.23.1440.832@0.23.1440.832" timestamp="1603865559081" />
     <state width="1398" height="376" key="GridCell.Tab.1.bottom" timestamp="1603649862910">
       <screen x="0" y="23" width="1440" height="832" />
     </state>
@@ -539,12 +529,13 @@
     <state width="1398" height="426" key="GridCell.Tab.1.right/0.0.1440.900@0.0.1440.900" timestamp="1603153680540" />
     <state width="1398" height="329" key="GridCell.Tab.1.right/0.23.1440.828@0.23.1440.828" timestamp="1601954820135" />
     <state width="1398" height="376" key="GridCell.Tab.1.right/0.23.1440.832@0.23.1440.832" timestamp="1603649862910" />
-    <state x="229" y="23" width="1024" height="829" key="SettingsEditor" timestamp="1602247118694">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state x="229" y="44" width="1024" height="829" key="SettingsEditor" timestamp="1604164584904">
+      <screen x="0" y="23" width="1440" height="830" />
     </state>
     <state x="229" y="23" width="1024" height="829" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1602247118694" />
     <state x="229" y="75" width="1211" height="722" key="SettingsEditor/0.23.1440.827@0.23.1440.827" timestamp="1601063858324" />
     <state x="229" y="75" key="SettingsEditor/0.23.1440.829@0.23.1440.829" timestamp="1602247031426" />
+    <state x="229" y="44" key="SettingsEditor/0.23.1440.830@0.23.1440.830" timestamp="1604164584904" />
     <state x="248" y="95" width="1240" height="700" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1601358065572">
       <screen x="0" y="23" width="1440" height="827" />
     </state>
@@ -558,10 +549,12 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="268" y="186" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1440.900@0.0.1440.900" timestamp="1601953889660" />
-    <state x="455" y="67" width="586" height="735" key="find.popup" timestamp="1600741053284">
-      <screen x="0" y="23" width="1440" height="825" />
+    <state x="455" y="48" width="586" height="803" key="find.popup" timestamp="1604550355687">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
+    <state x="455" y="48" width="586" height="803" key="find.popup/0.0.1440.900@0.0.1440.900" timestamp="1604550355687" />
     <state x="455" y="67" width="586" height="735" key="find.popup/0.23.1440.825@0.23.1440.825" timestamp="1600741053284" />
+    <state x="455" y="67" width="586" height="740" key="find.popup/0.23.1440.830@0.23.1440.830" timestamp="1604161855178" />
     <state x="246" y="118" key="new project wizard" timestamp="1601861951878">
       <screen x="0" y="23" width="1440" height="828" />
     </state>
@@ -571,11 +564,12 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="551" y="233" key="refactoring.ChangeSignatureDialog/0.0.1440.900@0.0.1440.900" timestamp="1601402293027" />
-    <state x="385" y="176" width="670" height="679" key="search.everywhere.popup" timestamp="1603647916402">
-      <screen x="0" y="23" width="1440" height="832" />
+    <state x="385" y="166" width="670" height="734" key="search.everywhere.popup" timestamp="1604550330240">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="385" y="166" width="670" height="734" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1602737508154" />
+    <state x="385" y="166" width="670" height="734" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1604550330240" />
     <state x="385" y="176" width="670" height="676" key="search.everywhere.popup/0.23.1440.829@0.23.1440.829" timestamp="1600996916822" />
+    <state x="385" y="176" width="670" height="678" key="search.everywhere.popup/0.23.1440.830@0.23.1440.830" timestamp="1604287829563" />
     <state x="385" y="176" width="670" height="679" key="search.everywhere.popup/0.23.1440.832@0.23.1440.832" timestamp="1603647916402" />
   </component>
   <component name="XDebuggerManager">

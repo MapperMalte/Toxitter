@@ -2,12 +2,11 @@ package Avatar.Elemental.aether;
 
 import Avatar.Boxfresh.routes.LoginAndRegister;
 import Avatar.Boxfresh.routes.User;
-import Avatar.Boxfresh.routes.UserReservoir;
+import Avatar.Boxfresh.reservoirs.UserReservoir;
 import Avatar.Annotations.core.PushTo;
 import Avatar.Boxfresh.output.LoginSuccess;
 import Avatar.Elemental.water.OUTPUT;
 import Avatar.Elemental.water.BookOfIlaan;
-import Avatar.Elemental.water.Pusher;
 import Avatar.Security.ToxitterSecurityMiddleware;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
@@ -26,7 +25,7 @@ import java.util.TreeMap;
 /**
  * A simple WebSocketServer implementation. Keeps track of a "chatroom".
  */
-public class ToxitterWebsocketHandler extends WebSocketServer implements Pusher
+public class ToxitterWebsocketHandler extends WebSocketServer
 {
     private static TreeMap<Integer,ToxitterWebsocketHandler> websocketHandlerTreeMap = new TreeMap<>();
     private static ToxitterWebsocketHandler newest = null;

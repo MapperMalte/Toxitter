@@ -1,7 +1,7 @@
 package Avatar.Elemental.water.test;
 
 import Avatar.Boxfresh.routes.User;
-import Avatar.Boxfresh.routes.UserReservoir;
+import Avatar.Boxfresh.reservoirs.UserReservoir;
 import Avatar.Elemental.water.Pool;
 import org.junit.Test;
 
@@ -21,9 +21,9 @@ public class PoolTest
 
         pool.push(hallo);
         pool.push(new TestOutput("WELT"));
-        assertTrue(pool.get(malte).contains(hallo));
-        pool.setPusher(new TestPusher());
+        assertTrue(pool.pull(malte).contains(hallo));
 
+        pool.setPusher(new TestPusher());
         pool.userComesOnline(malte);
     }
 }

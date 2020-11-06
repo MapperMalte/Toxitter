@@ -1,6 +1,7 @@
 package Avatar.Boxfresh.routes;
 
 import Avatar.Annotations.core.FetchAt;
+import Avatar.Boxfresh.output.LikeSignature;
 import Avatar.Elemental.earth.Persist;
 import Avatar.Annotations.route.Injected;
 import Avatar.Boxfresh.input.CreatePostRequest;
@@ -9,34 +10,27 @@ import Avatar.Elemental.earth.ID;
 import Avatar.Elemental.earth.ReservoirEntity;
 import Avatar.Elemental.earth.ReservoirEntityList;
 import Avatar.Elemental.fire.AI.stimulanziae.Investin;
+import Avatar.Elemental.water.html.annotations.*;
+import Avatar.Elemental.water.html.annotations.styling.Leftmost;
 
 @Persist(primaryKey = "postId", tableName = "user")
 @FetchAt(route = "post")
 public class Post extends ReservoirEntity
 {
-    private static ReservoirEntityList<Post> allPosts;
-
     private String postId;
     private String ownerId;
-    private @Injected User user;
-    private String title;
-    private String content;
-    private long time;
+    private @Injected(byId = "ownerId") User user;
+    private @Header long time;
+    private @Header String title;
+    private @Content String content;
+    private @Footer @Injected(byId = "postId") LikeSignature likeSignature;
 
-    @Investin
-    public static PostCreated createPost(CreatePostRequest input)
+    public Post(CreatePostRequest input)
     {
-        Post newPost = new Post();
-        newPost.setId(new ID());
-        newPost.content = input.content;
-        newPost.ownerId = input.ownerId;
-        newPost.time = System.currentTimeMillis();
-        allPosts.addOnTop(newPost);
-        PostCreated postCreated = new PostCreated();
-        postCreated.msg = "Erfolgreich!";
-        return postCreated;
-    }
-    public Post() {
+        setId(new ID());
+        content = input.content;
+        ownerId = input.ownerId;
+        time = System.currentTimeMillis();
     }
 
     public String getTitle() {
